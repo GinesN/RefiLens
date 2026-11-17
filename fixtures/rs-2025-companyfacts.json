@@ -1,0 +1,466 @@
+{
+  "facts": {
+    "us-gaap": {
+      "CashAndCashEquivalentsAtCarryingValue": {
+        "units": {
+          "USD": [
+            {
+              "end": "2024-12-31",
+              "val": 318100000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2024Q4I"
+            },
+            {
+              "end": "2025-12-31",
+              "val": 216600000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26"
+            }
+          ]
+        }
+      },
+      "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents": {
+        "units": {
+          "USD": [
+            {
+              "end": "2022-12-31",
+              "val": 1173400000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2022Q4I"
+            },
+            {
+              "end": "2023-12-31",
+              "val": 1080200000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2023Q4I"
+            },
+            {
+              "end": "2024-12-31",
+              "val": 318100000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26"
+            },
+            {
+              "end": "2025-12-31",
+              "val": 216600000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26"
+            }
+          ]
+        }
+      },
+      "DebtInstrumentCarryingAmount": {
+        "units": {
+          "USD": [
+            {
+              "end": "2024-12-31",
+              "val": 1151100000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2024Q4I"
+            },
+            {
+              "end": "2025-12-31",
+              "val": 1427700000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26"
+            }
+          ]
+        }
+      },
+      "DebtInstrumentUnamortizedDiscountPremiumAndDebtIssuanceCostsNet": {
+        "units": {
+          "USD": [
+            {
+              "end": "2024-12-31",
+              "val": 8600000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2024Q4I"
+            },
+            {
+              "end": "2025-12-31",
+              "val": 6800000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26"
+            }
+          ]
+        }
+      },
+      "LongTermDebtMaturitiesRepaymentsOfPrincipalAfterYearFive": {
+        "units": {
+          "USD": [
+            {
+              "end": "2025-12-31",
+              "val": 250000000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2025Q4I"
+            }
+          ]
+        }
+      },
+      "LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths": {
+        "units": {
+          "USD": [
+            {
+              "end": "2025-12-31",
+              "val": 700000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2025Q4I"
+            }
+          ]
+        }
+      },
+      "LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFive": {
+        "units": {
+          "USD": [
+            {
+              "end": "2025-12-31",
+              "val": 500000000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2025Q4I"
+            }
+          ]
+        }
+      },
+      "LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFour": {
+        "units": {
+          "USD": [
+            {
+              "end": "2025-12-31",
+              "val": 277000000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2025Q4I"
+            }
+          ]
+        }
+      },
+      "LongTermDebtMaturitiesRepaymentsOfPrincipalInYearThree": {
+        "units": {
+          "USD": [
+            {
+              "end": "2025-12-31",
+              "val": 400000000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2025Q4I"
+            }
+          ]
+        }
+      },
+      "LongTermDebtMaturitiesRepaymentsOfPrincipalInYearTwo": {
+        "units": {
+          "USD": [
+            {
+              "end": "2025-12-31",
+              "val": 0,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2025Q4I"
+            }
+          ]
+        }
+      },
+      "LongTermDebtNoncurrent": {
+        "units": {
+          "USD": [
+            {
+              "end": "2024-12-31",
+              "val": 742800000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2024Q4I"
+            },
+            {
+              "end": "2025-12-31",
+              "val": 1420200000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26"
+            }
+          ]
+        }
+      },
+      "NetCashProvidedByUsedInOperatingActivities": {
+        "units": {
+          "USD": [
+            {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "val": 1671300000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2023"
+            },
+            {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "val": 1429800000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2024"
+            },
+            {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "val": 831400000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2025"
+            }
+          ]
+        }
+      },
+      "OperatingIncomeLoss": {
+        "units": {
+          "USD": [
+            {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "val": 1739500000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2023"
+            },
+            {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "val": 1160000000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2024"
+            },
+            {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "val": 1012700000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2025"
+            }
+          ]
+        }
+      },
+      "PaymentsToAcquirePropertyPlantAndEquipment": {
+        "units": {
+          "USD": [
+            {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "val": 468800000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2023"
+            },
+            {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "val": 430600000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2024"
+            },
+            {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "val": 328900000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2025"
+            }
+          ]
+        }
+      },
+      "RevenueFromContractWithCustomerExcludingAssessedTax": {
+        "units": {
+          "USD": [
+            {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "val": 14805900000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2023"
+            },
+            {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "val": 13835000000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2024"
+            },
+            {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "val": 14294300000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2025"
+            }
+          ]
+        }
+      },
+      "LongTermDebtCurrent": {
+        "units": {
+          "USD": [
+            {
+              "end": "2024-12-31",
+              "val": 399700000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2024Q4I"
+            },
+            {
+              "end": "2025-12-31",
+              "val": 700000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26"
+            }
+          ]
+        }
+      },
+      "InterestExpenseNonoperating": {
+        "units": {
+          "USD": [
+            {
+              "start": "2023-01-01",
+              "end": "2023-12-31",
+              "val": 40100000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2023"
+            },
+            {
+              "start": "2024-01-01",
+              "end": "2024-12-31",
+              "val": 40300000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2024"
+            },
+            {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "val": 55700000,
+              "accn": "0001104659-26-020651",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-26",
+              "frame": "CY2025"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

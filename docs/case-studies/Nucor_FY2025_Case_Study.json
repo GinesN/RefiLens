@@ -1,0 +1,594 @@
+{
+  "available": true,
+  "reason": null,
+  "filing": {
+    "id": 1,
+    "accession": "0001193125-26-071575",
+    "form": "10-K",
+    "filed_at": "2026-02-25",
+    "period_end": "2025-12-31",
+    "period_start": "2025-01-01",
+    "fiscal_year": 2025,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/73309/000119312526071575/nue-20251231.htm",
+    "acquisition_mode": "LIVE_SEC",
+    "imported_at": "2026-11-15T17:28:47.399611Z"
+  },
+  "hypothetical": true,
+  "human_review_completed": false,
+  "report": {
+    "formula_version": "refilens-nue-fy2025-case-v1",
+    "title": "Nucor: profitable does not mean cash is free",
+    "question": "Can Nucor fund its 2026\u20132027 maturities, investment and modeled distributions if operating cash weakens?",
+    "information_cutoff": "2026-02-25",
+    "as_of": "2025-12-31",
+    "starting_cash": "2260000000",
+    "historical_cfo": "3234000000",
+    "historical_cash_capex": "3422000000",
+    "historical_free_cash_flow": "-188000000",
+    "historical_coverage_proxy": "15.452941176470588235294117647058823529",
+    "near_term_principal": "598000000",
+    "minimum_cash_assumption": "500000000",
+    "observed_cfo_deterioration": "745000000",
+    "recurring_other_uses_before_buybacks": "793000000",
+    "cash_preserved_by_pausing_buybacks": "1400000000.0000",
+    "remaining_cash_floor_gap": "137265000.0000",
+    "minimum_additional_annual_cash_improvement": "68632500.0000",
+    "cases": [
+      {
+        "id": "reference",
+        "label": "Filing-anchored reference",
+        "rationale": "Repeat FY2025 CFO; use the 2026 capex estimate as a cash-budget proxy and continue the modeled cash distributions.",
+        "annual_buybacks_assumption": "700000000",
+        "inputs": {
+          "company_id": 1,
+          "filing_id": 1,
+          "as_of": "2025-12-31",
+          "currency": "USD",
+          "available_cash_assumption": "2260000000",
+          "minimum_cash": "500000000",
+          "previous_rate": "0.04",
+          "new_rate": "0.06",
+          "refinance_fraction": "1",
+          "issuance_fee_rate": "0",
+          "cash_flow_already_adjusted": false,
+          "years": [
+            {
+              "year": 2026,
+              "operating_cash_flow": "3234000000",
+              "capital_expenditure": "2500000000.00",
+              "other_cash_uses": "1615000000"
+            },
+            {
+              "year": 2027,
+              "operating_cash_flow": "3234000000",
+              "capital_expenditure": "2500000000.00",
+              "other_cash_uses": "1493000000"
+            }
+          ]
+        },
+        "projection": {
+          "formula_version": "refilens-annual-liquidity-v1",
+          "years": [
+            {
+              "year": 2026,
+              "opening_cash": "2260000000",
+              "operating_cash_flow_assumption": "3234000000",
+              "capital_expenditure_assumption": "2500000000.00",
+              "other_cash_uses_assumption": "1615000000",
+              "scheduled_principal": "66000000",
+              "refinanced_principal": "66000000",
+              "principal_repaid_from_cash": "0",
+              "interest_change_for_new_maturities": "1320000.00",
+              "cumulative_interest_change": "1320000.00",
+              "reference_interest_after_changes": "171320000.00",
+              "issuance_fees": "0",
+              "closing_cash_before_uncommitted_funding": "1377680000.00",
+              "shortfall_to_minimum_cash": "0",
+              "cumulative_refinanced_principal": "66000000"
+            },
+            {
+              "year": 2027,
+              "opening_cash": "1377680000.00",
+              "operating_cash_flow_assumption": "3234000000",
+              "capital_expenditure_assumption": "2500000000.00",
+              "other_cash_uses_assumption": "1493000000",
+              "scheduled_principal": "532000000",
+              "refinanced_principal": "532000000",
+              "principal_repaid_from_cash": "0",
+              "interest_change_for_new_maturities": "10640000.00",
+              "cumulative_interest_change": "11960000.00",
+              "reference_interest_after_changes": "181960000.00",
+              "issuance_fees": "0",
+              "closing_cash_before_uncommitted_funding": "606720000.00",
+              "shortfall_to_minimum_cash": "0",
+              "cumulative_refinanced_principal": "598000000"
+            }
+          ],
+          "closing_cash_before_uncommitted_funding": "606720000.00",
+          "peak_shortfall": "0",
+          "first_shortfall_year": null,
+          "total_refinanced_principal": "598000000"
+        }
+      },
+      {
+        "id": "cash_pressure",
+        "label": "Operating cash pressure",
+        "rationale": "Repeat the observed USD 745m annual CFO deterioration once, then hold that lower level in both years. Financing assumptions stay unchanged.",
+        "annual_buybacks_assumption": "700000000",
+        "inputs": {
+          "company_id": 1,
+          "filing_id": 1,
+          "as_of": "2025-12-31",
+          "currency": "USD",
+          "available_cash_assumption": "2260000000",
+          "minimum_cash": "500000000",
+          "previous_rate": "0.04",
+          "new_rate": "0.06",
+          "refinance_fraction": "1",
+          "issuance_fee_rate": "0",
+          "cash_flow_already_adjusted": false,
+          "years": [
+            {
+              "year": 2026,
+              "operating_cash_flow": "2489000000",
+              "capital_expenditure": "2500000000.00",
+              "other_cash_uses": "1615000000"
+            },
+            {
+              "year": 2027,
+              "operating_cash_flow": "2489000000",
+              "capital_expenditure": "2500000000.00",
+              "other_cash_uses": "1493000000"
+            }
+          ]
+        },
+        "projection": {
+          "formula_version": "refilens-annual-liquidity-v1",
+          "years": [
+            {
+              "year": 2026,
+              "opening_cash": "2260000000",
+              "operating_cash_flow_assumption": "2489000000",
+              "capital_expenditure_assumption": "2500000000.00",
+              "other_cash_uses_assumption": "1615000000",
+              "scheduled_principal": "66000000",
+              "refinanced_principal": "66000000",
+              "principal_repaid_from_cash": "0",
+              "interest_change_for_new_maturities": "1320000.00",
+              "cumulative_interest_change": "1320000.00",
+              "reference_interest_after_changes": "171320000.00",
+              "issuance_fees": "0",
+              "closing_cash_before_uncommitted_funding": "632680000.00",
+              "shortfall_to_minimum_cash": "0",
+              "cumulative_refinanced_principal": "66000000"
+            },
+            {
+              "year": 2027,
+              "opening_cash": "632680000.00",
+              "operating_cash_flow_assumption": "2489000000",
+              "capital_expenditure_assumption": "2500000000.00",
+              "other_cash_uses_assumption": "1493000000",
+              "scheduled_principal": "532000000",
+              "refinanced_principal": "532000000",
+              "principal_repaid_from_cash": "0",
+              "interest_change_for_new_maturities": "10640000.00",
+              "cumulative_interest_change": "11960000.00",
+              "reference_interest_after_changes": "181960000.00",
+              "issuance_fees": "0",
+              "closing_cash_before_uncommitted_funding": "-883280000.00",
+              "shortfall_to_minimum_cash": "1383280000.00",
+              "cumulative_refinanced_principal": "598000000"
+            }
+          ],
+          "closing_cash_before_uncommitted_funding": "-883280000.00",
+          "peak_shortfall": "1383280000.00",
+          "first_shortfall_year": 2027,
+          "total_refinanced_principal": "598000000"
+        }
+      },
+      {
+        "id": "funding_pressure",
+        "label": "Cash and refinancing pressure",
+        "rationale": "Keep the same lower CFO, refinance 75% of maturities at an assumed 8% coupon and pay a 1% issuance fee.",
+        "annual_buybacks_assumption": "700000000",
+        "inputs": {
+          "company_id": 1,
+          "filing_id": 1,
+          "as_of": "2025-12-31",
+          "currency": "USD",
+          "available_cash_assumption": "2260000000",
+          "minimum_cash": "500000000",
+          "previous_rate": "0.04",
+          "new_rate": "0.08",
+          "refinance_fraction": "0.75",
+          "issuance_fee_rate": "0.01",
+          "cash_flow_already_adjusted": false,
+          "years": [
+            {
+              "year": 2026,
+              "operating_cash_flow": "2489000000",
+              "capital_expenditure": "2500000000.00",
+              "other_cash_uses": "1615000000"
+            },
+            {
+              "year": 2027,
+              "operating_cash_flow": "2489000000",
+              "capital_expenditure": "2500000000.00",
+              "other_cash_uses": "1493000000"
+            }
+          ]
+        },
+        "projection": {
+          "formula_version": "refilens-annual-liquidity-v1",
+          "years": [
+            {
+              "year": 2026,
+              "opening_cash": "2260000000",
+              "operating_cash_flow_assumption": "2489000000",
+              "capital_expenditure_assumption": "2500000000.00",
+              "other_cash_uses_assumption": "1615000000",
+              "scheduled_principal": "66000000",
+              "refinanced_principal": "49500000.00",
+              "principal_repaid_from_cash": "16500000.00",
+              "interest_change_for_new_maturities": "1320000.0000",
+              "cumulative_interest_change": "1320000.0000",
+              "reference_interest_after_changes": "171320000.0000",
+              "issuance_fees": "495000.0000",
+              "closing_cash_before_uncommitted_funding": "615685000.0000",
+              "shortfall_to_minimum_cash": "0",
+              "cumulative_refinanced_principal": "49500000.00"
+            },
+            {
+              "year": 2027,
+              "opening_cash": "615685000.0000",
+              "operating_cash_flow_assumption": "2489000000",
+              "capital_expenditure_assumption": "2500000000.00",
+              "other_cash_uses_assumption": "1493000000",
+              "scheduled_principal": "532000000",
+              "refinanced_principal": "399000000.00",
+              "principal_repaid_from_cash": "133000000.00",
+              "interest_change_for_new_maturities": "10640000.0000",
+              "cumulative_interest_change": "11960000.0000",
+              "reference_interest_after_changes": "181960000.0000",
+              "issuance_fees": "3990000.0000",
+              "closing_cash_before_uncommitted_funding": "-1037265000.0000",
+              "shortfall_to_minimum_cash": "1537265000.0000",
+              "cumulative_refinanced_principal": "448500000.00"
+            }
+          ],
+          "closing_cash_before_uncommitted_funding": "-1037265000.0000",
+          "peak_shortfall": "1537265000.0000",
+          "first_shortfall_year": 2027,
+          "total_refinanced_principal": "448500000.00"
+        }
+      },
+      {
+        "id": "pause_buybacks",
+        "label": "Pause modeled buybacks",
+        "rationale": "Change only share repurchases to zero in both years. Keep dividends, NCI distributions, withholding, capex and refinancing assumptions unchanged.",
+        "annual_buybacks_assumption": "0",
+        "inputs": {
+          "company_id": 1,
+          "filing_id": 1,
+          "as_of": "2025-12-31",
+          "currency": "USD",
+          "available_cash_assumption": "2260000000",
+          "minimum_cash": "500000000",
+          "previous_rate": "0.04",
+          "new_rate": "0.08",
+          "refinance_fraction": "0.75",
+          "issuance_fee_rate": "0.01",
+          "cash_flow_already_adjusted": false,
+          "years": [
+            {
+              "year": 2026,
+              "operating_cash_flow": "2489000000",
+              "capital_expenditure": "2500000000.00",
+              "other_cash_uses": "915000000"
+            },
+            {
+              "year": 2027,
+              "operating_cash_flow": "2489000000",
+              "capital_expenditure": "2500000000.00",
+              "other_cash_uses": "793000000"
+            }
+          ]
+        },
+        "projection": {
+          "formula_version": "refilens-annual-liquidity-v1",
+          "years": [
+            {
+              "year": 2026,
+              "opening_cash": "2260000000",
+              "operating_cash_flow_assumption": "2489000000",
+              "capital_expenditure_assumption": "2500000000.00",
+              "other_cash_uses_assumption": "915000000",
+              "scheduled_principal": "66000000",
+              "refinanced_principal": "49500000.00",
+              "principal_repaid_from_cash": "16500000.00",
+              "interest_change_for_new_maturities": "1320000.0000",
+              "cumulative_interest_change": "1320000.0000",
+              "reference_interest_after_changes": "171320000.0000",
+              "issuance_fees": "495000.0000",
+              "closing_cash_before_uncommitted_funding": "1315685000.0000",
+              "shortfall_to_minimum_cash": "0",
+              "cumulative_refinanced_principal": "49500000.00"
+            },
+            {
+              "year": 2027,
+              "opening_cash": "1315685000.0000",
+              "operating_cash_flow_assumption": "2489000000",
+              "capital_expenditure_assumption": "2500000000.00",
+              "other_cash_uses_assumption": "793000000",
+              "scheduled_principal": "532000000",
+              "refinanced_principal": "399000000.00",
+              "principal_repaid_from_cash": "133000000.00",
+              "interest_change_for_new_maturities": "10640000.0000",
+              "cumulative_interest_change": "11960000.0000",
+              "reference_interest_after_changes": "181960000.0000",
+              "issuance_fees": "3990000.0000",
+              "closing_cash_before_uncommitted_funding": "362735000.0000",
+              "shortfall_to_minimum_cash": "137265000.0000",
+              "cumulative_refinanced_principal": "448500000.00"
+            }
+          ],
+          "closing_cash_before_uncommitted_funding": "362735000.0000",
+          "peak_shortfall": "137265000.0000",
+          "first_shortfall_year": 2027,
+          "total_refinanced_principal": "448500000.00"
+        }
+      }
+    ],
+    "assumptions": [
+      "Opening cash is the consolidated FY2025 eligible balance, assumed accessible. The USD 500m desired cash floor is an analyst-selected buffer, not a covenant or credit standard.",
+      "The 2026 management capex estimate is a planning reference, not realized cash expenditure. Treating it as cash capex and extending it unchanged into 2027 are explicit model assumptions; accrual/payment timing may differ.",
+      "Operating stress repeats the absolute observed 2024\u20132025 CFO decline. It is held flat, not compounded or assigned a probability; working-capital releases could reverse part of that historical decline.",
+      "FY2025 common dividends, NCI distributions and share-based compensation tax payments repeat annually as assumptions, not obligations or forecasts. Buybacks repeat only in the first three cases.",
+      "The separate short-term debt balance is assumed repaid in 2026. Exact source long-term principal is used for 2026\u20132027 only. Assumed old/new coupons, refinancing access and fees are research choices, not verified instrument/market terms."
+    ],
+    "limitations": [
+      "This is a historical planning illustration using the 10-K filed on 25 February 2026, with opening balances dated 31 December 2025. It is neither a current November 2026 assessment nor a point-in-time trading backtest. Later filings/events are not incorporated.",
+      "No automatic draw is made on the separately disclosed revolving facility. Reported capacity is not cash, proof of future drawability or modeled covenant headroom. A modeled gap is not a default prediction.",
+      "Future acquisitions, lease-principal payments, asset/investment sales, incentives, other financing flows and intra-year cash peaks are excluded unless added in the annual editor. Parent-only availability, taxes/capitalization on changed interest and gap-funding costs remain unmodeled.",
+      "Pausing buybacks is a conditional lever, not a recommendation or evidence that a policy change is feasible. Further cash improvement may require operating, spending or financing changes; its feasibility and costs are not established.",
+      "NUE's rounded principal disclosures retain their separate source-rounding difference. Three later exact years and Thereafter are outside this two-year case. EBITDA remains unavailable; the historical earnings coverage is an analytical proxy, not covenant coverage.",
+      "No independent human accounting review or personal owner authorship/research is claimed. Source extraction and deterministic checks are distinct from owner verification."
+    ],
+    "memo_markdown": "# Nucor: profitable does not mean cash is free\n\n**Question:** Can Nucor fund its 2026\u20132027 maturities, investment and modeled distributions if operating cash weakens?\n\nHistorical planning case. Opening balance: 31 December 2025. Information cutoff: 25 February 2026. USD millions unless stated. Prepared with RefiLens; not independent owner-reviewed research or a current issuer forecast.\n\n## Answer\n\nThe reference case ends 2027 with 606.72 in unfunded-model cash. Repeating the observed CFO decline and restricting refinancing produces a negative balance. Pausing the modeled repurchases preserves 1,400 across two years, but still leaves 137.265 below the chosen 500 cash buffer. An additional 68.6325 of cash improvement in EACH of 2026 and 2027 would meet that buffer mathematically, holding every other assumption fixed. Feasibility is not established; no loan or spending cut is automatically inserted.\n\n## Why this is a real financial question\n\nFY2025 operating cash flow of 3,234 was below cash capex of 3,422, leaving FCF of -188. Historical analytical EBIT-proxy coverage was 15.45x, yet that ratio does not fund investment, distributions or principal. The next two disclosed principal buckets total 598.\n\n## Source anchors and modeling choices\n\nFY2024/2025 CFO was 3,979/3,234; the adverse path repeats the 745 absolute decline once. The 2026 capex estimate of 2,500 becomes an assumed cash budget in both years; 2027 is an extrapolation. Common dividends 512, NCI distributions 249 and tax-withholding payments 32 repeat. Repurchases 700 repeat except in the response case. These repetitions are hypotheses, not issuer commitments.\n\nShared opening cash is 2,260, assumed accessible; the desired cash floor is an illustrative 500; the old coupon is assumed at 4%. Other uses include assumed repayment of 122 short-term debt in 2026. Cash pressure changes only CFO; refinancing pressure then changes the new rate from 6% to 8%, refinancing from 100% to 75%, and fees from 0% to 1%.\n\n| Case | End-2027 cash | Peak shortfall to 500 | First shortfall |\n|---|---:|---:|---|\n| Filing-anchored reference | 606.72 | 0 | None within horizon |\n| Operating cash pressure | -883.28 | 1,383.28 | 2027 |\n| Cash and refinancing pressure | -1,037.265 | 1,537.265 | 2027 |\n| Pause modeled buybacks | 362.735 | 137.265 | 2027 |\n\n## Closure and next diligence\n\nCash generation and capital allocation drive this result; interest coverage alone is insufficient. A positive ending balance after pausing repurchases still fails the chosen operating buffer. Investigate accessible parent cash, reversibility of working-capital movements, committed capex, distribution flexibility, exact coupons and facility/covenant draw conditions before turning the numerical response into a financing plan.\n\nReported revolving capacity of 2,250 is disclosed separately and never counted as available cash. No automatic gap funding, default probability, credit ranking or investment recommendation is produced. Future lease principal, acquisitions and other unentered flows remain excluded. Later principal buckets/Thereafter are not assigned to these years. All source precision and independent-human-review limits remain visible.\n\n## Source and reproduction\n\n[Nucor original FY2025 Form 10-K](https://www.sec.gov/Archives/edgar/data/73309/000119312526071575/nue-20251231.htm), accession 0001193125-26-071575: cash-flow statements, MD&A liquidity and Note 11. Historic rows agree with accession/period/USD-matched companyfacts; the capex estimate/facility narrative is source-extracted only. Raw response hashes, inline element references, original values and contexts are preserved in the case JSON/evidence package.\n\nFormula version: `refilens-nue-fy2025-case-v1`. Export JSON contains each complete annual request. Replay each `inputs` payload against `/api/liquidity/calculate` using the same snapshot. Source data and owner-review flags are never modified.\n"
+  },
+  "evidence": [
+    {
+      "key": "cfo_2024",
+      "label": "Operating cash flow, FY2024",
+      "amount": "3979000000",
+      "currency": "USD",
+      "period_start": "2024-01-01",
+      "period_end": "2024-12-31",
+      "kind": "HISTORICAL_REPORTED",
+      "validation_state": "CROSS_CHECKED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/73309/000119312526071575/nue-20251231.htm",
+      "source_ref": "#F_8c1980cd-e51b-43a4-b8a1-e7d73d950b61",
+      "taxonomy_tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+      "context_ref": "C_8fc42f4a-ab67-4f69-b0bb-f00c452b0970",
+      "original_value": "3,979",
+      "scale": 6,
+      "companyfacts_record": {
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "val": 3979000000,
+        "accn": "0001193125-26-071575",
+        "fy": 2025,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2026-02-25",
+        "frame": "CY2024"
+      }
+    },
+    {
+      "key": "cfo_2025",
+      "label": "Operating cash flow, FY2025",
+      "amount": "3234000000",
+      "currency": "USD",
+      "period_start": "2025-01-01",
+      "period_end": "2025-12-31",
+      "kind": "HISTORICAL_REPORTED",
+      "validation_state": "CROSS_CHECKED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/73309/000119312526071575/nue-20251231.htm",
+      "source_ref": "#F_bdf4189d-baec-4e13-a408-3c1b2e5ebcb6",
+      "taxonomy_tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+      "context_ref": "C_f6e8cb01-afb0-4244-98a2-348bda7cc223",
+      "original_value": "3,234",
+      "scale": 6,
+      "companyfacts_record": {
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "val": 3234000000,
+        "accn": "0001193125-26-071575",
+        "fy": 2025,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2026-02-25",
+        "frame": "CY2025"
+      }
+    },
+    {
+      "key": "dividends",
+      "label": "Common dividends paid, FY2025",
+      "amount": "512000000",
+      "currency": "USD",
+      "period_start": "2025-01-01",
+      "period_end": "2025-12-31",
+      "kind": "HISTORICAL_REPORTED",
+      "validation_state": "CROSS_CHECKED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/73309/000119312526071575/nue-20251231.htm",
+      "source_ref": "#F_ce8ae48a-1719-4735-bcdd-221fdf56ac0c",
+      "taxonomy_tag": "us-gaap:PaymentsOfDividendsCommonStock",
+      "context_ref": "C_f6e8cb01-afb0-4244-98a2-348bda7cc223",
+      "original_value": "512",
+      "scale": 6,
+      "companyfacts_record": {
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "val": 512000000,
+        "accn": "0001193125-26-071575",
+        "fy": 2025,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2026-02-25",
+        "frame": "CY2025"
+      }
+    },
+    {
+      "key": "buybacks",
+      "label": "Share repurchases paid, FY2025",
+      "amount": "700000000",
+      "currency": "USD",
+      "period_start": "2025-01-01",
+      "period_end": "2025-12-31",
+      "kind": "HISTORICAL_REPORTED",
+      "validation_state": "CROSS_CHECKED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/73309/000119312526071575/nue-20251231.htm",
+      "source_ref": "#F_b09ac441-b93a-41f1-be63-7fea5f6970a0",
+      "taxonomy_tag": "us-gaap:PaymentsForRepurchaseOfCommonStock",
+      "context_ref": "C_f6e8cb01-afb0-4244-98a2-348bda7cc223",
+      "original_value": "700",
+      "scale": 6,
+      "companyfacts_record": {
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "val": 700000000,
+        "accn": "0001193125-26-071575",
+        "fy": 2025,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2026-02-25",
+        "frame": "CY2025"
+      }
+    },
+    {
+      "key": "nci_distributions",
+      "label": "Distributions to noncontrolling interests, FY2025",
+      "amount": "249000000",
+      "currency": "USD",
+      "period_start": "2025-01-01",
+      "period_end": "2025-12-31",
+      "kind": "HISTORICAL_REPORTED",
+      "validation_state": "CROSS_CHECKED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/73309/000119312526071575/nue-20251231.htm",
+      "source_ref": "#F_883f2b68-f3bd-413c-ac2a-39113cf8eb69",
+      "taxonomy_tag": "us-gaap:PaymentsOfDividendsMinorityInterest",
+      "context_ref": "C_f6e8cb01-afb0-4244-98a2-348bda7cc223",
+      "original_value": "249",
+      "scale": 6,
+      "companyfacts_record": {
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "val": 249000000,
+        "accn": "0001193125-26-071575",
+        "fy": 2025,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2026-02-25",
+        "frame": "CY2025"
+      }
+    },
+    {
+      "key": "tax_withholding",
+      "label": "Share-based compensation tax payments, FY2025",
+      "amount": "32000000",
+      "currency": "USD",
+      "period_start": "2025-01-01",
+      "period_end": "2025-12-31",
+      "kind": "HISTORICAL_REPORTED",
+      "validation_state": "CROSS_CHECKED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/73309/000119312526071575/nue-20251231.htm",
+      "source_ref": "#F_afd2f52c-d586-40fe-9e85-4333db5b7633",
+      "taxonomy_tag": "us-gaap:PaymentsRelatedToTaxWithholdingForShareBasedCompensation",
+      "context_ref": "C_f6e8cb01-afb0-4244-98a2-348bda7cc223",
+      "original_value": "32",
+      "scale": 6,
+      "companyfacts_record": {
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "val": 32000000,
+        "accn": "0001193125-26-071575",
+        "fy": 2025,
+        "fp": "FY",
+        "form": "10-K",
+        "filed": "2026-02-25",
+        "frame": "CY2025"
+      }
+    },
+    {
+      "key": "capex_budget",
+      "label": "Management's 2026 capex estimate",
+      "amount": "2500000000.00",
+      "currency": "USD",
+      "period_start": "2026-01-01",
+      "period_end": "2026-12-31",
+      "kind": "MANAGEMENT_ESTIMATE",
+      "validation_state": "SOURCE_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/73309/000119312526071575/nue-20251231.htm",
+      "source_ref": "MD&A / Investing Activities",
+      "taxonomy_tag": null,
+      "context_ref": null,
+      "original_value": null,
+      "scale": null,
+      "companyfacts_record": null
+    },
+    {
+      "key": "facility",
+      "label": "Reported revolving credit capacity, not cash",
+      "amount": "2250000000.00",
+      "currency": "USD",
+      "period_start": null,
+      "period_end": "2025-12-31",
+      "kind": "DISCLOSED_CAPACITY",
+      "validation_state": "SOURCE_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/73309/000119312526071575/nue-20251231.htm",
+      "source_ref": "MD&A / Financing Activities",
+      "taxonomy_tag": null,
+      "context_ref": null,
+      "original_value": null,
+      "scale": null,
+      "companyfacts_record": null
+    }
+  ],
+  "source_manifest": {
+    "https://www.sec.gov/files/company_tickers.json": {
+      "url": "https://www.sec.gov/files/company_tickers.json",
+      "sha256": "391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f",
+      "retrieved_at": "2026-11-13T13:23:49.322360+00:00",
+      "bytes": 796325,
+      "cache_hit": true
+    },
+    "https://data.sec.gov/submissions/CIK0000073309.json": {
+      "url": "https://data.sec.gov/submissions/CIK0000073309.json",
+      "sha256": "a5819bab6cab3e2bfd41513d0cca66ab9c9e69f8c2fe2c50671c7e4175ca6980",
+      "retrieved_at": "2026-11-13T13:23:49.937756+00:00",
+      "bytes": 157765,
+      "cache_hit": true
+    },
+    "https://data.sec.gov/api/xbrl/companyfacts/CIK0000073309.json": {
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000073309.json",
+      "sha256": "7a8ed4a66082eb2d497764f546f99a4ce5238e6d6155508da84d359dd0f6113e",
+      "retrieved_at": "2026-11-13T13:23:50.913800+00:00",
+      "bytes": 3988185,
+      "cache_hit": true
+    },
+    "https://www.sec.gov/Archives/edgar/data/73309/000119312526071575/nue-20251231.htm": {
+      "url": "https://www.sec.gov/Archives/edgar/data/73309/000119312526071575/nue-20251231.htm",
+      "sha256": "66e9be9d61e12f66c51aa421c0c4cc2701339a5493a8cf2e70fef49b87eb9296",
+      "retrieved_at": "2026-11-13T13:23:51.021884+00:00",
+      "bytes": 5474025,
+      "cache_hit": true
+    }
+  },
+  "excluded_principal": "6338000000.00",
+  "excluded_bucket_labels": [
+    "2028",
+    "2029",
+    "2030",
+    "Thereafter"
+  ]
+}

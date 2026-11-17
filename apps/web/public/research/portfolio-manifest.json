@@ -1,0 +1,20 @@
+{
+  "case_formula_version": "refilens-nue-fy2025-case-v1",
+  "accession": "0001193125-26-071575",
+  "source_period_end": "2025-12-31",
+  "information_cutoff": "2026-02-25",
+  "prepared_on": "2026-11-16",
+  "human_review_completed": false,
+  "artifacts": [
+    {
+      "filename": "RefiLens_Nucor_Case_Study.pdf",
+      "pages": 4,
+      "sha256": "037de1298b39d457d03c53bfa78c0e65b9e967c52d34d7265d4305292c8a9ae4"
+    },
+    {
+      "filename": "RefiLens_Project_Brief.pdf",
+      "pages": 2,
+      "sha256": "b41cd825a9641619019b25caad4006389b5b0a0ebf7efc14b52416851413acf2"
+    }
+  ]
+}

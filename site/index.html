@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="RefiLens connects original SEC filing evidence to corporate debt maturities, refinancing assumptions and a transparent Python cash model.">
+  <meta name="theme-color" content="#13191f">
+  <title>RefiLens — Corporate debt research</title>
+  <style>
+    :root{color-scheme:dark;--bg:#13191f;--surface:#1b252e;--ink:#edf2f6;--muted:#aabac6;--blue:#a2d2ef;--line:#3a4c59;--warm:#e4d4ad}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--blue);text-underline-offset:4px}a:hover{color:white}a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:5px}header,main,footer{max-width:1150px;margin:auto;padding:0 32px}header{display:flex;align-items:center;justify-content:space-between;padding-top:25px;padding-bottom:25px;border-bottom:1px solid var(--line);gap:24px}.brand{font-size:25px;font-weight:750;letter-spacing:-1px;text-decoration:none;color:var(--ink)}.brand span{color:var(--blue)}nav{display:flex;gap:25px;font-size:14px}.eyebrow{color:var(--muted);text-transform:uppercase;font-size:11px;letter-spacing:2px;font-weight:650}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(39px,6vw,70px);line-height:1.08;letter-spacing:-2.5px;max-width:900px;margin-bottom:25px}h1 span{color:var(--blue)}h2{font-size:31px;line-height:1.2;letter-spacing:-1px;margin-bottom:22px}h3{font-size:19px;line-height:1.3}section{padding:64px 0;border-bottom:1px solid var(--line)}.hero{padding-top:78px}.hero>p:not(.eyebrow){max-width:740px;color:var(--muted);font-size:19px}.actions{display:flex;flex-wrap:wrap;gap:14px;margin:29px 0}.button{display:inline-block;padding:12px 20px;border:1px solid var(--line);background:var(--surface);border-radius:3px;text-decoration:none;font-size:14px;font-weight:600}.primary{background:var(--blue);color:#12232f;border-color:var(--blue)}.primary:hover{color:#12232f;background:#c1e3f8}.scope{font-size:13px!important;color:var(--muted)}.notice{padding-left:18px;border-left:2px solid var(--warm);font-size:14px!important;max-width:760px!important}.split{display:grid;grid-template-columns:1.15fr 1fr;gap:46px;align-items:start}.split p,.methods p{color:var(--muted)}.facts{display:grid;grid-template-columns:1fr 1fr;gap:22px;border-top:1px solid var(--line);padding-top:21px;margin-top:26px}.facts dt{font-size:12px;color:var(--muted)}.facts dd{margin:5px 0 0;font-size:25px;font-variant-numeric:tabular-nums}.result{background:var(--surface);padding:26px;border:1px solid var(--line)}.result dl{margin-bottom:0}.result dl>div{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding:15px 0}.result dt{font-size:14px;color:var(--muted)}.result dd{margin:0;text-align:right;font-size:22px;font-variant-numeric:tabular-nums;white-space:nowrap}.result .gap{color:var(--blue);font-size:30px}.small{font-size:13px;color:var(--muted)}figure{margin:27px 0 0}img{display:block;width:100%;height:auto;border:1px solid var(--line)}figcaption{font-size:12px;color:var(--muted);margin-top:9px}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:640px;font-size:14px;text-align:left}th,td{padding:14px 12px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-size:12px;font-weight:500}td:first-child{font-weight:650;color:var(--blue)}.methods{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:25px}.methods article{border-top:2px solid var(--line);padding-top:20px}.downloads{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}.downloads a{display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid var(--line);padding:17px 0;text-decoration:none}.downloads span{color:var(--muted);font-size:13px}.limits{padding:20px 0 0;color:var(--muted);font-size:14px}footer{padding-top:27px;padding-bottom:35px;font-size:12px;color:var(--muted)}.skip{position:absolute;left:-10000px}.skip:focus{left:16px;top:12px;background:var(--surface);padding:10px;z-index:2}
+    @media(max-width:720px){header,main,footer{padding-left:20px;padding-right:20px}header{align-items:flex-start}nav{gap:12px;font-size:12px;flex-wrap:wrap;justify-content:flex-end}section{padding:43px 0}.hero{padding-top:48px}h1{letter-spacing:-1.5px}.split,.methods,.downloads{grid-template-columns:1fr;gap:24px}.hero>p:not(.eyebrow){font-size:17px}.result{padding:20px}.result dd{font-size:19px}.scope{font-size:12px!important}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to project</a>
+<header><a class="brand" href="#">Refi<span>Lens</span></a><nav aria-label="Project navigation"><a href="#case">The case</a><a href="#evidence">Evidence</a><a href="#downloads">Reports</a><a href="https://github.com/GinesN/RefiLens">GitHub ↗</a></nav></header>
+<main id="main">
+  <section class="hero">
+    <p class="eyebrow">Corporate debt research / public project overview</p>
+    <h1>Profit covers interest.<br><span>Does cash cover the plan?</span></h1>
+    <p>Follow original SEC filing evidence through debt maturities, refinancing assumptions and a transparent cash model. Understand which changes create a funding need, and which assumptions drive the result.</p>
+    <div class="actions"><a class="button primary" href="#case">Explore the Nucor case ↓</a><a class="button" href="https://github.com/GinesN/RefiLens#quick-start">Run the interactive workspace ↗</a></div>
+    <p class="scope">Five issuers · Historical calendar FY2025 · USD · Python Decimal calculations</p>
+    <p class="notice">This public page presents the research and downloadable reports. The full interactive workspace runs with its Next.js and Python services using the repository's setup instructions.</p>
+  </section>
+  <section id="case">
+    <div class="split"><div>
+      <p class="eyebrow">Nucor / a bounded 2026–2027 planning exercise</p>
+      <h2>A strong earnings ratio can coexist with a cash constraint.</h2>
+      <p>FY2025 operating cash flow was below cash investment. The case asks whether maturities, investment and modeled distributions can still be funded when operations weaken and refinancing access is reduced.</p>
+      <dl class="facts"><div><dt>Source operating cash flow</dt><dd>$3,234m</dd></div><div><dt>Source cash capex</dt><dd>$3,422m</dd></div><div><dt>Cash after capex</dt><dd>−$188m</dd></div><div><dt>2026–2027 source principal</dt><dd>$598m</dd></div></dl>
+      <p class="small">Opening balances: 31 December 2025. Information cutoff: original 10-K filed 25 February 2026. Later events are outside this dated case.</p>
+    </div><aside class="result" aria-label="Conditional response case">
+      <p class="eyebrow">One modeled response / pause share buybacks</p>
+      <p>Pausing assumed repurchases preserves $1,400m over two years. Ending cash remains below the chosen operating reserve.</p>
+      <dl><div><dt>Chosen reserve<br><span class="small">Analyst assumption</span></dt><dd>$500m</dd></div><div><dt>End-2027 cash<br><span class="small">Hypothetical model result</span></dt><dd>$362.735m</dd></div><div><dt>Remaining reserve gap</dt><dd class="gap">$137.265m</dd></div></dl>
+      <p class="small">A mathematical gap does not establish a feasible spending cut or available financing. The model preserves unfunded balances without inserting a loan.</p>
+      <a href="reports/RefiLens_Nucor_Case_Study.pdf">Read the four-page case PDF ↗</a>
+    </aside></div>
+    <figure><a href="assets/case-study-desktop.png"><img src="assets/case-study-desktop.png" alt="RefiLens Nucor case workspace with source-bound results and annual cash assumptions" loading="lazy" width="1440" height="2400"></a><figcaption>Full workspace capture from a verified offline production run. This image is a preview; use the repository to run the interactive models.</figcaption></figure>
+  </section>
+  <section id="evidence">
+    <p class="eyebrow">65 observed/control facts / 30 disclosed maturity buckets</p>
+    <h2>Each number keeps its source.</h2>
+    <p class="small">Exact issuer, filing accession, fiscal period and USD units. Company-specific debt definitions remain visible. Thereafter is never allocated to invented years.</p>
+    <div class="table-wrap" role="region" aria-label="Covered issuers" tabindex="0"><table><thead><tr><th>Issuer</th><th>Business</th><th>Facts / buckets</th><th>Original FY2025 filing</th></tr></thead><tbody>
+      <tr><td>NUE · Nucor</td><td>Steel producer</td><td>16 / 6</td><td><a href="https://www.sec.gov/Archives/edgar/data/73309/000119312526071575/nue-20251231.htm">25 February 2026 ↗</a></td></tr>
+      <tr><td>STLD · Steel Dynamics</td><td>Steel producer</td><td>12 / 6</td><td><a href="https://www.sec.gov/Archives/edgar/data/1022671/000110465926021395/stld-20251231x10k.htm">27 February 2026 ↗</a></td></tr>
+      <tr><td>RS · Reliance</td><td>Metals distributor</td><td>11 / 6</td><td><a href="https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm">26 February 2026 ↗</a></td></tr>
+      <tr><td>LECO · Lincoln Electric</td><td>Welding equipment and consumables</td><td>14 / 6</td><td><a href="https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm">25 February 2026 ↗</a></td></tr>
+      <tr><td>ITW · Illinois Tool Works</td><td>Diversified industrial manufacturing, including welding</td><td>12 / 6</td><td><a href="https://www.sec.gov/Archives/edgar/data/49826/000004982626000008/itw-20251231.htm">13 February 2026 ↗</a></td></tr>
+    </tbody></table></div>
+    <p class="small">These compare funding exposures across different businesses, not equivalent credit risks. Automated cross-checks compare representations of the same issuer filing. Independent human accounting review remains pending.</p>
+  </section>
+  <section>
+    <p class="eyebrow">Implemented in the full workspace</p><h2>Trace the inputs. Change an assumption. Explain the result.</h2>
+    <div class="methods"><article><h3>Debt and source evidence</h3><p>Inspect original facts, debt-note bridges, cash scope and each maturity bucket. Keep missing information unavailable and source zeros intact.</p></article><article><h3>Transparent financing scenarios</h3><p>Isolate a maturity's rate change, edit annual cash flows or compare three explicit stress cases. Export exact inputs and outputs for replay.</p></article><article><h3>Reproducible calculations</h3><p>Financial calculations live in pure Python Decimal. Typed API contracts, extraction tests and browser flows check the path from sources to the interface.</p></article></div>
+    <div class="actions"><a class="button" href="https://github.com/GinesN/RefiLens#quick-start">Setup and run instructions ↗</a><a class="button" href="https://github.com/GinesN/RefiLens/blob/main/docs/VALIDATION_REPORT.md">Inspect dated validation evidence ↗</a></div>
+  </section>
+  <section id="downloads">
+    <p class="eyebrow">Portable research</p><h2>Take the evidence with you.</h2>
+    <div class="downloads"><a href="reports/RefiLens_Project_Brief.pdf">Project brief <span>PDF · 2 pages</span></a><a href="reports/RefiLens_Nucor_Case_Study.pdf">Nucor case study <span>PDF · 4 pages</span></a><a href="reports/financial-review.xlsx">Financial source review <span>Excel · 5 issuer sheets</span></a><a href="reports/RefiLens_Presentation_Pack.zip">Full presentation pack <span>PDFs, evidence and methods</span></a><a href="reports/Guia_RefiLens_ES.md">Guía de uso en español <span>Markdown</span></a><a href="https://github.com/GinesN/RefiLens/tree/main/docs">Methodology and documentation <span>GitHub ↗</span></a></div>
+    <div class="limits"><p>Historical annual snapshots and hypothetical future paths. The project does not provide a verified EBITDA reconciliation, calibrated issuer forecast, financing-access guarantee, credit rating or default probability.</p><p>AI-assisted implementation and documentation. Public code and automated checks do not imply independent owner accounting review or solo authorship.</p></div>
+  </section>
+</main>
+<footer>RefiLens · Corporate debt research · FY2025 USD · <a href="https://github.com/GinesN/RefiLens">Source repository</a> · <a href="https://github.com/GinesN/RefiLens/blob/main/docs/ASSUMPTIONS_AND_LIMITATIONS.md">Assumptions and limitations</a></footer>
+</body>
+</html>

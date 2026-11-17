@@ -1,0 +1,618 @@
+{
+  "format": 1,
+  "purpose": "Initial verified public source snapshot; AI-assisted project",
+  "files": {
+    ".env.example": {
+      "sha256": "1e7d97688e284adc4e8bb18754c8257347976bc59e8d5117182e70d9dc4b67fb",
+      "mode": 420
+    },
+    ".github/ISSUE_TEMPLATE/bug_report.md": {
+      "sha256": "9c95ff20238b13893912c7dd831961e398a259a894757d9394c56a9761251a54",
+      "mode": 420
+    },
+    ".github/PULL_REQUEST_TEMPLATE.md": {
+      "sha256": "dbb4ce9a54b667667508be73ceb5dac65d9c45faab64d42dff99f86a12d25dd1",
+      "mode": 420
+    },
+    ".gitignore": {
+      "sha256": "16e2248560e4493063de31c74b0ab84c3ed844f6bd75569492cfc7281c3e71d1",
+      "mode": 420
+    },
+    ".python-version": {
+      "sha256": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d",
+      "mode": 420
+    },
+    "AGENTS.md": {
+      "sha256": "92bbea0e8b558d7c2554dd4222eaa128090b7f9e92aa584998a6175c92c9bdaa",
+      "mode": 420
+    },
+    "CONTRIBUTING.md": {
+      "sha256": "001d3190b148e8b4b051a925f6b282aba4b45f5cfb30caa0099da6a67dc59f22",
+      "mode": 420
+    },
+    "README.md": {
+      "sha256": "cfb4dde627f3773f553b0b326439a8b38f15b5e0c63bb7b42c424084d69aa65c",
+      "mode": 420
+    },
+    "SECURITY.md": {
+      "sha256": "5b38b6b934605f0a58c16142b501deab8fcb71d8836ef2b2f2026068ec4252e5",
+      "mode": 420
+    },
+    "Start RefiLens.command": {
+      "sha256": "48677ce2a2f88659a7dddfac7eb9f120fe9cde72a2196edf0f52711a2b5de0a8",
+      "mode": 493
+    },
+    "apps/web/AGENTS.md": {
+      "sha256": "063098f6cb31bb44c6f8fbea25b3876de7ee1e5f7d00a50dbab506f6415eb7f0",
+      "mode": 420
+    },
+    "apps/web/eslint.config.mjs": {
+      "sha256": "864cee02abe135c045b6dd1a376805c86b65ab44888fddddac9f18922f872a35",
+      "mode": 420
+    },
+    "apps/web/next-env.d.ts": {
+      "sha256": "1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b",
+      "mode": 420
+    },
+    "apps/web/next.config.mjs": {
+      "sha256": "135fd2b408fd55dee2c2093a9a64d271eac6660d5d60bb93ca68ec7f0c3311e6",
+      "mode": 420
+    },
+    "apps/web/package.json": {
+      "sha256": "b3b57eb78ed64acbc9c069ef61068d1eb23aacf6673d654515744bd86fce7243",
+      "mode": 420
+    },
+    "apps/web/playwright.config.ts": {
+      "sha256": "8bedb02791acf1875ecfd5cf3689ef8cfc90b1579c93e899afecea491eeec2fa",
+      "mode": 420
+    },
+    "apps/web/pnpm-lock.yaml": {
+      "sha256": "0cbe101fb07356dbfad425d7459b80a5773202ae0ab01d234c62eaf54590ca41",
+      "mode": 420
+    },
+    "apps/web/postcss.config.mjs": {
+      "sha256": "b783348d5618047d0f37e12acd15c5a2c5f02809d8711e0764c9cea52750346c",
+      "mode": 420
+    },
+    "apps/web/public/research/Guia_RefiLens_ES.md": {
+      "sha256": "0a3156e346b6dea6ed3394cae58142238c820aa92068d16836a431022a3ca1a6",
+      "mode": 420
+    },
+    "apps/web/public/research/RefiLens_Nucor_Case_Study.pdf": {
+      "sha256": "037de1298b39d457d03c53bfa78c0e65b9e967c52d34d7265d4305292c8a9ae4",
+      "mode": 420
+    },
+    "apps/web/public/research/RefiLens_Presentation_Pack.zip": {
+      "sha256": "2d27b70d331664a67416f711b0980076d1cc94f0816fec3b608e252876af729b",
+      "mode": 420
+    },
+    "apps/web/public/research/RefiLens_Project_Brief.pdf": {
+      "sha256": "b41cd825a9641619019b25caad4006389b5b0a0ebf7efc14b52416851413acf2",
+      "mode": 420
+    },
+    "apps/web/public/research/financial-review.xlsx": {
+      "sha256": "a3d2e76683419d0c69a1e9c889e9635a0a72e2de4a5dbbe20ef8852afd7ba980",
+      "mode": 420
+    },
+    "apps/web/public/research/portfolio-manifest.json": {
+      "sha256": "c58d257214718587805c41b11d1e9b4d3278a2e78952492a87640ca6598362bc",
+      "mode": 420
+    },
+    "apps/web/src/app/api/[...path]/route.ts": {
+      "sha256": "6379785cd4d719459b3ee10b56ad70fc2abdd1fade2d242fa6ef5930c9e260cf",
+      "mode": 420
+    },
+    "apps/web/src/app/globals.css": {
+      "sha256": "521cc09559520a44ea6b8a777a56a54b4b5761dbbe9932746c7e0885a5de6592",
+      "mode": 420
+    },
+    "apps/web/src/app/icon.svg": {
+      "sha256": "ad7d87e6119d0b7c1a31fb13adee46f98012d1a35250772426992bb9cf6f5331",
+      "mode": 420
+    },
+    "apps/web/src/app/layout.tsx": {
+      "sha256": "a8b600e067ff3b092f8af847dd8f656502061fb35421ca9bf6bedbd34e0a3aa0",
+      "mode": 420
+    },
+    "apps/web/src/app/page.tsx": {
+      "sha256": "482ca7993558e175cdbde7161015b8b7824143b08f6528279ad913037cea09df",
+      "mode": 420
+    },
+    "apps/web/src/app/presentation.css": {
+      "sha256": "b6a22f31167e0a15f7358f12dedddb087768e84cf151d9dc1f23a2b0390ed965",
+      "mode": 420
+    },
+    "apps/web/src/app/research.css": {
+      "sha256": "6bc856e761d7839dacc253d35a12ce449b94a77980e8d9dae8ef7bb7be0f31bf",
+      "mode": 420
+    },
+    "apps/web/src/app/workbench.css": {
+      "sha256": "21dbd3be45305216a6b5be1c56d037c01f34ac928decd6e33ea01f7a46e92443",
+      "mode": 420
+    },
+    "apps/web/src/components/case-study.test.tsx": {
+      "sha256": "f0e2c98fbdf762223a3141e9bc919fde5c94f30bb74163470f6d9ac45a77adec",
+      "mode": 420
+    },
+    "apps/web/src/components/case-study.tsx": {
+      "sha256": "f8a540c9670a56cf346e1f15c6713465a5e597988cfa746ffaab6bfb08d39aa2",
+      "mode": 420
+    },
+    "apps/web/src/components/financial-review.tsx": {
+      "sha256": "976d3d0bfd708dc274e0d18c92329fb912a8bb9300d785b5fd2afcedc92ca5bb",
+      "mode": 420
+    },
+    "apps/web/src/components/liquidity-model.tsx": {
+      "sha256": "a9901d0e002347a61fcfa6cac9030c317435ec964d35136fa4dead172717c781",
+      "mode": 420
+    },
+    "apps/web/src/components/maturity-chart.tsx": {
+      "sha256": "55699e81f808c841279050506895904a7b9cb3ae3c117df4aa80588e4a1e9369",
+      "mode": 420
+    },
+    "apps/web/src/components/metric-card.test.tsx": {
+      "sha256": "25dcc6c427c9ba2128f1f436cb54f757b3374b3d6c004af6107b3aba38246478",
+      "mode": 420
+    },
+    "apps/web/src/components/metric-card.tsx": {
+      "sha256": "2947b724e2f2380d3afe288488d00e4878da220ad0b0c12adcd123e1a19b0f16",
+      "mode": 420
+    },
+    "apps/web/src/components/peer-comparison.tsx": {
+      "sha256": "caf0ed1b5f0d1651155fe7f2b2cb5cdb0abaf3cf88000ae5744abba3967f015c",
+      "mode": 420
+    },
+    "apps/web/src/components/project-overview.test.tsx": {
+      "sha256": "358decd795e727ca7e80d3366ac7560ae612befccf70b563df639c06de88d8e1",
+      "mode": 420
+    },
+    "apps/web/src/components/project-overview.tsx": {
+      "sha256": "e345741f96bcececf3d5f98f45804dc28ab1872de4298ab634af656e7835caf4",
+      "mode": 420
+    },
+    "apps/web/src/components/scenario-lab.tsx": {
+      "sha256": "c8f444bc796696f6a5d08fc2341152eab61153994be0412506b8cc82dcdc0c7a",
+      "mode": 420
+    },
+    "apps/web/src/components/stress-scenarios.tsx": {
+      "sha256": "26e1f37a56bc44d5e70a77a521c4f62cf5a510201b1e1d757adfd966c4e4ba42",
+      "mode": 420
+    },
+    "apps/web/src/components/workspace.tsx": {
+      "sha256": "f4c05b5f984d7a3008b12916bfe579efa8d0c79af4e47499292906c8e715c8ba",
+      "mode": 420
+    },
+    "apps/web/src/lib/api.test.ts": {
+      "sha256": "5c285dd89fc472ac1f7972b624a6e7412882496aef0c9a3204ab3daa87362698",
+      "mode": 420
+    },
+    "apps/web/src/lib/api.ts": {
+      "sha256": "b55e6c6ebc29e59dce30401de2249dabce0c61451e76e14f6312c84aaadff581",
+      "mode": 420
+    },
+    "apps/web/src/lib/stress.test.ts": {
+      "sha256": "9b3c8461ec321e16d372760c697d60480ee601f775f703fbcb9d5325053a3ea9",
+      "mode": 420
+    },
+    "apps/web/src/lib/stress.ts": {
+      "sha256": "9eceec7961209183b0a251c30a4b066dd3f33b6ed4e35b6d05daf4500ca8632f",
+      "mode": 420
+    },
+    "apps/web/src/test-setup.ts": {
+      "sha256": "c2ccf2417a8183a91935356b3d91c9aefc75b23abe2e72e335e671c12654f65d",
+      "mode": 420
+    },
+    "apps/web/tests/smoke.spec.ts": {
+      "sha256": "2362c8c63996f8eeaade8d08412f5df6d967ac2dd2299e748be8f145bcb38163",
+      "mode": 420
+    },
+    "apps/web/tsconfig.json": {
+      "sha256": "a5e23f360834490af362e5b8d7b5f82f1a34931524ca5a9a93a8b2eb7028d82f",
+      "mode": 420
+    },
+    "apps/web/vitest.config.ts": {
+      "sha256": "30763c457d3fc484d9726f0ce075c2c33c9d33fc1f8671311dcc9f6f47c5e76e",
+      "mode": 420
+    },
+    "compose.yml": {
+      "sha256": "3f3f256982863248e6b130f87efd12e108422936a18731efffdd6d03399cbafa",
+      "mode": 420
+    },
+    "docs/ARCHITECTURE.md": {
+      "sha256": "bb25d61de0b74b14b5dd977825f14b7d11d4ed20c8cf124a7090e638d5102b2f",
+      "mode": 420
+    },
+    "docs/ASSUMPTIONS_AND_LIMITATIONS.md": {
+      "sha256": "1503a890ccb89b3f304ee12121983f730d2119ef29f9c5ab2b03af6331fdf6ae",
+      "mode": 420
+    },
+    "docs/COVERAGE_EXPANSION.md": {
+      "sha256": "ae9c94e118a92d025fd2b2ccf11c6cf754141892da1c712ac67335aa9b3e4576",
+      "mode": 420
+    },
+    "docs/DATA_DICTIONARY.md": {
+      "sha256": "07c06e9059bfce4f1e50d16b05d0b0f1e3ce357c47a205d80c3fc3ed88e1bf2f",
+      "mode": 420
+    },
+    "docs/DATA_PROVENANCE.md": {
+      "sha256": "dc2529927bd309b4e803d379fe9a119e493f599c1fc4a3e1e12bf5739582180b",
+      "mode": 420
+    },
+    "docs/DECISIONS.md": {
+      "sha256": "1f6f7481fbf8dfc55ac029cdde051419c4426f25edd5b223c44a5316d3d03a38",
+      "mode": 420
+    },
+    "docs/FINANCIAL_METHODOLOGY.md": {
+      "sha256": "21854533d467dd8a400cc94b778227c577912c9a56a2a79ac67bc03b9a3bbbb5",
+      "mode": 420
+    },
+    "docs/FINANCIAL_REVIEW.md": {
+      "sha256": "6d9cb25b041c5589c38bbfe64b0ee84728f4f54e95f92bc642a590df1b61a4ce",
+      "mode": 420
+    },
+    "docs/GUIA_FACIL_ES.md": {
+      "sha256": "0a3156e346b6dea6ed3394cae58142238c820aa92068d16836a431022a3ca1a6",
+      "mode": 420
+    },
+    "docs/LIQUIDITY_MODEL.md": {
+      "sha256": "c2f4798e25c99736306676fa9d05b8c65d703451d4ef3ac8e015150cc12ca359",
+      "mode": 420
+    },
+    "docs/OWNER_VERIFICATION_CHECKLIST.md": {
+      "sha256": "cb96f63a9c03339508646277ac246956f1e776dd9ad163ea9782d9e6fcfce6eb",
+      "mode": 420
+    },
+    "docs/PORTFOLIO_DRAFTS.md": {
+      "sha256": "318ee1fda437d23b61e6051fad9f9354fed9f7a8e04ddcd11b3d9f89fb21c8fb",
+      "mode": 420
+    },
+    "docs/PORTFOLIO_MATERIALS_ES.md": {
+      "sha256": "d33ae1ab82acb4cf16fd44285f181ceb019dcd4b4e6f85a565c233a3efd9188a",
+      "mode": 420
+    },
+    "docs/PRODUCT_SPEC.md": {
+      "sha256": "2f334e69019960b3f29a19dc6336eb5afc5005e289065732a8ce8cdebb7ccf5d",
+      "mode": 420
+    },
+    "docs/PUBLICATION.md": {
+      "sha256": "95d70a34d4588fb87b6f7327a981b5fe12b719129c0c1030c5a3bd401f1d3ebf",
+      "mode": 420
+    },
+    "docs/README.md": {
+      "sha256": "b5c422a195afdc590a5b0fd9e65b77ef875b442ab109d804dfca02ab02ab4bbf",
+      "mode": 420
+    },
+    "docs/RELEASE_READINESS.md": {
+      "sha256": "1fe7fa31ea90d030b4625c514fa75b8e290864e8268eea63b0c5b233f3a08fcc",
+      "mode": 420
+    },
+    "docs/ROADMAP.md": {
+      "sha256": "2dc4a1e832f5a6dbf363aa69e920d5bb77cefb127619e01d0fd7355a5548a715",
+      "mode": 420
+    },
+    "docs/STRESS_SCENARIOS.md": {
+      "sha256": "7f8684361de9e8e3572ef3e7bd88f99c77487fa305b9b6aa4a9821bd6a18e5e5",
+      "mode": 420
+    },
+    "docs/VALIDATION_REPORT.md": {
+      "sha256": "6648cbf8e4df94b36e7b2613c493173baba8efa7749573e8bea9fa128f880424",
+      "mode": 420
+    },
+    "docs/case-studies/NUCOR_FY2025.md": {
+      "sha256": "62139695d458dd6e65cc751f2217c1f9df9126bd0a2be1d1e1069eafd72d7f62",
+      "mode": 420
+    },
+    "docs/case-studies/Nucor_FY2025_Case_Study.json": {
+      "sha256": "7087c306f76874551e632de2742aec48b9da9241c379c66d70eb5f2711412e03",
+      "mode": 420
+    },
+    "docs/screenshots/case-study-desktop.png": {
+      "sha256": "d6c59f599853cad5970b7ca05bfa9b5e981557ff09bda4ad497a1baf79755c96",
+      "mode": 420
+    },
+    "docs/screenshots/comparison-desktop.png": {
+      "sha256": "6530e66eac6068ca62f06aed13a6d4ec40b9bdef64ca0513f77f92a81ac117ef",
+      "mode": 420
+    },
+    "docs/screenshots/financial-review-desktop.png": {
+      "sha256": "7dd5c00d053c456d10237b265109b425e8a5aafe6eaa84475017f76f38d86853",
+      "mode": 420
+    },
+    "docs/screenshots/leco-annual-desktop.png": {
+      "sha256": "06a09e00f5d40371b17ae3099d4077486885385f753ce1dcee4d15a1f4a308c8",
+      "mode": 420
+    },
+    "docs/screenshots/project-desktop.png": {
+      "sha256": "18acc56642662a1775adf3a2c171096b42373f43a77bcdd827de8bf1d216d110",
+      "mode": 420
+    },
+    "docs/screenshots/project-mobile.png": {
+      "sha256": "96daca5065da5d74cacfc02de9c95926eecadb207cddaff5424e2de2ee06fcec",
+      "mode": 420
+    },
+    "fixtures/README.md": {
+      "sha256": "083a4069281ea12ddfac350a526631c0ad3f0795db8c37e69b92696b3f87165e",
+      "mode": 420
+    },
+    "fixtures/excerpts/nue-case-evidence.html": {
+      "sha256": "39e3dd0d540f3ef2ba4f540f6e196aa0274cae58fe0c652a3ecda4f6e8daee4b",
+      "mode": 420
+    },
+    "fixtures/itw-2025-companyfacts.json": {
+      "sha256": "d78f30dfc4f964474e735e2147633354bd1a06fa912893d017d98299538b7dfc",
+      "mode": 420
+    },
+    "fixtures/itw-2025-excerpt.xhtml": {
+      "sha256": "c3f6a7ab1f810603140b968b4faded839400ded288274ad2657dc809787103f3",
+      "mode": 420
+    },
+    "fixtures/itw-2025.json": {
+      "sha256": "7bffe710fe8beed20b0bcdd0195cd761ec1944a4d7a9f13dd6ff168ba47ad74a",
+      "mode": 420
+    },
+    "fixtures/leco-2025-companyfacts.json": {
+      "sha256": "07e02adcd57c1b4de3ece4df03580cc2f8c4e4809a1b0c6894de8226a5d823f5",
+      "mode": 420
+    },
+    "fixtures/leco-2025-excerpt.xhtml": {
+      "sha256": "7dc710d95ccf5ac11845fe01028efb523261b2747b96f4ce89ef2203854d453e",
+      "mode": 420
+    },
+    "fixtures/leco-2025.json": {
+      "sha256": "a205b2d42d012d613fc06f95bfe12e8867e4d7fdfcaee32d25ebb7235e468a8b",
+      "mode": 420
+    },
+    "fixtures/nue-2025-companyfacts.json": {
+      "sha256": "d5bc4a16984a2ce6c842e2fa756064f79dc0783d25f01ac2081069a54a5e3725",
+      "mode": 420
+    },
+    "fixtures/nue-2025-excerpt.xhtml": {
+      "sha256": "e569b4a52c9f4d29a09725391cdad5a5230fe6bd54d535c994afa30fa89174c1",
+      "mode": 420
+    },
+    "fixtures/nue-2025.json": {
+      "sha256": "96f9d0b0c055e09cacb0e237a70c64ef513bdc34ab1bd781a14e258c39eb2782",
+      "mode": 420
+    },
+    "fixtures/research/nue-2025-case-evidence.json": {
+      "sha256": "2ded34ca9533daa4f7a39d1c91e4d2953674c08fca7dfaae41596496101fa03e",
+      "mode": 420
+    },
+    "fixtures/rs-2025-companyfacts.json": {
+      "sha256": "0ab1f3c1adc7e54f303d5700614441b3ced01cd3640af80613d64972961e6ff6",
+      "mode": 420
+    },
+    "fixtures/rs-2025-excerpt.xhtml": {
+      "sha256": "778220c4ded0f940affbf419395a9432fe431de7773c32e2a200b6e3c719904e",
+      "mode": 420
+    },
+    "fixtures/rs-2025.json": {
+      "sha256": "653c2d7b0f242d39542ff28ea6a19b74b505726c3732fd11ad694f81dbdc5dce",
+      "mode": 420
+    },
+    "fixtures/stld-2025-companyfacts.json": {
+      "sha256": "b46e607b719da6962a71740f2c653da088699afb5e516217e9e578d9b671ba75",
+      "mode": 420
+    },
+    "fixtures/stld-2025-excerpt.xhtml": {
+      "sha256": "ffc018078aff35c194f3672e7f2b0b17081e32c603c8c8d68f097a91c8171b1a",
+      "mode": 420
+    },
+    "fixtures/stld-2025.json": {
+      "sha256": "9786def28731e5e272dd8f4de0c5c4e7fa2d53baa48ed3b2662e479d9b77d6ac",
+      "mode": 420
+    },
+    "scripts/audit_financials.py": {
+      "sha256": "4bfcd0616da94d5964d3ba7e6a27aeb78ebb4fa7a9ef46c817bff25aa947efc1",
+      "mode": 420
+    },
+    "scripts/build_nucor_case_evidence.py": {
+      "sha256": "c92fe4e4f0387a626cfa9692bb227959a6c3cca0bd8204f7f39dea149be078e6",
+      "mode": 420
+    },
+    "scripts/build_public_site.py": {
+      "sha256": "f16dcbe81e62bec14bc17fb92a982f0cbc256c950fc8e4d1c802170ce175ad1a",
+      "mode": 420
+    },
+    "scripts/check.sh": {
+      "sha256": "4b6a3904d3814b2564a609f1515629ad3077cb097b75aae71e0ef116d3b554ca",
+      "mode": 493
+    },
+    "scripts/dev.sh": {
+      "sha256": "dc27f737ca7e49c40a3563ca03b0c98100899422704e83400606d6eb60d4334e",
+      "mode": 493
+    },
+    "scripts/export_test_evidence.py": {
+      "sha256": "a893e2f289b52006071182363a02c644c83286eae49fa679f8d01302e2447fa8",
+      "mode": 420
+    },
+    "scripts/portfolio/build.py": {
+      "sha256": "3e0c9ee6207a7c7265025468c89a7de05633ff8785b5d37e75c052d14f241ddd",
+      "mode": 420
+    },
+    "scripts/portfolio/pack.py": {
+      "sha256": "e5aa4d1e954eec04a44cea249c9d763549fad4c2653d3fbf382366657c881761",
+      "mode": 420
+    },
+    "scripts/portfolio/requirements.txt": {
+      "sha256": "0a4ef77c68167a8a45b619b285572ee923572eb5fce8804c7ea57ed24843b2c2",
+      "mode": 420
+    },
+    "scripts/portfolio/verify.py": {
+      "sha256": "5fa5151a6df2d53865c642f0537b1b4cbc8b66a6e47be261e49aeab3243eb975",
+      "mode": 420
+    },
+    "scripts/research_candidates.py": {
+      "sha256": "5334016980596adc51268eb9dc2801b4625887f9aefacb3150a51b2dc530b206",
+      "mode": 420
+    },
+    "scripts/research_coverage.py": {
+      "sha256": "bc93267a34a89ffd8d8cce83a063ec13fac72749470268e2deee8e324ffaaaba",
+      "mode": 420
+    },
+    "scripts/runtime.sh": {
+      "sha256": "275fb5bc663a2ce1ab75edec204371c9101edd056a16d2af7ae0fdf343575e1c",
+      "mode": 493
+    },
+    "scripts/setup.sh": {
+      "sha256": "b6baab939541b3fec92cfcb645c863f80549daeaaf0daae5a9cca627a67cacd6",
+      "mode": 493
+    },
+    "scripts/start.sh": {
+      "sha256": "4ad747e55e6963ea562dca3b170980816cc0e96eab386cdea2d09d88805b3487",
+      "mode": 493
+    },
+    "scripts/wait_for_app.py": {
+      "sha256": "d9f15cb21314df4ad8d39f99b737688a83d548ba66b9d4e15081fcbcbc11d736",
+      "mode": 420
+    },
+    "scripts/workbooks/build-financial-review.mjs": {
+      "sha256": "d0fbc40af5f1ad8c9e55b3e40e5107c4713cb080e8ce31fb23ca98b42179c644",
+      "mode": 420
+    },
+    "services/api/alembic.ini": {
+      "sha256": "1e4bef4189bcff9ebf4dc39d56fc10646f683088b2e8209f176a51ac686a6a5c",
+      "mode": 420
+    },
+    "services/api/alembic/env.py": {
+      "sha256": "7e63e748beb77ec44b11c5cff8c97417ca88f4fb18ae0de0d63771332f1af262",
+      "mode": 420
+    },
+    "services/api/alembic/versions/0001_initial.py": {
+      "sha256": "4b5e693e9771ad5fc8d2eaa9aa0835ee19bc63311db6792518ca96e86a64dc57",
+      "mode": 420
+    },
+    "services/api/alembic/versions/0002_company_profile.py": {
+      "sha256": "43cfc7d15331dae25179c37928ea76b74d2c37368523e0a96474d96c61e203c3",
+      "mode": 420
+    },
+    "services/api/app/__init__.py": {
+      "sha256": "bbbd0a2d7c180b9f0a078dd324758306493be877a6974a8f097bbd983ef75751",
+      "mode": 420
+    },
+    "services/api/app/core/config.py": {
+      "sha256": "443ac4d32acf5df77b1a68f114b7ba9c923ff8c65f2fcdc97aca7b6ff352d58f",
+      "mode": 420
+    },
+    "services/api/app/db.py": {
+      "sha256": "9581a8184a653dc30324911bd9664b840f926bc43d0395acb1fdc853e095d2c2",
+      "mode": 420
+    },
+    "services/api/app/extraction/filing.py": {
+      "sha256": "2027045680c62b094a118edceb3b04ab456b20f1c8d5b65b4c42e162802c90f7",
+      "mode": 420
+    },
+    "services/api/app/extraction/profiles.py": {
+      "sha256": "da0492bcb609f0bc161bb25641a373b978c696db1c81ac6988c7abb46e2350a5",
+      "mode": 420
+    },
+    "services/api/app/finance/calculations.py": {
+      "sha256": "3a5eb28b90bab0fcf22c5f1316d88f3d365082ddd84b8b1b9417c724191fe0a3",
+      "mode": 420
+    },
+    "services/api/app/finance/case_study.py": {
+      "sha256": "b1f91edf6f45a2fe46441028867e014de0c5fc9f3b3bb46a19937b5ffe9c9655",
+      "mode": 420
+    },
+    "services/api/app/finance/liquidity.py": {
+      "sha256": "9ce985bdaaff1d11c4cc67dbc2732b56ebdd12a64b6c82ed17626bd20c508715",
+      "mode": 420
+    },
+    "services/api/app/finance/stress.py": {
+      "sha256": "94f993f5bd3379327d38e74d096480e6f660337167ce8b118873587134bdaa14",
+      "mode": 420
+    },
+    "services/api/app/ingestion/import_company.py": {
+      "sha256": "4d64523f5b92398de633658b4c7fe764fcf5b0dc66bf8ea644f46ec91939ee44",
+      "mode": 420
+    },
+    "services/api/app/ingestion/sec.py": {
+      "sha256": "771b8aa2086f786f332e99dfac7fa05580c4022c226a3db8fcad958ed9052744",
+      "mode": 420
+    },
+    "services/api/app/main.py": {
+      "sha256": "764dd7d21e1b73ba040ab7e581dbf681ecc35cfd5c900dd73b68e7b795b1500a",
+      "mode": 420
+    },
+    "services/api/app/models/entities.py": {
+      "sha256": "9e2c89dd0cbf5c915a81c025c93ecebe5ca4cb46e32332f9d7186bd85574fe44",
+      "mode": 420
+    },
+    "services/api/app/research/evidence.py": {
+      "sha256": "ff9c853c1cafef956ba051b0c95af33b521031c52a16c6c6c2c0ec8e39204989",
+      "mode": 420
+    },
+    "services/api/app/schemas/api.py": {
+      "sha256": "c5207a693ad9bbc79b1251c339401186a74bd8bef9d6ef2ee06cee5a8e3aa2e3",
+      "mode": 420
+    },
+    "services/api/app/schemas/case_study.py": {
+      "sha256": "89568e6593441ca6135822f8088b653ea2259a9db59e7f8a15571a51dd9ba3c7",
+      "mode": 420
+    },
+    "services/api/app/validation/maturities.py": {
+      "sha256": "6405e8e98cbb04da5cf0e53b9c84ec3f351d476ace2eb6af8f81b58d3129d14d",
+      "mode": 420
+    },
+    "services/api/app/validation/metrics.py": {
+      "sha256": "71062968aa03300621ba97a79185065b52f4b194a66cc43ffe596b18e6293014",
+      "mode": 420
+    },
+    "services/api/app/validation/review.py": {
+      "sha256": "3f962b2d47b2038d64b777e3ef01480a04a0dfa17d3010e155ed1ae775936802",
+      "mode": 420
+    },
+    "services/api/pyproject.toml": {
+      "sha256": "4b7c0b23e376dfad01d188720c58a2ba2c45c9ef366d4e95838d0e02fb6379ea",
+      "mode": 420
+    },
+    "services/api/tests/conftest.py": {
+      "sha256": "fa1ffec99bd7bda8031011636ed2e7fa46af6d7bbc0e8ff2c128b1b09c48c994",
+      "mode": 420
+    },
+    "services/api/tests/test_added_issuers.py": {
+      "sha256": "58c437812b1da34d6b0de5e6a9f6c6791b695fbcc2e255733d37dfe5d6cd7d20",
+      "mode": 420
+    },
+    "services/api/tests/test_api.py": {
+      "sha256": "d1c73bd9f888f9f929175cdf978cd7cd40bbdd041b6a6441ab207c8050fc8621",
+      "mode": 420
+    },
+    "services/api/tests/test_case_study.py": {
+      "sha256": "8bb8688dc55828c24aabbb9ee7dc9ed7694d7ce8ca2ba75dcdd1b19c17755361",
+      "mode": 420
+    },
+    "services/api/tests/test_coverage.py": {
+      "sha256": "0baa09eee5ae8d153c9677b2e69139703516ba0d615806f240f496b473f6ff1c",
+      "mode": 420
+    },
+    "services/api/tests/test_finance.py": {
+      "sha256": "1abcd7416ddaf6ad4a3d70315a7cdb19b305487e212080e54c44a42a88cb8209",
+      "mode": 420
+    },
+    "services/api/tests/test_ingestion.py": {
+      "sha256": "187bb519c064c7c0b9b6c92738892945120e6a307f1655168d6f94fa154e15eb",
+      "mode": 420
+    },
+    "services/api/tests/test_liquidity.py": {
+      "sha256": "7bc449d4cb18714a86e458251d22dfd46e9062f2076c10269f89fa604a6f3503",
+      "mode": 420
+    },
+    "services/api/tests/test_review.py": {
+      "sha256": "aa461ba3a26f221d9c62e1a937958056b30b009408ea56eb81aa7dd90ac37a89",
+      "mode": 420
+    },
+    "services/api/tests/test_stress.py": {
+      "sha256": "f0e468f83d86504744efc333bdc0ec024252899762ba559a75c7023b1c28cada",
+      "mode": 420
+    },
+    "services/api/uv.lock": {
+      "sha256": "af8ffeef7d48c42290a9ec1ab72e521f1cf7bb202c3ddc891858bb81770ff588",
+      "mode": 420
+    },
+    "site/index.html": {
+      "sha256": "916680b7b715f8f59e54923333d3331e867585da0499aee0d88a984118d80dc9",
+      "mode": 420
+    }
+  }
+}

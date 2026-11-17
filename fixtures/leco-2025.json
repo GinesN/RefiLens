@@ -1,0 +1,964 @@
+{
+  "company": {
+    "cik": "0000059527",
+    "ticker": "LECO",
+    "name": "LINCOLN ELECTRIC HOLDINGS INC",
+    "industry": "Metalworkg Machinery & Equipment",
+    "sic": "3540",
+    "research_profile": {
+      "sector": "Welding and metalworking equipment",
+      "business_model": "Welding equipment / consumables / automation",
+      "exchange": "Nasdaq",
+      "debt_components": [
+        "short_term_debt",
+        "noncurrent_debt"
+      ],
+      "debt_basis": "Reported borrowings, including bank debt and the debt-note swap adjustment; carrying amount",
+      "includes_finance_leases": false,
+      "core_concepts": [
+        "cash",
+        "short_term_debt",
+        "current_debt",
+        "noncurrent_debt",
+        "interest_expense",
+        "operating_income",
+        "operating_cash_flow",
+        "capital_expenditure",
+        "revenue"
+      ],
+      "debt_bridge": [
+        [
+          "review_debt_gross",
+          "Long-term borrowing subtotal before adjustments",
+          1
+        ],
+        [
+          "review_debt_swap_adjustment",
+          "Add disclosed interest-rate swap adjustment",
+          1
+        ],
+        [
+          "review_debt_costs",
+          "Less debt issuance costs",
+          -1
+        ],
+        [
+          "short_term_debt",
+          "Add separately reported bank debt / current borrowing subtotal",
+          1
+        ]
+      ],
+      "maturity_principal_components": [
+        "review_debt_gross",
+        "short_term_debt"
+      ],
+      "maturity_rounding": "DISPLAYED_PRECISION",
+      "maturity_method": "LECO_NARRATIVE",
+      "maturity_scope": "Five explicit annual borrowing payments and thereafter, including amounts due banks; excludes swap valuation adjustments and issuance costs. The source schedule is USD 4,000 below note principal, at the combined displayed rounding bound; no year is altered.",
+      "comparability_note": "Welding equipment, consumables and automation supplier in the metalworking value chain, not a steel producer. Capex is the cash-flow line tagged PaymentsToAcquireProductiveAssets, excluding acquisitions. Gross interest is taken from the separate interest-expense note, not the net income-statement line. Bank borrowings are already included in the 2026 maturity bucket; do not add them again."
+    }
+  },
+  "filing": {
+    "accession": "0000059527-26-000006",
+    "filed_at": "2026-02-25",
+    "period_end": "2025-12-31",
+    "period_start": "2025-01-01",
+    "fiscal_year": 2025,
+    "form": "10-K",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm"
+  },
+  "facts": [
+    {
+      "concept": "cash",
+      "taxonomy_tag": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "308,789",
+      "original_scale": 3,
+      "amount": "308789000",
+      "start": null,
+      "end": "2025-12-31",
+      "period": "INSTANT",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Tc_3kmRy76O7k-8UR36Wg7_3g_5_2",
+      "source_ref": "Inline XBRL id=Tc_3kmRy76O7k-8UR36Wg7_3g_5_2; context=As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA; us-gaap:CashAndCashEquivalentsAtCarryingValue",
+      "excerpt": "Cash and cash equivalents $ 308,789 \u200b $ 377,262",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "end": "2025-12-31",
+          "val": 308789000,
+          "accn": "0000059527-26-000006",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25"
+        },
+        "context_id": "As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA",
+        "dimensions": [],
+        "taxonomy_amount": "308789000",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "short_term_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported borrowings, including bank debt and the debt-note swap adjustment; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "short_term_debt",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "operating_cash_flow",
+      "taxonomy_tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "661,173",
+      "original_scale": 3,
+      "amount": "661173000",
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "period": "FY",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Tc_xba5vGOWrkWkknNPyRJhyQ_20_3",
+      "source_ref": "Inline XBRL id=Tc_xba5vGOWrkWkknNPyRJhyQ_20_3; context=Duration_1_1_2025_To_12_31_2025_LiDAO7sSSkCaDx6HogO__w; us-gaap:NetCashProvidedByUsedInOperatingActivities",
+      "excerpt": "NET CASH PROVIDED BY OPERATING ACTIVITIES \u200b 661,173 \u200b 598,977 \u200b 667,542",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 661173000,
+          "accn": "0000059527-26-000006",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25",
+          "frame": "CY2025"
+        },
+        "context_id": "Duration_1_1_2025_To_12_31_2025_LiDAO7sSSkCaDx6HogO__w",
+        "dimensions": [],
+        "taxonomy_amount": "661173000",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "short_term_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported borrowings, including bank debt and the debt-note swap adjustment; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "short_term_debt",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "capital_expenditure",
+      "taxonomy_tag": "us-gaap:PaymentsToAcquireProductiveAssets",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "126,974",
+      "original_scale": 3,
+      "amount": "126974000",
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "period": "FY",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Tc_HdatcKC5JEC6wY0nP4sCuA_22_3",
+      "source_ref": "Inline XBRL id=Tc_HdatcKC5JEC6wY0nP4sCuA_22_3; context=Duration_1_1_2025_To_12_31_2025_LiDAO7sSSkCaDx6HogO__w; us-gaap:PaymentsToAcquireProductiveAssets",
+      "excerpt": "Capital expenditures \u200b ( 126,974 ) \u200b ( 116,603 ) \u200b ( 90,987 )",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 126974000,
+          "accn": "0000059527-26-000006",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25",
+          "frame": "CY2025"
+        },
+        "context_id": "Duration_1_1_2025_To_12_31_2025_LiDAO7sSSkCaDx6HogO__w",
+        "dimensions": [],
+        "taxonomy_amount": "126974000",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "short_term_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported borrowings, including bank debt and the debt-note swap adjustment; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "short_term_debt",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "revenue",
+      "taxonomy_tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "4,233,003",
+      "original_scale": 3,
+      "amount": "4233003000",
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "period": "FY",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Tc_5xbJ1lj1PkiCZYkkI4eRgQ_3_3",
+      "source_ref": "Inline XBRL id=Tc_5xbJ1lj1PkiCZYkkI4eRgQ_3_3; context=Duration_1_1_2025_To_12_31_2025_LiDAO7sSSkCaDx6HogO__w; us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "excerpt": "Net sales (Note 2) \u200b\u00a0\u200b\u00a0\u200b $ 4,233,003 \u200b\u00a0\u200b\u00a0\u200b $ 4,008,670 \u200b\u00a0\u200b\u00a0\u200b $ 4,191,636",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 4233003000,
+          "accn": "0000059527-26-000006",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25",
+          "frame": "CY2025"
+        },
+        "context_id": "Duration_1_1_2025_To_12_31_2025_LiDAO7sSSkCaDx6HogO__w",
+        "dimensions": [],
+        "taxonomy_amount": "4233003000",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "short_term_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported borrowings, including bank debt and the debt-note swap adjustment; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "short_term_debt",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "short_term_debt",
+      "taxonomy_tag": "us-gaap:DebtCurrent",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "143,780",
+      "original_scale": 3,
+      "amount": "143780000",
+      "start": null,
+      "end": "2025-12-31",
+      "period": "INSTANT",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Tc_0LlYFwlFukqlRhryHuoeig_25_6",
+      "source_ref": "Inline XBRL id=Tc_0LlYFwlFukqlRhryHuoeig_25_6; context=As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA; us-gaap:DebtCurrent",
+      "excerpt": "Total short-term debt \u200b \u200b \u200b \u200b 143,780 \u200b 110,524",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "end": "2025-12-31",
+          "val": 143780000,
+          "accn": "0000059527-26-000006",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25"
+        },
+        "context_id": "As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA",
+        "dimensions": [],
+        "taxonomy_amount": "143780000",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "short_term_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported borrowings, including bank debt and the debt-note swap adjustment; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "short_term_debt",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "current_debt",
+      "taxonomy_tag": "us-gaap:LongTermDebtCurrent",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "\u2014",
+      "original_scale": 3,
+      "amount": "0",
+      "start": null,
+      "end": "2025-12-31",
+      "period": "INSTANT",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Tc_ZKJ8e6E4KUW_snM-C7NeTQ_23_2",
+      "source_ref": "Inline XBRL id=Tc_ZKJ8e6E4KUW_snM-C7NeTQ_23_2; context=As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA; us-gaap:LongTermDebtCurrent",
+      "excerpt": "Current portion of long-term debt (Note 9) \u2014 \u200b 100,004",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "end": "2025-12-31",
+          "val": 0,
+          "accn": "0000059527-26-000006",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25"
+        },
+        "context_id": "As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA",
+        "dimensions": [],
+        "taxonomy_amount": "0",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "short_term_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported borrowings, including bank debt and the debt-note swap adjustment; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "short_term_debt",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "noncurrent_debt",
+      "taxonomy_tag": "us-gaap:LongTermDebtNoncurrent",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "1,150,228",
+      "original_scale": 3,
+      "amount": "1150228000",
+      "start": null,
+      "end": "2025-12-31",
+      "period": "INSTANT",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Tc_2uoeNZWVYEqCvCAElY1s3w_25_2",
+      "source_ref": "Inline XBRL id=Tc_2uoeNZWVYEqCvCAElY1s3w_25_2; context=As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA; us-gaap:LongTermDebtNoncurrent",
+      "excerpt": "Long-term debt, less current portion (Note 9) 1,150,228 \u200b 1,150,551",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "end": "2025-12-31",
+          "val": 1150228000,
+          "accn": "0000059527-26-000006",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25"
+        },
+        "context_id": "As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA",
+        "dimensions": [],
+        "taxonomy_amount": "1150228000",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "short_term_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported borrowings, including bank debt and the debt-note swap adjustment; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "short_term_debt",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "interest_expense",
+      "taxonomy_tag": "us-gaap:InterestExpenseNonoperating",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "58,379",
+      "original_scale": 3,
+      "amount": "58379000",
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "period": "FY",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Tc_Wymxbhy_7kCnUfk_29Ks9A_10_5",
+      "source_ref": "Inline XBRL id=Tc_Wymxbhy_7kCnUfk_29Ks9A_10_5; context=Duration_1_1_2025_To_12_31_2025_LiDAO7sSSkCaDx6HogO__w; us-gaap:InterestExpenseNonoperating",
+      "excerpt": "Interest expense \u200b \u200b \u200b \u200b ( 58,379 ) \u200b \u200b ( 52,916 ) \u200b \u200b ( 51,133 )",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 58379000,
+          "accn": "0000059527-26-000006",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25",
+          "frame": "CY2025"
+        },
+        "context_id": "Duration_1_1_2025_To_12_31_2025_LiDAO7sSSkCaDx6HogO__w",
+        "dimensions": [],
+        "taxonomy_amount": "58379000",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "short_term_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported borrowings, including bank debt and the debt-note swap adjustment; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "short_term_debt",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "operating_income",
+      "taxonomy_tag": "us-gaap:OperatingIncomeLoss",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "718,059",
+      "original_scale": 3,
+      "amount": "718059000",
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "period": "FY",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Tc_wNwUkwEdj0WomJujgdy9Aw_8_3",
+      "source_ref": "Inline XBRL id=Tc_wNwUkwEdj0WomJujgdy9Aw_8_3; context=Duration_1_1_2025_To_12_31_2025_LiDAO7sSSkCaDx6HogO__w; us-gaap:OperatingIncomeLoss",
+      "excerpt": "Operating income \u200b 718,059 \u200b 636,462 \u200b 717,849",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 718059000,
+          "accn": "0000059527-26-000006",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25",
+          "frame": "CY2025"
+        },
+        "context_id": "Duration_1_1_2025_To_12_31_2025_LiDAO7sSSkCaDx6HogO__w",
+        "dimensions": [],
+        "taxonomy_amount": "718059000",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "short_term_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported borrowings, including bank debt and the debt-note swap adjustment; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "short_term_debt",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "review_debt_gross",
+      "taxonomy_tag": "us-gaap:DebtInstrumentCarryingAmount",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "1,150,010",
+      "original_scale": 3,
+      "amount": "1150010000",
+      "start": null,
+      "end": "2025-12-31",
+      "period": "INSTANT",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Tc_-tqv0W9wH0qPvEXnltfR6g_17_6",
+      "source_ref": "Inline XBRL id=Tc_-tqv0W9wH0qPvEXnltfR6g_17_6; context=As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA; us-gaap:DebtInstrumentCarryingAmount",
+      "excerpt": "\u200b \u200b \u200b \u200b \u200b 1,150,010 \u200b 1,250,010",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "end": "2025-12-31",
+          "val": 1150010000,
+          "accn": "0000059527-26-000006",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25"
+        },
+        "context_id": "As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA",
+        "dimensions": [],
+        "taxonomy_amount": "1150010000",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "short_term_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported borrowings, including bank debt and the debt-note swap adjustment; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "short_term_debt",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "review_debt_swap_adjustment",
+      "taxonomy_tag": "us-gaap:EmbeddedDerivativeFairValueOfEmbeddedDerivativeLiability",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "2,678",
+      "original_scale": 3,
+      "amount": "2678000",
+      "start": null,
+      "end": "2025-12-31",
+      "period": "INSTANT",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Tc_hilpCW5ol0eD-djJjyrnWg_18_6",
+      "source_ref": "Inline XBRL id=Tc_hilpCW5ol0eD-djJjyrnWg_18_6; context=As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA; us-gaap:EmbeddedDerivativeFairValueOfEmbeddedDerivativeLiability",
+      "excerpt": "Plus interest rate swap adjustment \u200b \u200b \u200b \u200b \u200b 2,678 \u200b \u200b 3,355",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "end": "2025-12-31",
+          "val": 2678000,
+          "accn": "0000059527-26-000006",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25"
+        },
+        "context_id": "As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA",
+        "dimensions": [],
+        "taxonomy_amount": "2678000",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "short_term_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported borrowings, including bank debt and the debt-note swap adjustment; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "short_term_debt",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "review_debt_costs",
+      "taxonomy_tag": "us-gaap:DeferredFinanceCostsNet",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "2,460",
+      "original_scale": 3,
+      "amount": "2460000",
+      "start": null,
+      "end": "2025-12-31",
+      "period": "INSTANT",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Tc_9te0taDzPEid22ce8VzvVQ_20_6",
+      "source_ref": "Inline XBRL id=Tc_9te0taDzPEid22ce8VzvVQ_20_6; context=As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA; us-gaap:DeferredFinanceCostsNet",
+      "excerpt": "Less debt issuance costs \u200b \u200b \u200b \u200b \u200b 2,460 \u200b 2,810",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "end": "2025-12-31",
+          "val": 2460000,
+          "accn": "0000059527-26-000006",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25"
+        },
+        "context_id": "As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA",
+        "dimensions": [],
+        "taxonomy_amount": "2460000",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "short_term_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported borrowings, including bank debt and the debt-note swap adjustment; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "short_term_debt",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "review_debt_carrying_total",
+      "taxonomy_tag": "us-gaap:DebtLongtermAndShorttermCombinedAmount",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "1,294,008",
+      "original_scale": 3,
+      "amount": "1294008000",
+      "start": null,
+      "end": "2025-12-31",
+      "period": "INSTANT",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Tc_GQpC62d9bUOkKFIBnS-nFg_26_6",
+      "source_ref": "Inline XBRL id=Tc_GQpC62d9bUOkKFIBnS-nFg_26_6; context=As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA; us-gaap:DebtLongtermAndShorttermCombinedAmount",
+      "excerpt": "Total debt \u200b \u200b \u200b \u200b $ 1,294,008 \u200b $ 1,261,075",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "end": "2025-12-31",
+          "val": 1294008000,
+          "accn": "0000059527-26-000006",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25"
+        },
+        "context_id": "As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA",
+        "dimensions": [],
+        "taxonomy_amount": "1294008000",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "short_term_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported borrowings, including bank debt and the debt-note swap adjustment; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "short_term_debt",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "cash_flow_closing_cash",
+      "taxonomy_tag": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "308,789",
+      "original_scale": 3,
+      "amount": "308789000",
+      "start": null,
+      "end": "2025-12-31",
+      "period": "INSTANT",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Tc_zhZRzCLSWE-5pQOR1nWylw_40_3",
+      "source_ref": "Inline XBRL id=Tc_zhZRzCLSWE-5pQOR1nWylw_40_3; context=As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA; us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+      "excerpt": "CASH AND CASH EQUIVALENTS AT END OF PERIOD \u200b $ 308,789 \u200b $ 377,262 \u200b $ 393,787",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "end": "2025-12-31",
+          "val": 308789000,
+          "accn": "0000059527-26-000006",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-25"
+        },
+        "context_id": "As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA",
+        "dimensions": [],
+        "taxonomy_amount": "308789000",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "short_term_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported borrowings, including bank debt and the debt-note swap adjustment; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "short_term_debt",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    }
+  ],
+  "maturities": [
+    {
+      "label": "2026",
+      "kind": "EXACT_YEAR",
+      "year_start": 2026,
+      "year_end": 2026,
+      "amount": "143780000",
+      "currency": "USD",
+      "category": "LONG_TERM_DEBT_PRINCIPAL",
+      "as_of": "2025-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Narr_0gjUy0Auukqw9N5IViSCVQ",
+      "source_ref": "Note 9 \u2014 Debt; explicit annual maturity narrative; us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths; context=As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA",
+      "excerpt": "Maturities of long-term debt, including payments for amounts due banks, for the five\u00a0years succeeding December\u00a031, 2025 are $ 143,780 in 2026, $ 6 in 2027, $ 100,000 in 2028, $ 75,000 in 2029, $ 100,000 in 2030 and $ 875,000 thereafter.",
+      "validation_state": "CROSS_CHECKED"
+    },
+    {
+      "label": "2027",
+      "kind": "EXACT_YEAR",
+      "year_start": 2027,
+      "year_end": 2027,
+      "amount": "6000",
+      "currency": "USD",
+      "category": "LONG_TERM_DEBT_PRINCIPAL",
+      "as_of": "2025-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Narr_hc22O-ZB_0augg_19U1_cA",
+      "source_ref": "Note 9 \u2014 Debt; explicit annual maturity narrative; us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearTwo; context=As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA",
+      "excerpt": "Maturities of long-term debt, including payments for amounts due banks, for the five\u00a0years succeeding December\u00a031, 2025 are $ 143,780 in 2026, $ 6 in 2027, $ 100,000 in 2028, $ 75,000 in 2029, $ 100,000 in 2030 and $ 875,000 thereafter.",
+      "validation_state": "CROSS_CHECKED"
+    },
+    {
+      "label": "2028",
+      "kind": "EXACT_YEAR",
+      "year_start": 2028,
+      "year_end": 2028,
+      "amount": "100000000",
+      "currency": "USD",
+      "category": "LONG_TERM_DEBT_PRINCIPAL",
+      "as_of": "2025-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Narr_6Cg4__XpWkK0cskte-iHSA",
+      "source_ref": "Note 9 \u2014 Debt; explicit annual maturity narrative; us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearThree; context=As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA",
+      "excerpt": "Maturities of long-term debt, including payments for amounts due banks, for the five\u00a0years succeeding December\u00a031, 2025 are $ 143,780 in 2026, $ 6 in 2027, $ 100,000 in 2028, $ 75,000 in 2029, $ 100,000 in 2030 and $ 875,000 thereafter.",
+      "validation_state": "CROSS_CHECKED"
+    },
+    {
+      "label": "2029",
+      "kind": "EXACT_YEAR",
+      "year_start": 2029,
+      "year_end": 2029,
+      "amount": "75000000",
+      "currency": "USD",
+      "category": "LONG_TERM_DEBT_PRINCIPAL",
+      "as_of": "2025-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Narr_AiK62GQYRka-KcYd4yDLnw",
+      "source_ref": "Note 9 \u2014 Debt; explicit annual maturity narrative; us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFour; context=As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA",
+      "excerpt": "Maturities of long-term debt, including payments for amounts due banks, for the five\u00a0years succeeding December\u00a031, 2025 are $ 143,780 in 2026, $ 6 in 2027, $ 100,000 in 2028, $ 75,000 in 2029, $ 100,000 in 2030 and $ 875,000 thereafter.",
+      "validation_state": "CROSS_CHECKED"
+    },
+    {
+      "label": "2030",
+      "kind": "EXACT_YEAR",
+      "year_start": 2030,
+      "year_end": 2030,
+      "amount": "100000000",
+      "currency": "USD",
+      "category": "LONG_TERM_DEBT_PRINCIPAL",
+      "as_of": "2025-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Narr_zjaC94Tpt02Zkrb9QRRyNw",
+      "source_ref": "Note 9 \u2014 Debt; explicit annual maturity narrative; us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFive; context=As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA",
+      "excerpt": "Maturities of long-term debt, including payments for amounts due banks, for the five\u00a0years succeeding December\u00a031, 2025 are $ 143,780 in 2026, $ 6 in 2027, $ 100,000 in 2028, $ 75,000 in 2029, $ 100,000 in 2030 and $ 875,000 thereafter.",
+      "validation_state": "CROSS_CHECKED"
+    },
+    {
+      "label": "Thereafter",
+      "kind": "THEREAFTER",
+      "year_start": null,
+      "year_end": null,
+      "amount": "875000000",
+      "currency": "USD",
+      "category": "LONG_TERM_DEBT_PRINCIPAL",
+      "as_of": "2025-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm#Narr_QSUvrMfWhUCona2nsxu1FA",
+      "source_ref": "Note 9 \u2014 Debt; explicit annual maturity narrative; us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalAfterYearFive; context=As_Of_12_31_2025_x4Q9R1nvB0iEWlMXyhe1hA",
+      "excerpt": "Maturities of long-term debt, including payments for amounts due banks, for the five\u00a0years succeeding December\u00a031, 2025 are $ 143,780 in 2026, $ 6 in 2027, $ 100,000 in 2028, $ 75,000 in 2029, $ 100,000 in 2030 and $ 875,000 thereafter.",
+      "validation_state": "CROSS_CHECKED"
+    }
+  ],
+  "issues": [
+    {
+      "severity": "info",
+      "field": "ebitda",
+      "message": "EBITDA and net debt / EBITDA are unavailable: no reviewed EBITDA reconciliation. An optional scenario baseline is a user assumption only."
+    },
+    {
+      "severity": "info",
+      "field": "ebit_proxy",
+      "message": "Earnings numerator: analytical pretax-plus-net-interest proxy for Nucor; reported operating income for the other approved issuers. Inspect the metric formula; these numerators are not ranked as identical peer measures."
+    },
+    {
+      "severity": "info",
+      "field": "maturities",
+      "message": "Five explicit annual borrowing payments and thereafter, including amounts due banks; excludes swap valuation adjustments and issuance costs. The source schedule is USD 4,000 below note principal, at the combined displayed rounding bound; no year is altered. Contractual principal and debt carrying amounts differ; no arbitrary reconciliation plug is used."
+    },
+    {
+      "severity": "info",
+      "field": "cash",
+      "message": "Cash is consolidated cash and equivalents, excluding short-term investments. Availability to the parent is not modeled."
+    }
+  ],
+  "source_manifest": {
+    "https://www.sec.gov/files/company_tickers.json": {
+      "url": "https://www.sec.gov/files/company_tickers.json",
+      "sha256": "29e8eee5a85a68e837628b0e9623870af68db41e5427a154d17fe3b1af0a1b9a",
+      "retrieved_at": "2026-11-16T09:44:14.306428+00:00",
+      "bytes": 796319,
+      "cache_hit": true
+    },
+    "https://data.sec.gov/submissions/CIK0000059527.json": {
+      "url": "https://data.sec.gov/submissions/CIK0000059527.json",
+      "sha256": "c4ce71eff309277530af66374fd456b5ad6e67f33da33fb87abf5e444b9bf4fe",
+      "retrieved_at": "2026-11-16T09:50:00.960019+00:00",
+      "bytes": 158976,
+      "cache_hit": true
+    },
+    "https://data.sec.gov/api/xbrl/companyfacts/CIK0000059527.json": {
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000059527.json",
+      "sha256": "7b4c00eb27bf9b2741c9811fb61456cd52aa54904f09148e64d32bfe843a79eb",
+      "retrieved_at": "2026-11-16T09:50:01.710067+00:00",
+      "bytes": 3812589,
+      "cache_hit": true
+    },
+    "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm": {
+      "url": "https://www.sec.gov/Archives/edgar/data/59527/000005952726000006/leco-20251231x10k.htm",
+      "sha256": "46d005df23aa2c465036e9720d7a66365ae4eb3f91c25aedf5f8c33d04d83c49",
+      "retrieved_at": "2026-11-16T09:50:02.081310+00:00",
+      "bytes": 4129070,
+      "cache_hit": true
+    }
+  },
+  "snapshot_kind": "AUTHENTIC_PUBLIC_FILING_DERIVATIVE",
+  "created_at": "2026-11-16T09:58:55.878446+00:00"
+}

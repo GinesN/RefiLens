@@ -1,0 +1,768 @@
+{
+  "company": {
+    "cik": "0000861884",
+    "ticker": "RS",
+    "name": "RELIANCE, INC.",
+    "industry": "Wholesale-Metals Service Centers & of fices",
+    "sic": "5051",
+    "research_profile": {
+      "sector": "Metals distribution",
+      "business_model": "Metals service centers / distributor",
+      "exchange": "NYSE",
+      "debt_components": [
+        "current_debt",
+        "noncurrent_debt"
+      ],
+      "debt_basis": "Reported long-term debt, including current portion; carrying amount",
+      "includes_finance_leases": false,
+      "core_concepts": [
+        "cash",
+        "current_debt",
+        "noncurrent_debt",
+        "interest_expense",
+        "operating_income",
+        "operating_cash_flow",
+        "capital_expenditure",
+        "revenue"
+      ],
+      "maturity_method": "ANNUAL_TABLE",
+      "maturity_total_tag": "DebtInstrumentCarryingAmount",
+      "maturity_scope": "Aggregate maturities of long-term debt principal; excludes lease payments and interest.",
+      "comparability_note": "Metals distributor, not a steel producer. Uses reported long-term debt including current portion. Compare financial exposures; do not infer equivalent margins, capital intensity or credit risk."
+    }
+  },
+  "filing": {
+    "accession": "0001104659-26-020651",
+    "filed_at": "2026-02-26",
+    "period_end": "2025-12-31",
+    "period_start": "2025-01-01",
+    "fiscal_year": 2025,
+    "form": "10-K",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm"
+  },
+  "facts": [
+    {
+      "concept": "cash",
+      "taxonomy_tag": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "216.6",
+      "original_scale": 6,
+      "amount": "216600000.0",
+      "start": null,
+      "end": "2025-12-31",
+      "period": "INSTANT",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm#Tc_1SmAIYZuX0mO1WKwdwq11Q_4_2",
+      "source_ref": "Inline XBRL id=Tc_1SmAIYZuX0mO1WKwdwq11Q_4_2; context=As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A; us-gaap:CashAndCashEquivalentsAtCarryingValue",
+      "excerpt": "Cash and cash equivalents $ 216.6 \u200b $ 318.1",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "end": "2025-12-31",
+          "val": 216600000,
+          "accn": "0001104659-26-020651",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-26"
+        },
+        "context_id": "As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A",
+        "dimensions": [],
+        "taxonomy_amount": "216600000.0",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "current_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported long-term debt, including current portion; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "operating_cash_flow",
+      "taxonomy_tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "831.4",
+      "original_scale": 6,
+      "amount": "831400000.0",
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "period": "FY",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm#Tc_2DljuC-1Pk2HxI_oZmiavg_16_2",
+      "source_ref": "Inline XBRL id=Tc_2DljuC-1Pk2HxI_oZmiavg_16_2; context=Duration_1_1_2025_To_12_31_2025_Ld3wFi53Qkq_aJMpw14lJw; us-gaap:NetCashProvidedByUsedInOperatingActivities",
+      "excerpt": "Net cash provided by operating activities \u200b 831.4 \u200b \u200b 1,429.8 \u200b \u200b 1,671.3",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 831400000,
+          "accn": "0001104659-26-020651",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-26",
+          "frame": "CY2025"
+        },
+        "context_id": "Duration_1_1_2025_To_12_31_2025_Ld3wFi53Qkq_aJMpw14lJw",
+        "dimensions": [],
+        "taxonomy_amount": "831400000.0",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "current_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported long-term debt, including current portion; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "capital_expenditure",
+      "taxonomy_tag": "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "328.9",
+      "original_scale": 6,
+      "amount": "328900000.0",
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "period": "FY",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm#Tc_VHmVpn6tKUy_HQec_337hg_20_2",
+      "source_ref": "Inline XBRL id=Tc_VHmVpn6tKUy_HQec_337hg_20_2; context=Duration_1_1_2025_To_12_31_2025_Ld3wFi53Qkq_aJMpw14lJw; us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "excerpt": "Purchases of property, plant and equipment \u200b ( 328.9 ) \u200b \u200b ( 430.6 ) \u200b \u200b ( 468.8 )",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 328900000,
+          "accn": "0001104659-26-020651",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-26",
+          "frame": "CY2025"
+        },
+        "context_id": "Duration_1_1_2025_To_12_31_2025_Ld3wFi53Qkq_aJMpw14lJw",
+        "dimensions": [],
+        "taxonomy_amount": "328900000.0",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "current_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported long-term debt, including current portion; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "revenue",
+      "taxonomy_tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "14,294.3",
+      "original_scale": 6,
+      "amount": "14294300000.0",
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "period": "FY",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm#Tc_kxJ1E0FnpEWx0qlcFpLCHg_2_2",
+      "source_ref": "Inline XBRL id=Tc_kxJ1E0FnpEWx0qlcFpLCHg_2_2; context=Duration_1_1_2025_To_12_31_2025_Ld3wFi53Qkq_aJMpw14lJw; us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "excerpt": "Net Sales $ 14,294.3 \u200b $ 13,835.0 \u200b $ 14,805.9",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 14294300000,
+          "accn": "0001104659-26-020651",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-26",
+          "frame": "CY2025"
+        },
+        "context_id": "Duration_1_1_2025_To_12_31_2025_Ld3wFi53Qkq_aJMpw14lJw",
+        "dimensions": [],
+        "taxonomy_amount": "14294300000.0",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "current_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported long-term debt, including current portion; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "current_debt",
+      "taxonomy_tag": "us-gaap:LongTermDebtCurrent",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "0.7",
+      "original_scale": 6,
+      "amount": "700000.0",
+      "start": null,
+      "end": "2025-12-31",
+      "period": "INSTANT",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm#Tc_K3DfDMjWHUOdmanJr-32cA_24_2",
+      "source_ref": "Inline XBRL id=Tc_K3DfDMjWHUOdmanJr-32cA_24_2; context=As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A; us-gaap:LongTermDebtCurrent",
+      "excerpt": "Current maturities of long-term debt \u200b 0.7 \u200b \u200b 399.7",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "end": "2025-12-31",
+          "val": 700000,
+          "accn": "0001104659-26-020651",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-26"
+        },
+        "context_id": "As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A",
+        "dimensions": [],
+        "taxonomy_amount": "700000.0",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "current_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported long-term debt, including current portion; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "noncurrent_debt",
+      "taxonomy_tag": "us-gaap:LongTermDebtNoncurrent",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "1,420.2",
+      "original_scale": 6,
+      "amount": "1420200000.0",
+      "start": null,
+      "end": "2025-12-31",
+      "period": "INSTANT",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm#Tc_m89vT4xhQ0KY8zWNS3eMTg_27_2",
+      "source_ref": "Inline XBRL id=Tc_m89vT4xhQ0KY8zWNS3eMTg_27_2; context=As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A; us-gaap:LongTermDebtNoncurrent",
+      "excerpt": "Long-term debt \u200b 1,420.2 \u200b \u200b 742.8",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "end": "2025-12-31",
+          "val": 1420200000,
+          "accn": "0001104659-26-020651",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-26"
+        },
+        "context_id": "As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A",
+        "dimensions": [],
+        "taxonomy_amount": "1420200000.0",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "current_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported long-term debt, including current portion; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "interest_expense",
+      "taxonomy_tag": "us-gaap:InterestExpenseNonoperating",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "55.7",
+      "original_scale": 6,
+      "amount": "55700000.0",
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "period": "FY",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm#Tc_8St_r2fM002aovzvEXm07A_14_2",
+      "source_ref": "Inline XBRL id=Tc_8St_r2fM002aovzvEXm07A_14_2; context=Duration_1_1_2025_To_12_31_2025_Ld3wFi53Qkq_aJMpw14lJw; us-gaap:InterestExpenseNonoperating",
+      "excerpt": "Interest expense \u200b 55.7 \u200b \u200b 40.3 \u200b \u200b 40.1",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 55700000,
+          "accn": "0001104659-26-020651",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-26",
+          "frame": "CY2025"
+        },
+        "context_id": "Duration_1_1_2025_To_12_31_2025_Ld3wFi53Qkq_aJMpw14lJw",
+        "dimensions": [],
+        "taxonomy_amount": "55700000.0",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "current_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported long-term debt, including current portion; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "operating_income",
+      "taxonomy_tag": "us-gaap:OperatingIncomeLoss",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "1,012.7",
+      "original_scale": 6,
+      "amount": "1012700000.0",
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "period": "FY",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm#Tc_HQe7XPr5jkqqS09_MumMhg_11_2",
+      "source_ref": "Inline XBRL id=Tc_HQe7XPr5jkqqS09_MumMhg_11_2; context=Duration_1_1_2025_To_12_31_2025_Ld3wFi53Qkq_aJMpw14lJw; us-gaap:OperatingIncomeLoss",
+      "excerpt": "Operating income \u200b 1,012.7 \u200b \u200b 1,160.0 \u200b \u200b 1,739.5",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "start": "2025-01-01",
+          "end": "2025-12-31",
+          "val": 1012700000,
+          "accn": "0001104659-26-020651",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-26",
+          "frame": "CY2025"
+        },
+        "context_id": "Duration_1_1_2025_To_12_31_2025_Ld3wFi53Qkq_aJMpw14lJw",
+        "dimensions": [],
+        "taxonomy_amount": "1012700000.0",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "current_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported long-term debt, including current portion; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "review_debt_gross",
+      "taxonomy_tag": "us-gaap:DebtInstrumentCarryingAmount",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "1,427.7",
+      "original_scale": 6,
+      "amount": "1427700000.0",
+      "start": null,
+      "end": "2025-12-31",
+      "period": "INSTANT",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm#Tc_qY07-LRp8UizApi58XiC_w_8_2",
+      "source_ref": "Inline XBRL id=Tc_qY07-LRp8UizApi58XiC_w_8_2; context=As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A; us-gaap:DebtInstrumentCarryingAmount",
+      "excerpt": "Total \u200b 1,427.7 \u200b \u200b 1,151.1",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "end": "2025-12-31",
+          "val": 1427700000,
+          "accn": "0001104659-26-020651",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-26"
+        },
+        "context_id": "As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A",
+        "dimensions": [],
+        "taxonomy_amount": "1427700000.0",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "current_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported long-term debt, including current portion; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "review_debt_costs",
+      "taxonomy_tag": "us-gaap:DebtInstrumentUnamortizedDiscountPremiumAndDebtIssuanceCostsNet",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "6.8",
+      "original_scale": 6,
+      "amount": "6800000.0",
+      "start": null,
+      "end": "2025-12-31",
+      "period": "INSTANT",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm#Tc_ZVALswvEGE2VN6B6zGUtjw_9_2",
+      "source_ref": "Inline XBRL id=Tc_ZVALswvEGE2VN6B6zGUtjw_9_2; context=As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A; us-gaap:DebtInstrumentUnamortizedDiscountPremiumAndDebtIssuanceCostsNet",
+      "excerpt": "Less: unamortized discount and debt issuance costs \u200b ( 6.8 ) \u200b \u200b ( 8.6 )",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "end": "2025-12-31",
+          "val": 6800000,
+          "accn": "0001104659-26-020651",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-26"
+        },
+        "context_id": "As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A",
+        "dimensions": [],
+        "taxonomy_amount": "6800000.0",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "current_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported long-term debt, including current portion; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    },
+    {
+      "concept": "cash_flow_closing_cash",
+      "taxonomy_tag": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+      "currency": "USD",
+      "original_unit": "USD",
+      "original_value": "216.6",
+      "original_scale": 6,
+      "amount": "216600000.0",
+      "start": null,
+      "end": "2025-12-31",
+      "period": "INSTANT",
+      "source_type": "DOCUMENT_EXTRACTED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm#Tc_KNPkiW-1RUSaGo-QDTEOVw_38_2",
+      "source_ref": "Inline XBRL id=Tc_KNPkiW-1RUSaGo-QDTEOVw_38_2; context=As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A; us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+      "excerpt": "Cash and cash equivalents, ending balance $ 216.6 \u200b $ 318.1 \u200b $ 1,080.2",
+      "extraction_method": "INLINE_XBRL_AND_COMPANYFACTS",
+      "validation_state": "CROSS_CHECKED",
+      "raw_record": {
+        "companyfacts": {
+          "end": "2025-12-31",
+          "val": 216600000,
+          "accn": "0001104659-26-020651",
+          "fy": 2025,
+          "fp": "FY",
+          "form": "10-K",
+          "filed": "2026-02-26"
+        },
+        "context_id": "As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A",
+        "dimensions": [],
+        "taxonomy_amount": "216600000.0",
+        "inline_sign": "+",
+        "normalization": "Base USD units; preserve taxonomy sign",
+        "debt_profile": {
+          "debt_components": [
+            "current_debt",
+            "noncurrent_debt"
+          ],
+          "debt_basis": "Reported long-term debt, including current portion; carrying amount",
+          "includes_finance_leases": false,
+          "core_concepts": [
+            "cash",
+            "current_debt",
+            "noncurrent_debt",
+            "interest_expense",
+            "operating_income",
+            "operating_cash_flow",
+            "capital_expenditure",
+            "revenue"
+          ]
+        }
+      }
+    }
+  ],
+  "maturities": [
+    {
+      "label": "2026",
+      "kind": "EXACT_YEAR",
+      "year_start": 2026,
+      "year_end": 2026,
+      "amount": "700000.0",
+      "currency": "USD",
+      "category": "LONG_TERM_DEBT_PRINCIPAL",
+      "as_of": "2025-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm#Tc_20rAfC-6306EmJN3BJ4snQ_1_4",
+      "source_ref": "Debt maturity table; us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths; context=As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A",
+      "excerpt": "2026 \u200b \u200b $ 0.7",
+      "validation_state": "CROSS_CHECKED"
+    },
+    {
+      "label": "2027",
+      "kind": "EXACT_YEAR",
+      "year_start": 2027,
+      "year_end": 2027,
+      "amount": "0",
+      "currency": "USD",
+      "category": "LONG_TERM_DEBT_PRINCIPAL",
+      "as_of": "2025-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm#Tc_mmgU70WcK0C2VGB-x765zQ_2_4",
+      "source_ref": "Debt maturity table; us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearTwo; context=As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A",
+      "excerpt": "2027 \u200b \u200b \u200b \u2014",
+      "validation_state": "CROSS_CHECKED"
+    },
+    {
+      "label": "2028",
+      "kind": "EXACT_YEAR",
+      "year_start": 2028,
+      "year_end": 2028,
+      "amount": "400000000.0",
+      "currency": "USD",
+      "category": "LONG_TERM_DEBT_PRINCIPAL",
+      "as_of": "2025-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm#Tc_AP1T_9Y27EuEG5be8rG_bA_3_4",
+      "source_ref": "Debt maturity table; us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearThree; context=As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A",
+      "excerpt": "2028 \u200b \u200b \u200b 400.0",
+      "validation_state": "CROSS_CHECKED"
+    },
+    {
+      "label": "2029",
+      "kind": "EXACT_YEAR",
+      "year_start": 2029,
+      "year_end": 2029,
+      "amount": "277000000.0",
+      "currency": "USD",
+      "category": "LONG_TERM_DEBT_PRINCIPAL",
+      "as_of": "2025-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm#Tc_zFfzjcosREqR1kxYFt1CXA_4_4",
+      "source_ref": "Debt maturity table; us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFour; context=As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A",
+      "excerpt": "2029 \u200b \u200b \u200b 277.0",
+      "validation_state": "CROSS_CHECKED"
+    },
+    {
+      "label": "2030",
+      "kind": "EXACT_YEAR",
+      "year_start": 2030,
+      "year_end": 2030,
+      "amount": "500000000.0",
+      "currency": "USD",
+      "category": "LONG_TERM_DEBT_PRINCIPAL",
+      "as_of": "2025-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm#Tc_vnAUt1jT7UKDik7kppfqxQ_5_4",
+      "source_ref": "Debt maturity table; us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFive; context=As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A",
+      "excerpt": "2030 \u200b \u200b \u200b 500.0",
+      "validation_state": "CROSS_CHECKED"
+    },
+    {
+      "label": "Thereafter",
+      "kind": "THEREAFTER",
+      "year_start": null,
+      "year_end": null,
+      "amount": "250000000.0",
+      "currency": "USD",
+      "category": "LONG_TERM_DEBT_PRINCIPAL",
+      "as_of": "2025-12-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm#Tc_N9jZ9oCu1EmkhU4jEopEhg_6_4",
+      "source_ref": "Debt maturity table; us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalAfterYearFive; context=As_Of_12_31_2025_u1tu73_rRkSFGbH8XjPw8A",
+      "excerpt": "Thereafter \u200b \u200b \u200b 250.0",
+      "validation_state": "CROSS_CHECKED"
+    }
+  ],
+  "issues": [
+    {
+      "severity": "info",
+      "field": "ebitda",
+      "message": "EBITDA and net debt / EBITDA are unavailable: no reviewed EBITDA reconciliation. An optional scenario baseline is a user assumption only."
+    },
+    {
+      "severity": "info",
+      "field": "ebit_proxy",
+      "message": "Earnings numerator: analytical pretax-plus-net-interest proxy for Nucor; reported operating income for STLD/RS. Inspect the metric formula; these numerators are not ranked as identical peer measures."
+    },
+    {
+      "severity": "info",
+      "field": "maturities",
+      "message": "Aggregate maturities of long-term debt principal; excludes lease payments and interest. Contractual principal and debt carrying amounts differ; no arbitrary reconciliation plug is used."
+    },
+    {
+      "severity": "info",
+      "field": "cash",
+      "message": "Cash is consolidated cash and equivalents, excluding short-term investments. Availability to the parent is not modeled."
+    }
+  ],
+  "source_manifest": {
+    "https://www.sec.gov/files/company_tickers.json": {
+      "url": "https://www.sec.gov/files/company_tickers.json",
+      "sha256": "391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f",
+      "retrieved_at": "2026-11-13T13:23:49.322360+00:00",
+      "bytes": 796325,
+      "cache_hit": true
+    },
+    "https://data.sec.gov/submissions/CIK0000861884.json": {
+      "url": "https://data.sec.gov/submissions/CIK0000861884.json",
+      "sha256": "6a3f332ef1e804629422257b44da8668e0c1e29b685163c22ed7bd8456624bc0",
+      "retrieved_at": "2026-11-13T15:32:50.998711+00:00",
+      "bytes": 166574,
+      "cache_hit": true
+    },
+    "https://data.sec.gov/api/xbrl/companyfacts/CIK0000861884.json": {
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000861884.json",
+      "sha256": "a91cfd20ebf8ec6fed31fbbbaf66dd36106965b0b33497dfac01baf2559889c9",
+      "retrieved_at": "2026-11-13T15:32:51.733341+00:00",
+      "bytes": 3281237,
+      "cache_hit": true
+    },
+    "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm": {
+      "url": "https://www.sec.gov/Archives/edgar/data/861884/000110465926020651/rs-20251231x10k.htm",
+      "sha256": "b8c41a84c01b0ccc5c4b19568ac72009d217c92b7977a45ccfbb8104a3cc1051",
+      "retrieved_at": "2026-11-13T15:32:52.156728+00:00",
+      "bytes": 3143086,
+      "cache_hit": true
+    }
+  },
+  "snapshot_kind": "AUTHENTIC_PUBLIC_FILING_DERIVATIVE",
+  "created_at": "2026-11-13T15:55:45.178112+00:00",
+  "review_reprocessed_at": "2026-11-15T17:28:47.389987+00:00"
+}
