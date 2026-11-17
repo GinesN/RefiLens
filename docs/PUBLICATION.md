@@ -7,6 +7,8 @@
 - Software checks: https://github.com/GinesN/RefiLens/actions/workflows/ci.yml
 - Static-page deployments: https://github.com/GinesN/RefiLens/actions/workflows/pages.yml
 
+Verified 17 November 2026: [software checks](https://github.com/GinesN/RefiLens/actions/runs/44140620714), [Pages publication, attempt 2](https://github.com/GinesN/RefiLens/actions/runs/44140621155), anonymous access and exact hashes for the public HTML, screenshot and five downloadable reports. The public Git history uses anonymous GitHub author/committer addresses. Dated evidence and remaining gates are in VALIDATION_REPORT.md and ROADMAP.md.
+
 The GitHub Pages site explains the financial question, presents the dated Nucor case and offers actual PDF, Excel and ZIP downloads. It is a static project presentation. GitHub Pages does not execute Python, and the full editable research workspace requires the Next.js and FastAPI services described in the root README. Localhost links only work on the computer running those services.
 
 ## Where to make changes

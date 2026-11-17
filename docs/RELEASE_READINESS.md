@@ -1,6 +1,6 @@
 # Presentation release readiness
 
-Reviewed 17 November 2026. This is a locally verified research project and a shareable document pack. Remote GitHub CI and the static project overview have now run successfully. Final repository publication awaits identity verification for commit-metadata privacy cleanup. Full interactive public hosting, independent owner accounting review and solo authorship are not claimed.
+Reviewed 17 November 2026. The public source repository, remote GitHub CI and static project overview with report downloads are verified. Publication privacy checks pass after the owner completed GitHub identity verification. Full interactive public hosting, independent owner accounting review and solo authorship are not claimed.
 
 ## Ready to demonstrate
 
@@ -19,7 +19,9 @@ Reviewed 17 November 2026. This is a locally verified research project and a sha
 | Offline release proof | Empty separate database migrated and seeded with all five authentic snapshots, SEC contact empty. Production web/API on temporary ports served the bound case and downloads with OFFLINE_FILING_SNAPSHOT intact. Temporary servers were stopped; the owner's live local services were retained. |
 | Financial provenance | Read-only original-cache audit reconstructed 65 facts for five issuers without new ingestion requests or DB writes. Source hashes and all 30 maturity buckets remain preserved. |
 | Privacy / persistence | All 39 original facts and 18 original buckets unchanged; 26 new facts and 12 new buckets added; zero manual-review promotions. Real contact absent from non-ignored artifacts/ZIP/workbook XML; .env ignored with mode 0600. |
-| Remote CI | GitHub Actions run 44126132175 passed on Ubuntu: fresh offline setup, 118 backend / 11 frontend tests, lint/type checks, production build, PDF verification and 26 Chromium desktop/mobile browser flows. Final public-history cleanup remains a separate gate. |
+| Remote CI | [Public run 44140620714](https://github.com/GinesN/RefiLens/actions/runs/44140620714) passed on Ubuntu: fresh offline setup, 118 backend / 11 frontend tests, lint/type checks, production build, PDF verification and 26 Chromium desktop/mobile browser flows. |
+| Public presentation | [Pages run 44140621155](https://github.com/GinesN/RefiLens/actions/runs/44140621155), attempt 2, passed after enabling Pages. Anonymous HTTP checks confirm the exact deployed HTML, screenshot and all five report downloads match local SHA-256 hashes. |
+| Publication privacy | A fresh anonymous clone verifies all 153 initial source hashes/executable modes and anonymous author/committer addresses in the full public history. Initial email-bearing history is in a private backup; anonymous requests to that backup and the initial commit URL return 404. Private configuration stays ignored. |
 
 Supplementary WebKit checks use native macOS Option-Tab for keyboard links, consistent with [Apple's keyboard guidance](https://support.apple.com/guide/safari/keyboard-shortcuts-and-gestures-cpsh003/mac). Tall screenshot capture produced intermittent hit-testing stalls in an initial supplementary run. WebKit now captures the viewport while Chromium retains full-page visual evidence; all financial, download and navigation assertions are kept. A standalone WebKit probe also verified the PDF link and sidebar navigation. The final isolated production run passed all thirteen flows.
 
@@ -27,7 +29,7 @@ Supplementary WebKit checks use native macOS Option-Tab for keyboard links, cons
 
 **Independent owner review:** open the original rows, recalculate, understand the case assumptions and fill the personal review record. Software verification does not perform this human task or invent authorship.
 
-**Public repository:** the owner authorized publication to GinesN/RefiLens. The source upload, successful remote CI and actual GitHub Pages overview have been observed. A web-commit metadata check detected the owner's private email in the initial history. Future web commits now use GitHub's noreply address. Hiding the initial history requires GitHub identity verification; D8a stays IN_PROGRESS until that cleanup and final public checks pass. See PUBLICATION.md for the share links and maintenance paths.
+**Completed public repository:** [GinesN/RefiLens](https://github.com/GinesN/RefiLens) contains the source, authentic offline evidence, documentation, issue/PR templates and portable reports. The [public overview](https://ginesn.github.io/RefiLens/) presents the research and downloads. The initial email-bearing history was made private and retained as a backup; the new public repository has independently checked anonymous commit metadata. No historical internet-wide erasure is claimed. D8a is VERIFIED. See PUBLICATION.md for maintenance paths.
 
 **Full interactive public delivery:** no connected Python-capable hosting service has been configured. Localhost links work on the running Mac. The public overview and document pack can present the research, but a full app release needs a host that preserves both Next.js and the Python engine, followed by actual hosted verification. GitHub Pages cannot execute this FastAPI backend.
 

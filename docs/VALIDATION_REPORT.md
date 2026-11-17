@@ -202,7 +202,7 @@ Owner authorized two additional compatible issuers after Release A. LECO and ITW
 
 The source review retains the actual latest retrieval dates. Older manifests are not rewritten when a shared mapping refreshes; exact earlier bytes are preserved in the content-addressed archive. All five remain dated historical annual snapshots. No quarterly refresh, homogeneous credit ranking, instrument-coupon calibration, human review, public hosting or personal authorship is implied.
 
-## 17 November 2026 — GitHub publication work (privacy gate pending)
+## 17 November 2026 — Initial GitHub publication attempt (superseded below)
 
 - Re-ran the local check script: Ruff, mypy, 118 backend tests, frontend lint/type checking, 11 frontend tests and the production build passed.
 - Created the owner-authorized GinesN/RefiLens repository through the authenticated GitHub UI. Connected reads work; attempted connector writes were rejected with integration permission errors, so no credential or app-permission expansion was used.
@@ -212,3 +212,18 @@ The source review retains the actual latest retrieval dates. Older manifests are
 - **Unfinished privacy acceptance:** full-history inspection found the configured private contact in the author/committer metadata of initial web commits, despite clean source files. GitHub email privacy is now On; the site confirms future web operations use the account's noreply address. Making the initial repository private reached GitHub's Confirm access screen and requires owner identity verification. No successful privatization or clean replacement is claimed yet. D8a remains IN_PROGRESS. Do not share the initial repository as a completed clean release.
 
 Publication changes add no source observations, change no financial model and promote no human-review state. Full interactive hosting and independent owner accounting review remain open.
+
+## 17 November 2026 — Public release acceptance and privacy resolution
+
+The owner completed the GitHub identity check. The initial repository (ID 1461485248) is now private and renamed RefiLens-private-backup-20261117. A fresh public GinesN/RefiLens repository (ID 1461763608) was created at the intended URL. No repository was permanently deleted, no authentication credential changed and no integration permission expanded. Previously published metadata is not represented as erased from all historical internet copies.
+
+| Acceptance check | Observed result |
+|---|---|
+| Public source restoration | [Import run 44140424088](https://github.com/GinesN/RefiLens/actions/runs/44140424088) passed. Fresh anonymous clone verifies the SHA-256 and executable mode of all 153 files in the initial publication manifest. The transfer archive and one-time importer are absent from the current source tree. Later documentation changes are recorded by subsequent commits. |
+| Complete public-history metadata | All six commits through fb07c3344da1a99e92b92f638fe33a3cbecf882f use GitHub noreply addresses for author and committer; the configured private SEC contact is absent. Initial private-backup and original public-commit URLs both return HTTP 404 without authentication. |
+| Actual remote software checks | [Run 44140620714](https://github.com/GinesN/RefiLens/actions/runs/44140620714), job 134242082449, passed every step on Ubuntu: fresh offline setup, 118 backend / 11 frontend tests, Ruff/mypy/ESLint/TypeScript, production build, PDF verification and 26 Chromium desktop/mobile browser workflows. |
+| Actual static deployment | [Pages run 44140621155](https://github.com/GinesN/RefiLens/actions/runs/44140621155), attempt 2 / job 134243277410, passed. The first attempt ran before Pages was enabled and correctly failed; after setting GitHub Actions as the Pages source, the re-run succeeded. HTTPS is enforced for the default domain. |
+| Public payloads | Anonymous HTTP 200 for the deployed HTML, workspace image, two PDFs, financial-review workbook, presentation ZIP and Spanish Markdown guide. Every payload's SHA-256 matches its source file. |
+| Repository presentation | Professional README with actual CI badge and public links, documentation index, contribution/security guides, issue/PR templates, topic tags and the GitHub Pages link in About. The source tree has no `.env`, DB/cache, dependencies or temporary QA output. Local main tracks the new public origin/main; the earlier local preparation commit is retained on a local backup branch. |
+
+D8a passes. The public site is explicitly a presentation of the dated research and report downloads. It does not run the Python research API or advertise precomputed answers as interactive calculations. D8b full interactive hosting and D3 independent owner accounting review remain TODO. No financial inputs, evidence hashes, human-review state or source acquisition mode were changed by publication.
