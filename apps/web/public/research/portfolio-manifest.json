@@ -3,18 +3,18 @@
   "accession": "0001193125-26-071575",
   "source_period_end": "2025-12-31",
   "information_cutoff": "2026-02-25",
-  "prepared_on": "2026-11-16",
+  "prepared_on": "2026-11-17",
   "human_review_completed": false,
   "artifacts": [
     {
       "filename": "RefiLens_Nucor_Case_Study.pdf",
       "pages": 4,
-      "sha256": "037de1298b39d457d03c53bfa78c0e65b9e967c52d34d7265d4305292c8a9ae4"
+      "sha256": "e181920b1e9df5f43b3a24a548e7f96a829df7df8af3a31845a673ffaecbc0d0"
     },
     {
       "filename": "RefiLens_Project_Brief.pdf",
       "pages": 2,
-      "sha256": "b41cd825a9641619019b25caad4006389b5b0a0ebf7efc14b52416851413acf2"
+      "sha256": "4593b8fcd465959bbb5de98f51ff6fcdc51885732a778352bce5dd4196cd2e2d"
     }
   ]
 }

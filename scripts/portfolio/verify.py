@@ -23,7 +23,9 @@ for entry in manifest["artifacts"]:
     reader = PdfReader(path)
     assert len(reader.pages) == entry["pages"]
     text = "\n".join(page.extract_text() for page in reader.pages)
-    assert "AI-assisted" in text and "2025" in text
+    assert "2025" in text and "review remains pending" in text
+    assert "AI-assisted" not in text
+    assert reader.metadata.author == "RefiLens"
     if "Project_Brief" in entry["filename"]:
         snapshots = [json.loads(p.read_text()) for p in (ROOT / "fixtures").glob("*-2025.json")]
         assert len(snapshots) == 5

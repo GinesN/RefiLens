@@ -274,7 +274,7 @@ export default function ProjectOverview({
             Nucor and Steel Dynamics produce steel; Reliance distributes metals.
             Lincoln Electric supplies welding equipment and consumables; ITW is a
             diversified industrial manufacturer with a welding segment.
-            Their differences remain labelled. AI-assisted implementation;
+            Their differences remain labelled;
             independent owner accounting review remains pending.
           </p>
           <p className="field-note">

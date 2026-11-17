@@ -33,8 +33,10 @@ Start with 01_Project_Brief.pdf, then read 02_Nucor_Case_Study.pdf.
 The JSON contains replayable annual-model requests and preserved source references.
 All observations are historical FY2025 USD data. Future paths are assumptions.
 The case uses opening balances at 31 December 2025 and a 25 February 2026 source cutoff.
-No public app hosting, personal owner accounting review or solo authorship is claimed.
-AI-assisted implementation and documentation. No contact, credentials or local database are included.
+Public source: https://github.com/GinesN/RefiLens
+Public research overview: https://ginesn.github.io/RefiLens/
+The interactive workspace requires the Next.js and Python services.
+Independent accounting review remains pending. No contact, credentials or local database are included.
 The Spanish presentation text is a draft; no social post has been published.
 The owner checklist remains open. A localhost URL works only on the machine running the app.
 """
@@ -52,7 +54,7 @@ with ZipFile(out, "w", ZIP_DEFLATED) as z:
 with ZipFile(out) as z:
     for name, digest in manifest.items():
         assert hashlib.sha256(z.read(name)).hexdigest() == digest
-output = ROOT / "outputs/presentation-20261116"
+output = ROOT / "outputs/presentation-20261117"
 output.mkdir(parents=True, exist_ok=True)
 (output / out.name).write_bytes(out.read_bytes())
 print(

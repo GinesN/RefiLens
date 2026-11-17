@@ -177,7 +177,7 @@ def build(path, story, title):
         topMargin=20 * mm,
         bottomMargin=24 * mm,
         title=title,
-        author="RefiLens - AI-assisted project",
+        author="RefiLens",
         subject="Dated financial research with explicit assumptions",
     )
     doc.build(story, onFirstPage=footer, onLaterPages=footer)
@@ -233,7 +233,7 @@ def case_pdf(r, evidence, source):
             "Can the company fund maturities, investment and modeled distributions if operating cash weakens?"
         ),
         p(
-            "Opening balances: 31 December 2025. Information cutoff: the original 10-K filed 25 February 2026. Prepared 16 November 2026. This is a historical planning case, not a current issuer assessment.",
+            "Opening balances: 31 December 2025. Information cutoff: the original 10-K filed 25 February 2026. Updated 17 November 2026. This is a historical planning case, not a current issuer assessment.",
             "SmallText",
         ),
         table(
@@ -455,7 +455,7 @@ def case_pdf(r, evidence, source):
         p(
             "Formula: "
             + VERSION
-            + ". AI-assisted project; no claim of solo authorship, personal owner review or issuer-approved forecasts.",
+            + ". Independent accounting review remains pending; results are conditional scenarios, not issuer-approved forecasts.",
             "SmallText",
         ),
     ]
@@ -499,7 +499,7 @@ def project_pdf(r):
             "<b>1. Evidence:</b> inspect the original filing period, cash/debt definitions and maturity buckets.<br/><b>2. Model:</b> open the Nucor case, compare the four changes and transfer a case into the annual editor.<br/><b>3. Challenge:</b> alter an assumption, export exact inputs/results, and explain one boundary before interpreting the conclusion."
         ),
         p(
-            "Local entry: http://localhost:3000. The link works on the machine running the app; no hosted URL or public deployment is claimed.",
+            "Public overview: https://ginesn.github.io/RefiLens/. Full interactive workspace: run the repository locally, then open http://localhost:3000.",
             "SmallText",
         ),
         PageBreak(),
@@ -533,18 +533,18 @@ def project_pdf(r):
         ),
         p("Verification you can inspect", "Section"),
         p(
-            "The repository supplies Python source/extraction/API tests, frontend conversion/component checks, browser flows, locked dependencies and a production build command. The validation report records actual local results and limits. A proposed GitHub Actions workflow must run on a real remote repository before a remote CI pass can be claimed."
+            "The repository supplies Python source/extraction/API tests, frontend conversion/component checks, browser flows, locked dependencies and a production build command. The validation report records actual local and GitHub Actions results. Public source, remote checks and downloadable reports are available at github.com/GinesN/RefiLens."
         ),
-        p("Honest scope and contribution", "Section"),
+        p("Review status and public access", "Section"),
         p(
-            "AI-assisted implementation and documentation. No claim that the owner personally performed source review, authored every component or ran the checks independently. The owner checklist remains open. Portfolio descriptions should identify actual contributions and explain the source/model decisions in the owner's own words."
+            "Independent accounting review remains pending. The public project page at ginesn.github.io/RefiLens presents the research and reports. The complete interactive workspace requires the Next.js and Python services documented in the repository."
         ),
         p(
-            "Historical annual data; five issuers with differing businesses, including a diversified industrial manufacturer; no rating/default probability, verified EBITDA, current-quarter model, intra-year liquidity or guaranteed financing access. PostgreSQL/native-browser/cloud execution require their own validation.",
+            "Historical annual data; five issuers with differing businesses, including a diversified industrial manufacturer; no rating/default probability, verified EBITDA, current-quarter model, intra-year liquidity or guaranteed financing access. PostgreSQL, native-browser and full interactive cloud execution require their own validation.",
             "SmallText",
         ),
         p(
-            "Prepared 16 November 2026. Source: original issuer SEC filings; the companion case report retains accession-specific references. Run locally without a paid API or LLM service.",
+            "Updated 17 November 2026. Source: original issuer SEC filings; the companion case report retains accession-specific references. Run locally without a paid API or LLM service.",
             "SmallText",
         ),
     ]
@@ -593,7 +593,7 @@ def main():
         "accession": evidence["accession"],
         "source_period_end": "2025-12-31",
         "information_cutoff": "2026-02-25",
-        "prepared_on": "2026-11-16",
+        "prepared_on": "2026-11-17",
         "human_review_completed": False,
         "artifacts": artifacts,
     }

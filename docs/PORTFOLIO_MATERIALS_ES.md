@@ -1,10 +1,10 @@
 # Material de presentación de RefiLens
 
-Los siguientes textos describen funciones verificables del proyecto. No afirman que el propietario haya programado todos sus componentes o revisado personalmente las cuentas. La implementación y documentación se han realizado con asistencia de IA. Antes de atribuirte una contribución concreta, identifica lo que realmente hiciste y puedes explicar.
+Los siguientes textos describen funciones verificables del proyecto. No afirman que el propietario haya programado todos sus componentes o revisado personalmente las cuentas. Antes de atribuirte una contribución concreta, identifica lo que realmente hiciste y puedes explicar.
 
 ## Descripción breve del proyecto
 
-RefiLens es un proyecto de análisis de deuda corporativa, desarrollado con apoyo de IA, que conecta informes oficiales de la SEC con vencimientos de deuda y simulaciones transparentes de caja. Incluye cinco empresas con datos anuales de 2025, cálculos financieros en Python Decimal y un caso de Nucor que compara inversión, repartos de efectivo y refinanciación.
+RefiLens es un proyecto de análisis de deuda corporativa que conecta informes oficiales de la SEC con vencimientos de deuda y simulaciones transparentes de caja. Incluye cinco empresas con datos anuales de 2025, cálculos financieros en Python Decimal y un caso de Nucor que compara inversión, repartos de efectivo y refinanciación.
 
 ## Texto de presentación para LinkedIn — borrador, no publicado
 
@@ -14,15 +14,15 @@ El proyecto conecta datos de informes oficiales con un calendario de vencimiento
 
 El caso de Nucor muestra esa diferencia: bajo unos supuestos explícitos de presión operativa y refinanciación, pausar recompras conservaría caja, pero no bastaría para alcanzar la reserva elegida. La simulación cuantifica lo que aún faltaría sin inventar financiación para resolverlo.
 
-Implementación y documentación con asistencia de IA. Los datos son históricos; el modelo no produce calificaciones crediticias ni probabilidades de impago. La revisión personal de fuentes es una tarea separada y no se da por realizada.
+Los datos son históricos; el modelo no produce calificaciones crediticias ni probabilidades de impago. La revisión personal de fuentes es una tarea separada y no se da por realizada.
 
 ## Descripción factual para la sección de proyectos del CV
 
-**RefiLens — análisis de deuda corporativa y escenarios de liquidez.** Proyecto asistido por IA con Next.js/TypeScript, FastAPI, Python Decimal y evidencia de informes SEC. Incluye tres emisores FY2025/USD, trazabilidad de deuda y vencimientos, escenarios reproducibles y un caso financiero documentado de Nucor. Contribución personal: describir únicamente la parte efectivamente realizada y comprendida; el proyecto no atribuye trabajo personal no verificado.
+**RefiLens — análisis de deuda corporativa y escenarios de liquidez.** Proyecto con Next.js/TypeScript, FastAPI, Python Decimal y evidencia de informes SEC. Incluye cinco emisores FY2025/USD, trazabilidad de deuda y vencimientos, escenarios reproducibles y un caso financiero documentado de Nucor. Contribución personal: describir únicamente la parte efectivamente realizada y comprendida; el proyecto no atribuye trabajo personal no verificado.
 
 ## Demostración de tres minutos
 
-1. **0:00–0:25 — Problema.** “RefiLens estudia si la caja puede cubrir un plan financiero, aunque la cuenta de resultados muestre cobertura de intereses. Es un proyecto desarrollado con asistencia de IA.”
+1. **0:00–0:25 — Problema.** “RefiLens estudia si la caja puede cubrir un plan financiero, aunque la cuenta de resultados muestre cobertura de intereses.”
 2. **0:25–0:55 — Evidencia.** Abre el informe de Nucor y señala cierre fiscal, fecha de presentación, caja, inversión y vencimientos. Explica por qué un dato histórico no es el saldo de hoy.
 3. **0:55–1:40 — Caso.** Compara los cuatro casos. La respuesta de pausa de recompras conserva dividendos, pagos a socios minoritarios y retenciones fiscales. Aclara que las repeticiones futuras y los términos de financiación son hipótesis.
 4. **1:40–2:20 — Cálculo.** Abre la respuesta en el modelo anual. Distingue saldo de caja positivo de una reserva insuficiente. Cambia un supuesto y observa cómo se modifica el resultado.

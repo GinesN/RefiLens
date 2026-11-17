@@ -52,7 +52,7 @@ flowchart LR
 
 No browser SEC requests, runtime import endpoint, paid API or LLM service is required. Future scenarios never become observed company facts.
 
-AI-assisted implementation and documentation. Personal owner contributions and accounting review must be described accurately; no solo authorship or manual verification is inferred. See [presentation materials](docs/PORTFOLIO_MATERIALS_ES.md) and the [open owner checklist](docs/OWNER_VERIFICATION_CHECKLIST.md).
+Independent accounting review remains pending. Automated source checks and hypothetical scenarios retain their own labels. See [presentation materials](docs/PORTFOLIO_MATERIALS_ES.md) and the [open owner checklist](docs/OWNER_VERIFICATION_CHECKLIST.md).
 
 ## Quick start
 
