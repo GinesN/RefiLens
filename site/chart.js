@@ -10,6 +10,8 @@ export function drawTrajectory(canvas, opening, rows, endYear, reserve) {
   const context = canvas.getContext("2d");
   if (!context) return;
   context.scale(pixelRatio, pixelRatio);
+  const palette = getComputedStyle(canvas);
+  const color = (name) => palette.getPropertyValue(name).trim();
 
   const reference = [opening, ...rows.map((row) => row.reference)].map((value) => Number(value) / 1e6);
   const scenario = [opening, ...rows.map((row) => row.closing)].map((value) => Number(value) / 1e6);
@@ -35,17 +37,17 @@ export function drawTrajectory(canvas, opening, rows, endYear, reserve) {
     const value = lower + tick * step;
     const zero = Math.abs(value) < step / 100;
     const heightAt = y(value);
-    context.strokeStyle = zero ? "#829287" : "#e3e6da";
+    context.strokeStyle = zero ? color("--chart-zero") : color("--chart-grid");
     context.beginPath();
     context.moveTo(left, heightAt);
     context.lineTo(right, heightAt);
     context.stroke();
-    context.fillStyle = "#526358";
+    context.fillStyle = color("--muted");
     context.fillText(tickFormat.format(zero ? 0 : value), left - 7, heightAt);
   }
 
   if (reserveMillions > 0) {
-    context.strokeStyle = "#956919";
+    context.strokeStyle = color("--chart-reserve");
     context.setLineDash([8, 4]);
     context.beginPath();
     context.moveTo(left, y(reserveMillions));
@@ -54,7 +56,7 @@ export function drawTrajectory(canvas, opening, rows, endYear, reserve) {
   }
 
   const selected = rows.findIndex((row) => row.year === endYear) + 1;
-  context.strokeStyle = "#81998a";
+  context.strokeStyle = color("--chart-marker");
   context.setLineDash([3, 4]);
   context.beginPath();
   context.moveTo(x(selected), top);
@@ -80,6 +82,6 @@ export function drawTrajectory(canvas, opening, rows, endYear, reserve) {
     });
   }
 
-  plot(reference, "#886a4a", [5, 4]);
-  plot(scenario, "#176044", []);
+  plot(reference, color("--chart-reference"), [5, 4]);
+  plot(scenario, color("--chart-scenario"), []);
 }

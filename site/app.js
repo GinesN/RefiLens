@@ -1,4 +1,4 @@
-import { drawTrajectory } from "./chart.js?v=3";
+import { drawTrajectory } from "./chart.js?v=4";
 import { bindMatrix } from "./sensitivity.js?v=3";
 
 const byId = (id) => document.getElementById(id);
