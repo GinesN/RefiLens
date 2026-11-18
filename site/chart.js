@@ -1,7 +1,7 @@
 // Render dollar amounts already calculated by the Python model.
 const tickFormat = new Intl.NumberFormat("es-ES", { maximumFractionDigits: 1 });
 
-export function drawTrajectory(canvas, opening, rows, endYear) {
+export function drawTrajectory(canvas, opening, rows, endYear, reserve) {
   const { width, height } = canvas.getBoundingClientRect();
   if (width < 1 || height < 1) return;
   const pixelRatio = window.devicePixelRatio || 1;
@@ -14,7 +14,8 @@ export function drawTrajectory(canvas, opening, rows, endYear) {
   const reference = [opening, ...rows.map((row) => row.reference)].map((value) => Number(value) / 1e6);
   const scenario = [opening, ...rows.map((row) => row.closing)].map((value) => Number(value) / 1e6);
   const min = Math.min(0, ...reference, ...scenario);
-  const max = Math.max(0, ...reference, ...scenario);
+  const reserveMillions = Number(reserve) / 1e6;
+  const max = Math.max(reserveMillions, ...reference, ...scenario);
   const spacing = Math.max((max - min) / 4, 0.01);
   const unit = 10 ** Math.floor(Math.log10(spacing));
   const step = [1, 2, 5, 10].find((factor) => factor * unit >= spacing) * unit;
@@ -41,6 +42,15 @@ export function drawTrajectory(canvas, opening, rows, endYear) {
     context.stroke();
     context.fillStyle = "#526358";
     context.fillText(tickFormat.format(zero ? 0 : value), left - 7, heightAt);
+  }
+
+  if (reserveMillions > 0) {
+    context.strokeStyle = "#956919";
+    context.setLineDash([8, 4]);
+    context.beginPath();
+    context.moveTo(left, y(reserveMillions));
+    context.lineTo(right, y(reserveMillions));
+    context.stroke();
   }
 
   const selected = rows.findIndex((row) => row.year === endYear) + 1;

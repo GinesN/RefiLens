@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#f6f5ef">
   <title>RefiLens · Simulador de refinanciación</title>
   <link rel="icon" type="image/svg+xml" href="mark.svg">
-  <link rel="stylesheet" href="styles.css?v=2">
-  <script type="module" src="app.js?v=2"></script>
+  <link rel="stylesheet" href="styles.css?v=3">
+  <script type="module" src="app.js?v=3"></script>
 </head>
 <body>
   <a class="skip" href="#main">Saltar al simulador</a>
@@ -30,6 +30,7 @@
       <div class="company-select">
         <label for="company">Empresa</label>
         <select id="company"></select>
+        <a href="#limites" class="limits-jump">Explorar límites ↓</a>
       </div>
 
       <div class="grid">
@@ -80,6 +81,7 @@
             <div class="result-caption" id="result-caption">Caja estimada al final de 2026</div>
             <p class="result-value" id="closing-cash" aria-live="polite" aria-atomic="true"></p>
             <p class="result-note" id="result-note"></p>
+            <p class="result-note" id="reserve-result" hidden></p>
           </div>
           <p id="model-status" class="muted model-status" role="status" hidden></p>
           <button type="button" class="text-button" id="retry" hidden>Reintentar cálculo</button>
@@ -100,7 +102,7 @@
             <h2 id="comparison-title">Evolución de la caja</h2>
             <p class="muted">Referencia: refinancia el 100 % al 6 % y repite la caja operativa de 2025.</p>
           </div>
-          <div class="legend" aria-label="Series en millones de dólares"><small>M USD</small><span>Referencia</span><span>Tu escenario</span></div>
+          <div class="legend" aria-label="Series en millones de dólares"><small>M USD</small><span>Referencia</span><span>Tu escenario</span><span class="reserve-key" id="reserve-key" hidden>Reserva elegida</span></div>
         </div>
         <p id="comparison-status" class="muted" hidden>Actualizando la comparación…</p>
         <div class="comparison-grid" id="comparison-data" hidden>
@@ -127,6 +129,40 @@
               <div class="driver-total"><dt>Diferencia total</dt><dd id="total-effect"></dd></div>
             </dl>
             <p class="muted" id="baseline-cash"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="limites" class="panel limits" aria-labelledby="limits-title">
+        <div class="limits-header">
+          <div>
+            <h2 id="limits-title">¿Cuánto necesitas refinanciar?</h2>
+            <p class="muted">Elige la caja mínima que quieres conservar y prueba distintas condiciones de financiación.</p>
+          </div>
+          <div class="reserve-control">
+            <label for="reserve">Reserva de caja</label>
+            <div class="reserve-field"><input id="reserve" type="number" min="0" max="10000" step="1" value="0" inputmode="numeric" aria-describedby="reserve-error"><span>M USD</span></div>
+            <p id="reserve-error" class="field-error" hidden>Introduce un número entero entre 0 y 10.000.</p>
+          </div>
+        </div>
+        <p id="limits-status" class="muted" role="status" hidden></p>
+        <div id="limits-data" class="limits-grid" hidden>
+          <div>
+            <p id="matrix-period" class="matrix-period"></p>
+            <p id="matrix-instruction" class="muted">Pulsa una celda para aplicar su tipo y porcentaje refinanciado.</p>
+            <table class="matrix" aria-describedby="matrix-period matrix-instruction matrix-legend">
+              <caption>Caja más baja en los cierres anuales (M USD)</caption>
+              <thead id="matrix-head"></thead>
+              <tbody id="matrix-body"></tbody>
+            </table>
+            <div class="matrix-legend" id="matrix-legend"><span data-level="meets">Alcanza la reserva</span><span data-level="below">Por debajo</span><span data-level="negative">Caja negativa</span></div>
+          </div>
+          <div class="threshold">
+            <h3>Mínimo a refinanciar</h3>
+            <p id="minimum-share" class="minimum-share" aria-live="polite"></p>
+            <p id="minimum-note" class="muted"></p>
+            <button id="apply-minimum" type="button" class="threshold-button" hidden>Probar ese mínimo</button>
+            <details><summary>Cómo se calcula</summary><p>Busca el menor porcentaje entero que conserva la reserva en todos los cierres hasta el año elegido, con el interés y la caja operativa que has seleccionado.</p></details>
           </div>
         </div>
       </section>

@@ -11,6 +11,8 @@ Verified 17 November 2026: [software checks](https://github.com/GinesN/RefiLens/
 
 The public Spanish interface lets readers choose one of five issuers, explore its disclosed maturity schedule and change the refinancing share, interest rate and operating cash flow. It projects five annual closing balances for the edited assumptions and compares them with a reference that refinances 100% at 6% and repeats FY2025 operating cash flow. Selecting a year shows its closing balances and reconciles the cumulative difference into operating cash, principal paid with cash and interest. The last maturity column preserves the filing's grouped later maturities. The Nucor case stays available as a separate PDF.
 
+The sensitivity table combines five new rates and five refinancing shares at the current operating cash assumption. Each cell shows the lowest projected year-end cash through the selected year. Clicking a cell applies both assumptions. The chosen cash reserve is a threshold for comparison. The minimum refinancing share is the smallest whole percent that meets it at every modeled close, at the currently selected rate. The public chart displays the reserve alongside the two cash paths.
+
 The public site loads validated FY2025 USD values from a small build-time export. It runs the shared Python Decimal model in a browser worker via Pyodide 0.29.4. The pinned runtime is bundled into the deployment after its SHA-256 is checked. The browser loads the runtime and evidence from the same site. The default five-year comparison is computed during the build so it is visible as soon as the issuer data loads. Edited assumptions run both paths in the browser. The full research workspace with more adjustable assumptions requires Next.js and FastAPI.
 
 ## Where to make changes
@@ -18,7 +20,7 @@ The public site loads validated FY2025 USD values from a small build-time export
 | Change | Source |
 |---|---|
 | Repository introduction and setup | `README.md` |
-| Public simulator | `site/index.html`, `styles.css`, `app.js`, `worker.js` and `model.py` |
+| Public simulator | `site/` for the interface, chart, sensitivity table, browser worker and Python model adapter |
 | Files included in the public site | `scripts/build_public_site.py` (explicit allowlist) |
 | Full interactive workspace | `apps/web` |
 | Financial calculations and API | `services/api` |

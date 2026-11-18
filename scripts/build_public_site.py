@@ -18,7 +18,7 @@ FINANCE = API / "app/finance"
 sys.path[:0] = [str(ROOT / "site"), str(API), str(FINANCE)]
 
 from app.extraction.profiles import profile_for
-from model import DEFAULTS, PRESETS, simulate
+from model import DEFAULTS, PRESETS, analyze
 
 ISSUERS = {
     "NUE": ("Nucor", "Principal de deuda a largo plazo. Excluye arrendamientos financieros y deuda a corto plazo."),
@@ -115,7 +115,7 @@ def read_company(ticker, name, scope):
             {"year": row["year_start"], "amount": row["amount"]} for row in dated
         ] + [{"year": None, "amount": later[0]["amount"]}],
     }
-    record["initial"] = simulate(record, **DEFAULTS)
+    record["initial"] = analyze(record, reserve="0", **DEFAULTS)
     return record
 
 
@@ -142,7 +142,7 @@ def main() -> None:
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
-    for name in ["index.html", "styles.css", "app.js", "chart.js", "worker.js", "model.py", "mark.svg"]:
+    for name in ["index.html", "styles.css", "app.js", "chart.js", "sensitivity.js", "worker.js", "model.py", "mark.svg"]:
         shutil.copyfile(ROOT / "site" / name, OUT / name)
     shutil.copyfile(FINANCE / "liquidity.py", OUT / "liquidity.py")
     (OUT / "companies.json").write_text(json.dumps({"companies": companies, "defaults": DEFAULTS, "presets": PRESETS}))

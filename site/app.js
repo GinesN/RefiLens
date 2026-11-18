@@ -1,4 +1,5 @@
-import { drawTrajectory } from "./chart.js?v=2";
+import { drawTrajectory } from "./chart.js?v=3";
+import { bindMatrix } from "./sensitivity.js?v=3";
 
 const byId = (id) => document.getElementById(id);
 const controls = ["share", "rate", "decline"];
@@ -19,13 +20,19 @@ function setText(id, value) {
 let data;
 let company;
 let endYear;
-let projection;
+let analysis;
 let bucketButtons;
 let worker;
 let revision = 0;
 let debounceTimer;
 let workerTimer;
 const bridge = byId("bridge");
+const renderMatrix = bindMatrix(byId("matrix-head"), byId("matrix-body"), (share, rate) => {
+  if (!analysis) return;
+  byId("share").value = share;
+  byId("rate").value = rate;
+  calculate();
+});
 
 function matches(values, preset) {
   return controls.every((key) => Number(values[key]) === Number(preset[key]));
@@ -64,13 +71,43 @@ function showCash(result) {
 }
 
 function redraw() {
-  if (projection) drawTrajectory(byId("cash-chart"), company.cash, projection, endYear);
+  if (analysis) drawTrajectory(byId("cash-chart"), company.cash, analysis.years, endYear, analysis.reserve);
+}
+
+function showLimits(result, yearIndex) {
+  const rate = Number(byId("rate").value);
+  const share = Number(byId("share").value);
+  const decline = Number(byId("decline").value);
+  const target = Number(analysis.reserve);
+  const first = company.period.year + 1;
+  const period = endYear === first ? String(first) : `${first}–${endYear}`;
+  byId("limits-data").hidden = false;
+  byId("limites").dataset.loading = "false";
+  byId("limits-status").hidden = true;
+  setText("matrix-period", `${period} · Caída de caja operativa del ${decline} %`);
+  renderMatrix(analysis.matrix, yearIndex, share, rate);
+  const minimum = result.minimum_share;
+  const apply = byId("apply-minimum");
+  apply.hidden = minimum === null || minimum === share;
+  setText("minimum-share", minimum === null ? "Inalcanzable" : `${minimum} %`);
+  const conditions = `al ${formatter.format(rate)} % de interés, hasta ${endYear}`;
+  setText("minimum-note", minimum === null
+    ? `Refinanciar el 100 % ${conditions}, no basta para mantener ${money(target)}.`
+    : `Para mantener ${money(target)} en cada cierre ${conditions}.`);
+  byId("reserve-result").hidden = target === 0;
+  if (target > 0) {
+    setText("reserve-result", Number(result.reserve_gap) > 0
+      ? `Faltan hasta ${money(result.reserve_gap)} para alcanzar la reserva en todos los cierres del periodo.`
+      : `La reserva de ${money(target)} se mantiene en todos los cierres del periodo.`);
+  }
 }
 
 function showSelectedYear() {
-  if (!projection) return;
-  const result = projection.find((row) => row.year === endYear);
+  if (!analysis) return;
+  const index = analysis.years.findIndex((row) => row.year === endYear);
+  const result = analysis.years[index];
   showCash(result);
+  showLimits(result, index);
   byId("cash-years").querySelectorAll("button").forEach((button) => {
     button.setAttribute("aria-pressed", String(Number(button.textContent) === endYear));
   });
@@ -86,8 +123,9 @@ function showSelectedYear() {
   redraw();
 }
 
-function showProjection(rows) {
-  projection = rows;
+function showProjection(result) {
+  analysis = result;
+  const rows = result.years;
   byId("comparison-data").hidden = false;
   byId("comparison-status").hidden = true;
   byId("comparison").dataset.loading = "false";
@@ -101,9 +139,13 @@ function showProjection(rows) {
     return button;
   });
   byId("cash-years").replaceChildren(openingYear, ...years);
-  const firstGap = rows.find((row) => Number(row.closing) < 0);
+  const withReserve = Number(result.reserve) > 0;
+  const firstGap = rows.find((row) => Number(row.reserve_gap) > 0);
+  byId("reserve-key").hidden = !withReserve;
   byId("first-gap").hidden = !firstGap;
-  if (firstGap) setText("first-gap", `La caja cae por debajo de cero por primera vez en ${firstGap.year}.`);
+  if (firstGap) setText("first-gap", withReserve
+    ? `Primer cierre por debajo de la reserva: ${firstGap.year}.`
+    : `La caja cae por debajo de cero por primera vez en ${firstGap.year}.`);
   byId("cash-table-body").replaceChildren(...rows.map(({ year, reference, closing }) => {
     const tr = document.createElement("tr");
     const title = document.createElement("th");
@@ -142,12 +184,13 @@ function unavailable() {
   setText("closing-cash", "—");
   setText("result-note", "");
   setText("comparison-status", "No se pudo calcular la comparación.");
+  setText("limits-status", "No se pudieron calcular los límites.");
   status("No se pudo calcular este escenario.", true);
 }
 
 function getWorker() {
   if (worker) return worker;
-  worker = new Worker(new URL("./worker.js?v=2", import.meta.url), { type: "module" });
+  worker = new Worker(new URL("./worker.js?v=3", import.meta.url), { type: "module" });
   const currentWorker = worker;
   worker.onmessage = ({ data: response }) => {
     if (currentWorker !== worker || response.id !== revision) return;
@@ -176,23 +219,37 @@ function calculate() {
   const id = ++revision;
   clearTimeout(debounceTimer);
   clearWorkerTimer();
-  if (matches(values, data.defaults)) {
+  const reserve = byId("reserve").value;
+  const validReserve = /^\d+$/.test(reserve) && Number(reserve) <= 10000;
+  byId("reserve-error").hidden = validReserve;
+  byId("reserve").setAttribute("aria-invalid", String(!validReserve));
+  if (validReserve && Number(reserve) === 0 && matches(values, data.defaults)) {
     status("");
     showProjection(company.initial);
     return;
   }
-  projection = undefined;
+  analysis = undefined;
   byId("result").dataset.negative = "false";
   setText("closing-cash", "—");
   setText("result-note", "");
+  byId("reserve-result").hidden = true;
   bridge.replaceChildren();
   byId("comparison").dataset.loading = "true";
   setText("comparison-status", "Actualizando la comparación…");
   byId("comparison-status").hidden = false;
+  byId("limites").dataset.loading = "true";
+  byId("limits-status").hidden = false;
+  if (!validReserve) {
+    setText("comparison-status", "Corrige el importe de la reserva de caja.");
+    setText("limits-status", "Corrige el importe de la reserva de caja.");
+    status("Corrige el importe de la reserva de caja.");
+    return;
+  }
+  setText("limits-status", "Calculando las combinaciones…");
   status("Calculando…");
   debounceTimer = setTimeout(() => {
     try {
-      getWorker().postMessage({ id, company, controls: values });
+      getWorker().postMessage({ id, company, controls: { ...values, reserve } });
       workerTimer = setTimeout(unavailable, 18000);
     } catch {
       unavailable();
@@ -246,7 +303,8 @@ function loadControls(values) {
 }
 
 function selectCompany() {
-  projection = undefined;
+  analysis = undefined;
+  byId("reserve").value = "0";
   company = data.companies.find((entry) => entry.ticker === byId("company").value);
   const { period, source } = company;
   setText("company-name", company.name);
@@ -263,7 +321,7 @@ function selectCompany() {
 }
 
 async function init() {
-  const response = await fetch(new URL("./companies.json?v=2", import.meta.url));
+  const response = await fetch(new URL("./companies.json?v=3", import.meta.url));
   if (!response.ok) throw new Error("No se pudieron cargar los datos.");
   data = await response.json();
   byId("company").replaceChildren(...data.companies.map(
@@ -272,7 +330,17 @@ async function init() {
   selectCompany();
   byId("company").addEventListener("change", selectCompany);
   for (const key of controls) byId(key).addEventListener("input", calculate);
-  byId("reset").addEventListener("click", () => loadControls(data.defaults));
+  byId("reset").addEventListener("click", () => {
+    byId("reserve").value = "0";
+    loadControls(data.defaults);
+  });
+  byId("reserve").addEventListener("input", calculate);
+  byId("apply-minimum").addEventListener("click", () => {
+    if (!analysis) return;
+    const row = analysis.years.find((result) => result.year === endYear);
+    byId("share").value = row.minimum_share;
+    calculate();
+  });
   byId("retry").addEventListener("click", calculate);
   for (const button of presetButtons) {
     button.addEventListener("click", () => loadControls(data.presets[button.dataset.preset]));
@@ -283,6 +351,7 @@ async function init() {
     byId("case").open = true;
     byId("case").scrollIntoView();
   }
+  if (location.hash === "#limites") byId("limites").scrollIntoView();
 }
 
 init().catch(() => { byId("load-error").hidden = false; });
