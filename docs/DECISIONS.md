@@ -108,3 +108,9 @@
 - Owner requested a focused data/general review and removal of AI watermarks. Remove presentation attribution labels and redundant contribution text while keeping dated evidence, model limitations, the open human-review state and historical records. Do not invent personal authorship or rewrite source history.
 - Recheck the original cached sources against all five snapshots and the local database without reingestion. Correct stale three-issuer and pre-publication documentation; financial calculations and observed figures remain unchanged.
 - Regenerate PDF metadata/content and the presentation pack, refresh desktop/mobile introduction screenshots, and run full local software checks and 26 production Chromium flows. Record results and the unavailable initial local server in VALIDATION_REPORT.md.
+
+## 18 November 2026 — Interactive public simulator
+
+- Replace the screenshot-led public presentation with a Spanish simulator. Put issuer selection, maturities and an editable cash result in one view. Keep the original filing, the Nucor report and a single source repository link available as secondary material.
+- Use an explicit export of the five FY2025 USD snapshots. An exact year sets the model horizon from 2026 to the selected year. A grouped later bucket remains display-only. Use the shared Decimal liquidity engine in a browser worker with a pinned, hash-checked Pyodide runtime served from the same site.
+- Start at 75% refinanced, a 6% new rate and no operating cash flow reduction. Assume a 4% prior rate for maturities and repeat FY2025 capex. Repay separately disclosed short-term debt outside the schedule in the first year for NUE and ITW. LECO bank debt is already in its schedule. Show the assumptions and cash bridge on demand.

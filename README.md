@@ -10,13 +10,13 @@ A strong interest-coverage ratio does not tell you whether cash can fund investm
 
 **Public repository:** [GinesN/RefiLens](https://github.com/GinesN/RefiLens) · [Documentation index](docs/README.md) · [Contribution guide](CONTRIBUTING.md)
 
-**Open the public project page:** [ginesn.github.io/RefiLens](https://ginesn.github.io/RefiLens/) — project explanation, research case and downloadable reports. See [publication and maintenance](docs/PUBLICATION.md) for the hosting boundary.
+**Try the public simulator:** [ginesn.github.io/RefiLens](https://ginesn.github.io/RefiLens/). Choose an issuer, select a maturity year and change your refinancing assumptions. The interface is in Spanish.
 
 **Start locally:** [Project introduction](http://localhost:3000) · [Nucor case](http://localhost:3000/?company=NUE#case-study) · [Research workspace](http://localhost:3000/?company=NUE#overview)
 
 **Review without running the app:** [Project brief PDF](apps/web/public/research/RefiLens_Project_Brief.pdf) · [Nucor case PDF](apps/web/public/research/RefiLens_Nucor_Case_Study.pdf) · [Case memo](docs/case-studies/NUCOR_FY2025.md) · [Spanish guide](docs/GUIA_FACIL_ES.md)
 
-The workspace links above run locally. The public repository includes the complete source, authentic offline evidence and portable reports. The GitHub Pages project overview presents the research; running the full interactive workspace requires both Next.js and Python.
+The full research workspace runs locally with Next.js and FastAPI. The public simulator uses the shared Python liquidity engine in the browser and shows dated FY2025 figures from the repository. See [publication and maintenance](docs/PUBLICATION.md) for the public model and its assumptions.
 
 ## What the project demonstrates
 
@@ -212,6 +212,6 @@ See [release readiness](docs/RELEASE_READINESS.md) for local acceptance evidence
 | `fixtures` | Authentic filing derivatives, partial source evidence and explicitly synthetic test inputs |
 | `docs` | Financial definitions, completed case, provenance, limits and dated validation |
 | `scripts` | Repeatable setup, checks, source review and artifact helpers |
-| `site` | Static public project overview, separate from the full research app |
+| `site` | Public Spanish maturity explorer and browser-based refinancing simulator |
 
 Local caches, databases, configuration, build outputs and QA intermediates are ignored. Final downloadable artifacts are kept in `apps/web/public/research`. See [security](SECURITY.md) before sharing configuration or reports of a problem.
