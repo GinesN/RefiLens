@@ -135,6 +135,8 @@ def analyze(company: dict, share: str, rate: str, decline: str, reserve: str) ->
         )
         row.update(
             lowest=str(low),
+            cash_without_refinancing=str(lowest_path(0, new_rate)[index]),
+            reserve_headroom=str(low - target),
             reserve_gap=str(max(Decimal(0), target - low)),
             minimum_share=minimum if minimum <= 100 else None,
         )

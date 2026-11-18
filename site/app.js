@@ -84,16 +84,20 @@ function showLimits(result, yearIndex) {
   byId("limits-data").hidden = false;
   byId("limites").dataset.loading = "false";
   byId("limits-status").hidden = true;
-  setText("matrix-period", `${period} · Caída de caja operativa del ${decline} %`);
+  setText("matrix-period", `${company.name} · ${period} · Caída de caja operativa del ${decline} %`);
   renderMatrix(analysis.matrix, yearIndex, share, rate);
   const minimum = result.minimum_share;
   const apply = byId("apply-minimum");
   apply.hidden = minimum === null || minimum === share;
   setText("minimum-share", minimum === null ? "Inalcanzable" : `${minimum} %`);
   const conditions = `al ${formatter.format(rate)} % de interés, hasta ${endYear}`;
-  setText("minimum-note", minimum === null
-    ? `Refinanciar el 100 % ${conditions}, no basta para mantener ${money(target)}.`
-    : `Para mantener ${money(target)} en cada cierre ${conditions}.`);
+  let note = `Para mantener ${money(target)} en cada cierre ${conditions}.`;
+  if (minimum === null) note = `Refinanciar el 100 % ${conditions}, no basta para mantener ${money(target)}.`;
+  if (minimum === 0) note = `Sin refinanciar, la caja más baja hasta ${endYear} sería de ${money(result.cash_without_refinancing)}. Cubre la reserva de ${money(target)}.`;
+  setText("minimum-note", note);
+  setText("reserve-lowest", money(result.lowest));
+  setText("reserve-headroom", difference(result.reserve_headroom));
+  byId("reserve-headroom").dataset.loss = Number(result.reserve_headroom) < 0;
   byId("reserve-result").hidden = target === 0;
   if (target > 0) {
     setText("reserve-result", Number(result.reserve_gap) > 0
@@ -190,7 +194,7 @@ function unavailable() {
 
 function getWorker() {
   if (worker) return worker;
-  worker = new Worker(new URL("./worker.js?v=3", import.meta.url), { type: "module" });
+  worker = new Worker(new URL("./worker.js?v=5", import.meta.url), { type: "module" });
   const currentWorker = worker;
   worker.onmessage = ({ data: response }) => {
     if (currentWorker !== worker || response.id !== revision) return;
@@ -249,7 +253,7 @@ function calculate() {
   status("Calculando…");
   debounceTimer = setTimeout(() => {
     try {
-      getWorker().postMessage({ id, company, controls: { ...values, reserve } });
+      getWorker().postMessage({ id, company, controls: { ...values, reserve: String(Number(reserve)) } });
       workerTimer = setTimeout(unavailable, 18000);
     } catch {
       unavailable();
@@ -321,7 +325,7 @@ function selectCompany() {
 }
 
 async function init() {
-  const response = await fetch(new URL("./companies.json?v=3", import.meta.url));
+  const response = await fetch(new URL("./companies.json?v=5", import.meta.url));
   if (!response.ok) throw new Error("No se pudieron cargar los datos.");
   data = await response.json();
   byId("company").replaceChildren(...data.companies.map(

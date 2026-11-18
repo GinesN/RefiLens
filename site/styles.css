@@ -191,6 +191,10 @@ details p { margin: 5px 0 8px; }
 .minimum-share { color: var(--accent); font-size: 1.75rem; font-weight: 700; margin-block: 3px; letter-spacing: -.035em; }
 .threshold-button { background: var(--accent); color: white; border: 0; border-radius: 6px; padding: 7px 10px; font-size: .83rem; font-weight: 650; margin-top: 10px; min-height: 38px; }
 .threshold details { margin-top: 6px; }
+.reserve-readout { margin-top: 12px; }
+.reserve-readout div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 3px 10px; padding: 7px 0; border-top: 1px solid var(--line); font-size: .8rem; }
+.reserve-readout dd { font-weight: 680; color: var(--accent); font-variant-numeric: tabular-nums; }
+.reserve-readout dd[data-loss="true"] { color: var(--red); }
 #limits-status { margin-top: 10px; }
 .limits[data-loading="true"] .limits-grid { opacity: .35; pointer-events: none; }
 .legend .reserve-key::before { border-top: 2px dashed var(--chart-reserve); }

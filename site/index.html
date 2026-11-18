@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#f5f1eb">
   <title>RefiLens · Simulador de refinanciación</title>
   <link rel="icon" type="image/svg+xml" href="mark.svg?v=4">
-  <link rel="stylesheet" href="styles.css?v=4">
-  <script type="module" src="app.js?v=4"></script>
+  <link rel="stylesheet" href="styles.css?v=5">
+  <script type="module" src="app.js?v=5"></script>
 </head>
 <body>
   <a class="skip" href="#main">Saltar al simulador</a>
@@ -137,11 +137,11 @@
         <div class="limits-header">
           <div>
             <h2 id="limits-title">¿Cuánto necesitas refinanciar?</h2>
-            <p class="muted">Elige la caja mínima que quieres conservar y prueba distintas condiciones de financiación.</p>
+            <p class="muted">La reserva es tu objetivo de caja. Al cambiarla, se actualizan el margen y los colores de la tabla.</p>
           </div>
           <div class="reserve-control">
             <label for="reserve">Reserva de caja</label>
-            <div class="reserve-field"><input id="reserve" type="number" min="0" max="10000" step="1" value="0" inputmode="numeric" aria-describedby="reserve-error"><span>M USD</span></div>
+            <div class="reserve-field"><input id="reserve" type="text" value="0" inputmode="numeric" autocomplete="off" aria-describedby="reserve-unit reserve-error"><span id="reserve-unit">M USD</span></div>
             <p id="reserve-error" class="field-error" hidden>Introduce un número entero entre 0 y 10.000.</p>
           </div>
         </div>
@@ -161,6 +161,10 @@
             <h3>Mínimo a refinanciar</h3>
             <p id="minimum-share" class="minimum-share" aria-live="polite"></p>
             <p id="minimum-note" class="muted"></p>
+            <dl class="reserve-readout">
+              <div><dt>Caja más baja de tu escenario</dt><dd id="reserve-lowest"></dd></div>
+              <div><dt>Margen frente a la reserva</dt><dd id="reserve-headroom" aria-live="polite"></dd></div>
+            </dl>
             <button id="apply-minimum" type="button" class="threshold-button" hidden>Probar ese mínimo</button>
             <details><summary>Cómo se calcula</summary><p>Busca el menor porcentaje entero que conserva la reserva en todos los cierres hasta el año elegido, con el interés y la caja operativa que has seleccionado.</p></details>
           </div>

@@ -3,7 +3,7 @@ import { loadPyodide } from "./runtime/pyodide.mjs";
 async function initialize() {
   const py = await loadPyodide({ indexURL: new URL("runtime/", self.location).href });
   await Promise.all(["model.py", "liquidity.py"].map(async (name) => {
-    const response = await fetch(new URL(`${name}?v=3`, self.location));
+    const response = await fetch(new URL(`${name}?v=5`, self.location));
     if (!response.ok) throw new Error(`Missing calculation source: ${name}`);
     py.FS.writeFile(name, await response.text());
   }));
