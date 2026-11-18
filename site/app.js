@@ -1,5 +1,8 @@
+import { drawTrajectory } from "./chart.js?v=2";
+
 const byId = (id) => document.getElementById(id);
 const controls = ["share", "rate", "decline"];
+const presetButtons = [...document.querySelectorAll("[data-preset]")];
 const formatter = new Intl.NumberFormat("es-ES", { maximumFractionDigits: 2, useGrouping: "always" });
 const smallFormatter = new Intl.NumberFormat("es-ES", { maximumFractionDigits: 6 });
 
@@ -16,18 +19,29 @@ function setText(id, value) {
 let data;
 let company;
 let endYear;
+let projection;
+let bucketButtons;
 let worker;
 let revision = 0;
 let debounceTimer;
 let workerTimer;
 const bridge = byId("bridge");
 
+function matches(values, preset) {
+  return controls.every((key) => Number(values[key]) === Number(preset[key]));
+}
+
+function difference(amount) {
+  return Number(amount) > 0 ? `+${money(amount)}` : money(amount);
+}
+
 function showCash(result) {
   byId("result").dataset.negative = Number(result.closing) < 0;
   setText("closing-cash", money(result.closing));
-  setText("result-note", Number(result.closing) < 0
-    ? "Falta caja para cubrir los pagos de este escenario."
-    : `${money(result.debt_from_cash)} de la deuda que vence se pagan con caja.`);
+  let note = `${difference(result.delta)} frente a la referencia.`;
+  if (Number(result.delta) === 0) note = "La caja coincide con la referencia.";
+  if (Number(result.closing) < 0) note = "Falta caja para cubrir los pagos de este escenario.";
+  setText("result-note", note);
   const rows = [
     ["Caja al inicio del año", result.opening],
     ["Caja que genera el negocio", result.cash_from_operations],
@@ -47,6 +61,63 @@ function showCash(result) {
     row.append(term, value);
     return row;
   }));
+}
+
+function redraw() {
+  if (projection) drawTrajectory(byId("cash-chart"), company.cash, projection, endYear);
+}
+
+function showSelectedYear() {
+  if (!projection) return;
+  const result = projection.find((row) => row.year === endYear);
+  showCash(result);
+  byId("cash-years").querySelectorAll("button").forEach((button) => {
+    button.setAttribute("aria-pressed", String(Number(button.textContent) === endYear));
+  });
+  const first = company.period.year + 1;
+  setText("driver-period", endYear === first ? `Efecto en ${first}` : `Efecto acumulado de ${first} a ${endYear}`);
+  for (const key of ["operations", "principal", "interest", "total"]) {
+    const amount = key === "total" ? result.delta : result[`${key}_effect`];
+    const element = byId(`${key}-effect`);
+    element.textContent = difference(amount);
+    element.dataset.sign = Number(amount) < 0 ? "loss" : Number(amount) > 0 ? "gain" : "flat";
+  }
+  setText("baseline-cash", `Caja de referencia al cierre: ${money(result.reference)}.`);
+  redraw();
+}
+
+function showProjection(rows) {
+  projection = rows;
+  byId("comparison-data").hidden = false;
+  byId("comparison-status").hidden = true;
+  byId("comparison").dataset.loading = "false";
+  const openingYear = document.createElement("span");
+  openingYear.textContent = company.period.year;
+  const years = rows.map(({ year }) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = year;
+    button.addEventListener("click", () => chooseBucket(company.schedule.findIndex((entry) => entry.year === year)));
+    return button;
+  });
+  byId("cash-years").replaceChildren(openingYear, ...years);
+  const firstGap = rows.find((row) => Number(row.closing) < 0);
+  byId("first-gap").hidden = !firstGap;
+  if (firstGap) setText("first-gap", `La caja cae por debajo de cero por primera vez en ${firstGap.year}.`);
+  byId("cash-table-body").replaceChildren(...rows.map(({ year, reference, closing }) => {
+    const tr = document.createElement("tr");
+    const title = document.createElement("th");
+    title.scope = "row";
+    title.textContent = year;
+    tr.append(title);
+    for (const amount of [reference, closing]) {
+      const td = document.createElement("td");
+      td.textContent = money(amount).replace(" M USD", "");
+      tr.append(td);
+    }
+    return tr;
+  }));
+  showSelectedYear();
 }
 
 function status(message, retry = false) {
@@ -70,12 +141,13 @@ function unavailable() {
   stopWorker();
   setText("closing-cash", "—");
   setText("result-note", "");
+  setText("comparison-status", "No se pudo calcular la comparación.");
   status("No se pudo calcular este escenario.", true);
 }
 
 function getWorker() {
   if (worker) return worker;
-  worker = new Worker(new URL("./worker.js", import.meta.url), { type: "module" });
+  worker = new Worker(new URL("./worker.js?v=2", import.meta.url), { type: "module" });
   const currentWorker = worker;
   worker.onmessage = ({ data: response }) => {
     if (currentWorker !== worker || response.id !== revision) return;
@@ -85,7 +157,7 @@ function getWorker() {
       return;
     }
     status("");
-    showCash(response.result);
+    showProjection(response.result);
   };
   worker.onerror = () => {
     if (currentWorker !== worker) return;
@@ -98,22 +170,29 @@ function getWorker() {
 function calculate() {
   const values = Object.fromEntries(controls.map((key) => [key, byId(key).value]));
   for (const key of controls) setText(`${key}-label`, `${formatter.format(values[key])} %`);
+  for (const button of presetButtons) {
+    button.setAttribute("aria-pressed", String(matches(values, data.presets[button.dataset.preset])));
+  }
   const id = ++revision;
   clearTimeout(debounceTimer);
   clearWorkerTimer();
-  if (endYear === company.period.year + 1 && controls.every((key) => Number(values[key]) === Number(data.defaults[key]))) {
+  if (matches(values, data.defaults)) {
     status("");
-    showCash(company.initial);
+    showProjection(company.initial);
     return;
   }
+  projection = undefined;
   byId("result").dataset.negative = "false";
   setText("closing-cash", "—");
   setText("result-note", "");
   bridge.replaceChildren();
+  byId("comparison").dataset.loading = "true";
+  setText("comparison-status", "Actualizando la comparación…");
+  byId("comparison-status").hidden = false;
   status("Calculando…");
   debounceTimer = setTimeout(() => {
     try {
-      getWorker().postMessage({ id, company, controls: { ...values, through: endYear } });
+      getWorker().postMessage({ id, company, controls: values });
       workerTimer = setTimeout(unavailable, 18000);
     } catch {
       unavailable();
@@ -121,10 +200,26 @@ function calculate() {
   }, 90);
 }
 
+function chooseBucket(index) {
+  const entry = company.schedule[index];
+  bucketButtons.forEach((button, i) => button.setAttribute("aria-pressed", String(index === i)));
+  if (entry.year === null) {
+    setText("selected-bucket", `Desde ${company.period.year + 6} · ${money(entry.amount)} en total, sin desglose anual.`);
+    return;
+  }
+  endYear = entry.year;
+  const first = company.period.year + 1;
+  const horizon = endYear === first ? String(first) : `${first}–${endYear}`;
+  setText("selected-bucket", `${endYear} · ${money(entry.amount)} de principal`);
+  setText("simulation-period", `Escenario ${horizon} · ${money(entry.amount)} vencen en ${endYear}`);
+  setText("result-caption", `Caja estimada al final de ${endYear}`);
+  showSelectedYear();
+}
+
 function renderSchedule() {
   const schedule = byId("schedule");
   const max = Math.max(1, ...company.schedule.map((entry) => Number(entry.amount)));
-  const buttons = company.schedule.map((entry, index) => {
+  bucketButtons = company.schedule.map((entry, index) => {
     const button = document.createElement("button");
     const column = document.createElement("span");
     const label = document.createElement("span");
@@ -138,35 +233,20 @@ function renderSchedule() {
     column.style.setProperty("--height", `${relativeHeight}%`);
     label.textContent = year;
     button.append(column, label);
-    button.addEventListener("click", () => selectBucket(index));
+    button.addEventListener("click", () => chooseBucket(index));
     return button;
   });
-  function selectBucket(index) {
-    const entry = company.schedule[index];
-    buttons.forEach((button, i) => button.setAttribute("aria-pressed", String(index === i)));
-    if (entry.year === null) {
-      setText("selected-bucket", `Desde ${company.period.year + 6} · ${money(entry.amount)} en total, sin desglose anual.`);
-      return;
-    }
-    endYear = entry.year;
-    const first = company.period.year + 1;
-    const horizon = endYear === first ? String(first) : `${first}–${endYear}`;
-    setText("selected-bucket", `${endYear} · ${money(entry.amount)} de principal`);
-    setText("simulation-period", `Escenario ${horizon} · ${money(entry.amount)} vencen en ${endYear}`);
-    setText("result-caption", `Caja estimada al final de ${endYear}`);
-    calculate();
-  }
-  schedule.replaceChildren(...buttons);
-  endYear = company.period.year + 1;
-  selectBucket(0);
+  schedule.replaceChildren(...bucketButtons);
+  chooseBucket(0);
 }
 
-function reset() {
-  for (const key of controls) byId(key).value = data.defaults[key];
+function loadControls(values) {
+  for (const key of controls) byId(key).value = values[key];
   calculate();
 }
 
 function selectCompany() {
+  projection = undefined;
   company = data.companies.find((entry) => entry.ticker === byId("company").value);
   const { period, source } = company;
   setText("company-name", company.name);
@@ -178,12 +258,12 @@ function selectCompany() {
   const filedLabel = new Intl.DateTimeFormat("es-ES", { dateStyle: "long", timeZone: "UTC" }).format(filed);
   setText("filing-date", `Informe 10-K del ejercicio ${period.year}, publicado el ${filedLabel}. Referencia SEC ${source.accession}.`);
   byId("filing-link").href = source.url;
-  for (const key of controls) byId(key).value = data.defaults[key];
   renderSchedule();
+  loadControls(data.defaults);
 }
 
 async function init() {
-  const response = await fetch(new URL("./companies.json", import.meta.url));
+  const response = await fetch(new URL("./companies.json?v=2", import.meta.url));
   if (!response.ok) throw new Error("No se pudieron cargar los datos.");
   data = await response.json();
   byId("company").replaceChildren(...data.companies.map(
@@ -192,9 +272,13 @@ async function init() {
   selectCompany();
   byId("company").addEventListener("change", selectCompany);
   for (const key of controls) byId(key).addEventListener("input", calculate);
-  byId("reset").addEventListener("click", reset);
+  byId("reset").addEventListener("click", () => loadControls(data.defaults));
   byId("retry").addEventListener("click", calculate);
+  for (const button of presetButtons) {
+    button.addEventListener("click", () => loadControls(data.presets[button.dataset.preset]));
+  }
   byId("workspace").hidden = false;
+  new ResizeObserver(redraw).observe(byId("cash-chart"));
   if (location.hash === "#case") {
     byId("case").open = true;
     byId("case").scrollIntoView();

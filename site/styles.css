@@ -92,3 +92,52 @@ details p { margin: 5px 0 8px; }
   .facts { grid-template-columns: 1fr; }
   .footer { flex-wrap: wrap; }
 }
+
+.presets { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.presets button, .cash-years button {
+  background: transparent; border: 1px solid #c4d4c6; border-radius: 6px;
+  padding: 6px 9px; color: var(--green); font-size: .78rem; font-weight: 650;
+  min-height: 36px;
+}
+.presets button:hover, .cash-years button:hover { background: var(--light); }
+.presets button[aria-pressed="true"], .cash-years button[aria-pressed="true"] {
+  background: #e0ebda; border-color: #729782;
+}
+.comparison { position: relative; margin-top: 18px; }
+.comparison-header { display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 10px 18px; }
+.comparison-header p { margin-top: 6px; }
+.legend { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; font-size: .78rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend span::before { content: ""; display: inline-block; width: 20px; border-top: 3px dashed #886a4a; }
+.legend span + span::before { border-top: 3px solid #176044; }
+.comparison-grid { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 24px; margin-top: 13px; }
+.trajectory { min-width: 0; }
+#cash-chart { display: block; width: 100%; height: 208px; }
+.cash-years {
+  display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 2px;
+  padding: 0 10px 0 55px; align-items: center; text-align: center;
+}
+.cash-years span { font-size: .75rem; color: var(--muted); }
+.cash-years button { border-color: transparent; padding-inline: 0; min-height: 36px; font-variant-numeric: tabular-nums; }
+.gap-note { color: var(--red); margin-top: 8px; font-size: .83rem; font-weight: 650; }
+.trajectory details { margin-top: 5px; }
+.cash-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.cash-table caption { text-align: left; font-size: .78rem; }
+.cash-table th, .cash-table td { padding: 5px; border-bottom: 1px solid var(--line); text-align: right; }
+.cash-table th:first-child { text-align: left; }
+.drivers { border-radius: 10px; min-width: 0; padding: 15px 17px; background: var(--light); align-self: start; }
+.drivers p { margin-top: 4px; }
+.driver-list { margin: 7px 0 9px; }
+.driver-list div { display: flex; justify-content: space-between; gap: 8px; padding: 7px 0; border-bottom: 1px solid #cedacb; font-size: .84rem; }
+.driver-list dd { text-align: right; flex-shrink: 0; font-variant-numeric: tabular-nums; font-weight: 650; }
+.driver-list dd[data-sign="loss"] { color: var(--red); }
+.driver-list dd[data-sign="gain"] { color: #185a40; }
+.driver-list .driver-total { font-weight: 700; }
+#comparison-status { position: absolute; top: 50%; inset-inline: 0; text-align: center; }
+.comparison[data-loading="true"] .comparison-grid { visibility: hidden; }
+@media (max-width: 740px) {
+  .comparison-grid { grid-template-columns: 1fr; gap: 14px; }
+  #cash-chart { height: 165px; }
+  .cash-years button, .presets button { min-height: 42px; }
+  .drivers { padding: 12px 14px; }
+}

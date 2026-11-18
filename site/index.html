@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#f6f5ef">
   <title>RefiLens · Simulador de refinanciación</title>
   <link rel="icon" type="image/svg+xml" href="mark.svg">
-  <link rel="stylesheet" href="styles.css">
-  <script type="module" src="app.js"></script>
+  <link rel="stylesheet" href="styles.css?v=2">
+  <script type="module" src="app.js?v=2"></script>
 </head>
 <body>
   <a class="skip" href="#main">Saltar al simulador</a>
@@ -57,6 +57,11 @@
         <section class="panel simulation" aria-labelledby="sim-title">
           <h2 id="sim-title">Simula la refinanciación</h2>
           <p id="simulation-period" class="sim-period"></p>
+          <div class="presets" role="group" aria-label="Escenarios predefinidos">
+            <button type="button" data-preset="reference">Referencia</button>
+            <button type="button" data-preset="costly">Interés más alto</button>
+            <button type="button" data-preset="stress">Presión combinada</button>
+          </div>
           <div class="controls">
             <div class="control">
               <label for="share">Deuda que consigues refinanciar <output for="share" id="share-label">75 %</output></label>
@@ -88,6 +93,43 @@
           </div>
         </section>
       </div>
+
+      <section id="comparison" class="panel comparison" aria-labelledby="comparison-title">
+        <div class="comparison-header">
+          <div>
+            <h2 id="comparison-title">Evolución de la caja</h2>
+            <p class="muted">Referencia: refinancia el 100 % al 6 % y repite la caja operativa de 2025.</p>
+          </div>
+          <div class="legend" aria-label="Series en millones de dólares"><small>M USD</small><span>Referencia</span><span>Tu escenario</span></div>
+        </div>
+        <p id="comparison-status" class="muted" hidden>Actualizando la comparación…</p>
+        <div class="comparison-grid" id="comparison-data" hidden>
+          <div class="trajectory">
+            <canvas id="cash-chart" aria-hidden="true"></canvas>
+            <div id="cash-years" class="cash-years" role="group" aria-label="Seleccionar año de caja"></div>
+            <p id="first-gap" class="gap-note" hidden></p>
+            <details>
+              <summary>Ver cifras por año</summary>
+              <table class="cash-table">
+                <caption>Caja al cierre en millones de dólares</caption>
+                <thead><tr><th scope="col">Año</th><th scope="col">Referencia</th><th scope="col">Tu escenario</th></tr></thead>
+                <tbody id="cash-table-body"></tbody>
+              </table>
+            </details>
+          </div>
+          <div class="drivers">
+            <h3 id="drivers-title">Qué mueve el resultado</h3>
+            <p class="muted" id="driver-period"></p>
+            <dl class="driver-list">
+              <div><dt>Caja del negocio</dt><dd id="operations-effect"></dd></div>
+              <div><dt>Deuda que pagas con caja</dt><dd id="principal-effect"></dd></div>
+              <div><dt>Cambio en intereses</dt><dd id="interest-effect"></dd></div>
+              <div class="driver-total"><dt>Diferencia total</dt><dd id="total-effect"></dd></div>
+            </dl>
+            <p class="muted" id="baseline-cash"></p>
+          </div>
+        </div>
+      </section>
 
       <div id="downloads" class="resources">
         <details id="case">
