@@ -142,7 +142,10 @@ def main() -> None:
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
-    for name in ["index.html", "styles.css", "app.js", "chart.js", "sensitivity.js", "worker.js", "model.py", "mark.svg"]:
+    for name in [
+        "index.html", "styles.css", "app.js", "chart.js", "sensitivity.js",
+        "nucor-guide.js", "worker.js", "model.py", "mark.svg",
+    ]:
         shutil.copyfile(ROOT / "site" / name, OUT / name)
     shutil.copyfile(FINANCE / "liquidity.py", OUT / "liquidity.py")
     (OUT / "companies.json").write_text(json.dumps({"companies": companies, "defaults": DEFAULTS, "presets": PRESETS}))

@@ -1,5 +1,6 @@
 import { drawTrajectory } from "./chart.js?v=6";
 import { bindMatrix } from "./sensitivity.js?v=6";
+import { bindNucorGuide } from "./nucor-guide.js?v=7";
 
 const byId = (id) => document.getElementById(id);
 const controls = ["share", "rate", "decline"];
@@ -26,6 +27,7 @@ let data;
 let company;
 let endYear;
 let analysis;
+let nucorGuide;
 let bucketButtons;
 let worker;
 let revision = 0;
@@ -130,6 +132,7 @@ function showSelectedYear() {
   }
   setText("baseline-cash", `Reference case year-end cash: ${money(result.reference)}.`);
   redraw();
+  nucorGuide?.refresh();
 }
 
 function showProjection(result) {
@@ -195,6 +198,7 @@ function unavailable() {
   setText("comparison-status", "The comparison could not be calculated.");
   setText("limits-status", "The refinancing limits could not be calculated.");
   status("The scenario could not be calculated.", true);
+  nucorGuide?.refresh();
 }
 
 function getWorker() {
@@ -219,8 +223,12 @@ function getWorker() {
   return worker;
 }
 
+function controlValues() {
+  return Object.fromEntries(controls.map((key) => [key, byId(key).value]));
+}
+
 function calculate() {
-  const values = Object.fromEntries(controls.map((key) => [key, byId(key).value]));
+  const values = controlValues();
   for (const key of controls) setText(`${key}-label`, `${formatter.format(values[key])}%`);
   for (const button of presetButtons) {
     button.setAttribute("aria-pressed", String(matches(values, data.presets[button.dataset.preset])));
@@ -252,10 +260,12 @@ function calculate() {
     setText("comparison-status", "Enter a valid cash reserve.");
     setText("limits-status", "Enter a valid cash reserve.");
     status("Enter a valid cash reserve.");
+    nucorGuide?.refresh();
     return;
   }
   setText("limits-status", "Calculating combinations…");
   status("Calculating…");
+  nucorGuide?.refresh();
   debounceTimer = setTimeout(() => {
     try {
       getWorker().postMessage({ id, company, controls: { ...values, reserve: String(Number(reserve)) } });
@@ -279,7 +289,8 @@ function chooseBucket(index) {
   setText("selected-bucket", `${endYear} · ${money(entry.amount)} in principal`);
   setText("simulation-period", `${horizon} scenario · ${money(entry.amount)} due in ${endYear}`);
   setText("result-caption", `Projected cash at ${endYear} year-end`);
-  showSelectedYear();
+  if (analysis) showSelectedYear();
+  else nucorGuide?.refresh();
 }
 
 function renderSchedule() {
@@ -329,6 +340,18 @@ function selectCompany() {
   loadControls(data.defaults);
 }
 
+function applyGuideScenario(ticker, year, reserve, values) {
+  if (company.ticker !== ticker) {
+    byId("company").value = ticker;
+    selectCompany();
+  }
+  analysis = undefined;
+  for (const key of controls) byId(key).value = values[key];
+  byId("reserve").value = reserve;
+  chooseBucket(company.schedule.findIndex((bucket) => bucket.year === year));
+  calculate();
+}
+
 async function init() {
   const response = await fetch(new URL("./companies.json?v=6", import.meta.url));
   if (!response.ok) throw new Error("The company data could not be loaded.");
@@ -355,7 +378,22 @@ async function init() {
     button.addEventListener("click", () => loadControls(data.presets[button.dataset.preset]));
   }
   byId("workspace").hidden = false;
+  nucorGuide = bindNucorGuide({
+    company: data.companies.find((entry) => entry.ticker === "NUE"),
+    presets: data.presets,
+    money,
+    apply: applyGuideScenario,
+    readScenario: () => ({
+      ticker: company.ticker,
+      year: endYear,
+      reserve: byId("reserve").value,
+      values: controlValues(),
+      result: analysis?.years.find((row) => row.year === endYear),
+      failed: !byId("retry").hidden,
+    }),
+  });
   new ResizeObserver(redraw).observe(byId("cash-chart"));
+  if (location.hash === "#nucor-walkthrough") nucorGuide.open();
   if (location.hash === "#case") {
     byId("case").open = true;
     byId("case").scrollIntoView();

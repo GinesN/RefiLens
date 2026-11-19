@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#f5f1eb">
   <title>RefiLens · Corporate Debt &amp; Liquidity</title>
   <link rel="icon" type="image/svg+xml" href="mark.svg?v=4">
-  <link rel="stylesheet" href="styles.css?v=6">
-  <script type="module" src="app.js?v=6"></script>
+  <link rel="stylesheet" href="styles.css?v=7">
+  <script type="module" src="app.js?v=7"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to the simulator</a>
@@ -21,12 +21,41 @@
     <div class="intro">
       <h1>How much cash is left<br class="desktop-break"> <span>after debt comes due?</span></h1>
       <p>Choose a company and test how higher rates, less refinancing or weaker operations affect its cash.</p>
+      <button id="start-nucor-guide" class="guide-start" type="button" aria-controls="nucor-walkthrough" aria-expanded="false" hidden>Start the Nucor walkthrough <span aria-hidden="true">→</span></button>
     </div>
 
     <noscript><p class="notice">Enable JavaScript to choose a company and run a scenario.</p></noscript>
     <p class="notice" id="load-error" role="alert" hidden>The company data could not be loaded. <a href="./">Try again</a></p>
 
     <div id="workspace" hidden>
+      <section id="nucor-walkthrough" class="panel guide" aria-labelledby="guide-title" hidden>
+        <div class="guide-header">
+          <p>Nucor · 2026–2027 liquidity case</p>
+          <button id="guide-close" class="text-button" type="button">Close walkthrough</button>
+        </div>
+        <ol id="guide-progress" class="guide-progress" aria-label="Walkthrough progress"></ol>
+        <div class="guide-content">
+          <div>
+            <h2 id="guide-title" tabindex="-1"></h2>
+            <p id="guide-explanation"></p>
+            <p id="guide-settings" class="guide-settings"></p>
+          </div>
+          <div class="guide-outcome" aria-live="polite" aria-atomic="true">
+            <p id="guide-status"></p>
+            <dl id="guide-metrics"></dl>
+            <p id="guide-takeaway" class="guide-takeaway" hidden></p>
+          </div>
+        </div>
+        <div class="guide-footer">
+          <p class="muted">Illustrative year-end cash. The simulator repeats FY2025 capital spending and excludes dividends, buybacks and acquisitions.</p>
+          <div class="guide-actions">
+            <button id="guide-reapply" class="text-button" type="button" hidden>Reapply this step</button>
+            <button id="guide-back" class="guide-back" type="button" disabled>Back</button>
+            <button id="guide-next" class="guide-next" type="button">Next</button>
+          </div>
+        </div>
+      </section>
+
       <div class="company-select">
         <label for="company">Company</label>
         <select id="company"></select>
@@ -56,7 +85,7 @@
         </section>
 
         <section class="panel simulation" aria-labelledby="sim-title">
-          <h2 id="sim-title">Refinancing simulator</h2>
+          <h2 id="sim-title" tabindex="-1">Refinancing simulator</h2>
           <p id="simulation-period" class="sim-period"></p>
           <div class="presets" role="group" aria-label="Scenario presets">
             <button type="button" data-preset="reference">Reference</button>
