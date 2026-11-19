@@ -12,6 +12,7 @@ PRESETS = {
     "reference": {"share": "100", "rate": "6", "decline": "0"},
     "costly": {"share": "100", "rate": "9", "decline": "0"},
     "stress": {"share": "50", "rate": "10", "decline": "20"},
+    "response": {"share": "80", "rate": "10", "decline": "20"},
 }
 CLOSING = "closing_cash_before_uncommitted_funding"
 GRID_SHARES = (0, 25, 50, 75, 100)
@@ -141,3 +142,58 @@ def analyze(company: dict, share: str, rate: str, decline: str, reserve: str) ->
             minimum_share=minimum if minimum <= 100 else None,
         )
     return {"years": comparisons, "matrix": matrix, "reserve": str(target)}
+
+
+def compare_steel_producers(nucor: dict, steel_dynamics: dict) -> dict:
+    """Replay the same two-year scenarios and reconcile each issuer's cash bridge."""
+    companies = (nucor, steel_dynamics)
+    if (nucor["ticker"], steel_dynamics["ticker"]) != ("NUE", "STLD"):
+        raise ValueError("The steel comparison requires Nucor and Steel Dynamics.")
+    period = {"year": 2025, "end": "2025-12-31", "currency": "USD"}
+    if any(company["period"] != period for company in companies):
+        raise ValueError("The steel comparison requires matching FY2025 USD snapshots.")
+    years = (2026, 2027)
+    reserve = "300"
+
+    def cash_bridge(company: dict, controls: dict) -> dict:
+        projection = analyze(company, **controls, reserve=reserve)
+        rows = projection["years"][:len(years)]
+        schedule = [entry for entry in company["schedule"] if entry["year"] in years]
+        if tuple(row["year"] for row in rows) != years or tuple(entry["year"] for entry in schedule) != years:
+            raise ValueError(f"{company['ticker']}: missing comparable maturity years.")
+        closing = rows[-1]
+        opening = Decimal(rows[0]["opening"])
+        after_capex = sum(
+            Decimal(row["cash_from_operations"]) - Decimal(company["capital_expenditure"])
+            for row in rows
+        )
+        principal_due = sum(Decimal(entry["amount"]) for entry in schedule)
+        cash_principal = -sum(Decimal(row["debt_from_cash"]) for row in rows)
+        other_uses = -sum(Decimal(row["other_uses"]) for row in rows)
+        interest = -sum(Decimal(row["interest_change"]) for row in rows)
+        if opening + after_capex + cash_principal + other_uses + interest != Decimal(closing["closing"]):
+            raise ValueError(f"{company['ticker']}: the peer cash bridge did not reconcile.")
+        return {
+            "ticker": company["ticker"],
+            "name": company["name"],
+            "opening": str(opening),
+            "after_capex": str(after_capex),
+            "principal_due": str(principal_due),
+            "cash_principal": str(cash_principal),
+            "other_uses": str(other_uses),
+            "interest": str(interest),
+            "closing": closing["closing"],
+            "reserve_headroom": closing["reserve_headroom"],
+            "minimum_share": closing["minimum_share"],
+        }
+
+    return {
+        "scenarios": {
+            key: {
+                "controls": controls,
+                "companies": [cash_bridge(company, controls) for company in companies],
+            }
+            for key, controls in PRESETS.items()
+        },
+        "reserve": str(Decimal(reserve) * 1_000_000),
+    }

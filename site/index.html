@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#f5f1eb">
   <title>RefiLens · Corporate Debt &amp; Liquidity</title>
   <link rel="icon" type="image/svg+xml" href="mark.svg?v=4">
-  <link rel="stylesheet" href="styles.css?v=7">
-  <script type="module" src="app.js?v=7"></script>
+  <link rel="stylesheet" href="styles.css?v=8">
+  <script type="module" src="app.js?v=8"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to the simulator</a>
@@ -21,7 +21,10 @@
     <div class="intro">
       <h1>How much cash is left<br class="desktop-break"> <span>after debt comes due?</span></h1>
       <p>Choose a company and test how higher rates, less refinancing or weaker operations affect its cash.</p>
-      <button id="start-nucor-guide" class="guide-start" type="button" aria-controls="nucor-walkthrough" aria-expanded="false" hidden>Start the Nucor walkthrough <span aria-hidden="true">→</span></button>
+      <div id="intro-actions" class="intro-actions" hidden>
+        <button id="start-nucor-guide" class="guide-start" type="button" aria-controls="nucor-walkthrough" aria-expanded="false" hidden>Start the Nucor walkthrough <span aria-hidden="true">→</span></button>
+        <a href="#steel-comparison" class="peer-jump">Compare steel producers ↓</a>
+      </div>
     </div>
 
     <noscript><p class="notice">Enable JavaScript to choose a company and run a scenario.</p></noscript>
@@ -49,6 +52,7 @@
         <div class="guide-footer">
           <p class="muted">Illustrative year-end cash. The simulator repeats FY2025 capital spending and excludes dividends, buybacks and acquisitions.</p>
           <div class="guide-actions">
+            <a id="guide-peer-link" href="#steel-comparison" hidden>Compare with Steel Dynamics ↓</a>
             <button id="guide-reapply" class="text-button" type="button" hidden>Reapply this step</button>
             <button id="guide-back" class="guide-back" type="button" disabled>Back</button>
             <button id="guide-next" class="guide-next" type="button">Next</button>
@@ -198,6 +202,31 @@
             <details><summary>How it works</summary><p>The model finds the smallest whole percentage that maintains your reserve at each year-end through the selected year, given your interest rate and operating cash flow assumptions.</p></details>
           </div>
         </div>
+      </section>
+
+      <section id="steel-comparison" class="panel peer-comparison" aria-labelledby="peer-title" tabindex="-1" hidden>
+        <h2 id="peer-title">Nucor vs. Steel Dynamics</h2>
+        <p class="muted peer-intro">Two U.S. steel producers. See how the same scenario affects the cash each has left through 2027.</p>
+        <div class="presets" role="group" aria-label="Shared scenario for both steel producers">
+          <button type="button" data-peer-scenario="reference" aria-pressed="false">Reference</button>
+          <button type="button" data-peer-scenario="costly" aria-pressed="false">Higher rates</button>
+          <button type="button" data-peer-scenario="stress" aria-pressed="true">Combined stress</button>
+          <button type="button" data-peer-scenario="response" aria-pressed="false">Refinance 80%</button>
+        </div>
+        <p id="peer-settings" class="guide-settings peer-settings" aria-live="polite"></p>
+        <div id="peer-results" class="peer-results"></div>
+        <p id="peer-takeaway" class="peer-takeaway" aria-live="polite"></p>
+        <details class="peer-details">
+          <summary>How each cash balance adds up</summary>
+          <table class="cash-table peer-table">
+            <caption>Cash bridge through 2027, USD millions</caption>
+            <thead>
+              <tr><th scope="col">Cash driver</th><th scope="col">Nucor</th><th scope="col">Steel Dynamics</th></tr>
+            </thead>
+            <tbody id="peer-bridge"></tbody>
+          </table>
+          <p>Both models repeat their own FY2025 capital spending. The bridge includes the change in interest from refinancing and Nucor’s assumed 2026 short-term debt repayment. Dividends, buybacks and acquisitions are excluded. The shared reserve is illustrative.</p>
+        </details>
       </section>
 
       <div id="downloads" class="resources">

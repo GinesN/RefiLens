@@ -1,6 +1,7 @@
 import { drawTrajectory } from "./chart.js?v=6";
 import { bindMatrix } from "./sensitivity.js?v=6";
-import { bindNucorGuide } from "./nucor-guide.js?v=7";
+import { bindNucorGuide } from "./nucor-guide.js?v=8";
+import { bindSteelComparison } from "./steel-comparison.js?v=8";
 
 const byId = (id) => document.getElementById(id);
 const controls = ["share", "rate", "decline"];
@@ -353,7 +354,7 @@ function applyGuideScenario(ticker, year, reserve, values) {
 }
 
 async function init() {
-  const response = await fetch(new URL("./companies.json?v=6", import.meta.url));
+  const response = await fetch(new URL("./companies.json?v=8", import.meta.url));
   if (!response.ok) throw new Error("The company data could not be loaded.");
   data = await response.json();
   byId("company").replaceChildren(...data.companies.map(
@@ -392,8 +393,11 @@ async function init() {
       failed: !byId("retry").hidden,
     }),
   });
+  const steelComparison = bindSteelComparison({ comparison: data.steel_comparison, money, millions });
+  byId("intro-actions").hidden = false;
   new ResizeObserver(redraw).observe(byId("cash-chart"));
   if (location.hash === "#nucor-walkthrough") nucorGuide.open();
+  if (location.hash === "#steel-comparison") steelComparison.scrollIntoView();
   if (location.hash === "#case") {
     byId("case").open = true;
     byId("case").scrollIntoView();
