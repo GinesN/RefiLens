@@ -1,6 +1,6 @@
 # Local research workspace
 
-The Next.js and FastAPI workspace includes detailed filing evidence, year-by-year cash assumptions, scenario exports and the extended Nucor research case. For the version that opens without installation, use the [public simulator](https://ginesn.github.io/RefiLens/).
+The Next.js and FastAPI workspace includes detailed filing evidence, year-by-year cash assumptions, scenario exports and the extended Nucor research case. For the version that opens without installation, use the [public simulator](https://refilens.pages.dev/).
 
 ## Quick start
 

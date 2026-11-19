@@ -2,9 +2,9 @@
 
 ## Open the public simulator
 
-- [Live simulator](https://ginesn.github.io/RefiLens/)
-- [Guided Nucor liquidity case](https://ginesn.github.io/RefiLens/#nucor-walkthrough)
-- [Nucor and Steel Dynamics comparison](https://ginesn.github.io/RefiLens/#steel-comparison)
+- [Live simulator](https://refilens.pages.dev/)
+- [Guided Nucor liquidity case](https://refilens.pages.dev/#nucor-walkthrough)
+- [Nucor and Steel Dynamics comparison](https://refilens.pages.dev/#steel-comparison)
 - [Project README and walkthrough](../README.md)
 
 ## Inspect the financial work
