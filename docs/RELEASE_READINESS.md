@@ -1,6 +1,6 @@
 # Presentation release readiness
 
-Reviewed 17 November 2026. The public source repository, remote GitHub CI and static project overview with report downloads are verified. Publication privacy checks pass after the owner completed GitHub identity verification. Full interactive public hosting, independent owner accounting review and solo authorship are not claimed.
+This records the original presentation release reviewed on 17 November 2026, including the first Pages deployment and the local Next.js and FastAPI workspace. For the current public simulator, guided case and steel comparison, see the [public deployment guide](PUBLICATION.md).
 
 ## Ready to demonstrate
 
@@ -31,7 +31,7 @@ Supplementary WebKit checks use native macOS Option-Tab for keyboard links, cons
 
 **Completed public repository:** [GinesN/RefiLens](https://github.com/GinesN/RefiLens) contains the source, authentic offline evidence, documentation, issue/PR templates and portable reports. The [public overview](https://ginesn.github.io/RefiLens/) presents the research and downloads. The initial email-bearing history was made private and retained as a backup; the new public repository has independently checked anonymous commit metadata. No historical internet-wide erasure is claimed. D8a is VERIFIED. See PUBLICATION.md for maintenance paths.
 
-**Full interactive public delivery:** no connected Python-capable hosting service has been configured. Localhost links work on the running Mac. The public overview and document pack can present the research, but a full app release needs a host that preserves both Next.js and the Python engine, followed by actual hosted verification. GitHub Pages cannot execute this FastAPI backend.
+**Hosting the full research workspace.** The public simulator is interactive and runs the Python calculations in the browser. The full Next.js and FastAPI workspace runs locally. Hosting that workspace requires a Python-capable service and a separate deployment check. [Architecture](ARCHITECTURE.md)
 
 For that release, use clearly labelled authentic offline snapshots unless live server-side ingestion is deliberately configured. Keep SEC contact only in server secrets, preserve the API allowlist, exclude local data/cache and verify actual hosted source evidence, case replay, downloads and readiness before claiming deployment. Do not replace unsupported live calculations with precomputed responses presented as interactive results.
 

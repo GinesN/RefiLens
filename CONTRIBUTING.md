@@ -13,6 +13,6 @@ Start with [the architecture](docs/ARCHITECTURE.md) and [financial methodology](
 
 ## Verification
 
-Run `./scripts/check.sh`. For affected user flows, start the app and run `pnpm --dir apps/web test:browser` after installing the Chromium browser. The README documents artifact verification and optional WebKit checks.
+Run `./scripts/check.sh`. For affected user flows, start the app and run `pnpm --dir apps/web test:browser` after installing Chromium. The local workspace guide covers artifact verification and optional WebKit checks. The public deployment guide covers the standalone simulator build. [Local workspace guide](docs/LOCAL_WORKSPACE.md) · [Public simulator build](docs/PUBLICATION.md)
 
 Describe the concrete behavior changed, source/model implications and checks actually executed. Include a screenshot for visible UI changes. Keep generated logs, databases, local paths, credentials and SEC contact details out of commits. Do not claim checks, authorship or accounting review that did not occur.

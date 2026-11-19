@@ -2,12 +2,13 @@
 
 ## Links to share
 
-- Source and documentation: https://github.com/GinesN/RefiLens
-- Public refinancing simulator: https://ginesn.github.io/RefiLens/
-- Software checks: https://github.com/GinesN/RefiLens/actions/workflows/ci.yml
-- Static-page deployments: https://github.com/GinesN/RefiLens/actions/workflows/pages.yml
+- [Public refinancing simulator](https://ginesn.github.io/RefiLens/)
+- [Nucor walkthrough](https://ginesn.github.io/RefiLens/#nucor-walkthrough)
+- [Steel producer comparison](https://ginesn.github.io/RefiLens/#steel-comparison)
+- [Source and documentation](https://github.com/GinesN/RefiLens)
+- [Software checks](https://github.com/GinesN/RefiLens/actions/workflows/ci.yml) and [Pages deployments](https://github.com/GinesN/RefiLens/actions/workflows/pages.yml)
 
-Verified 17 November 2026: [software checks](https://github.com/GinesN/RefiLens/actions/runs/44140620714), [Pages publication, attempt 2](https://github.com/GinesN/RefiLens/actions/runs/44140621155), anonymous access and exact hashes for the public HTML, screenshot and five downloadable reports. The public Git history uses anonymous GitHub author/committer addresses. Dated evidence and remaining gates are in VALIDATION_REPORT.md and ROADMAP.md.
+The initial release was verified on 17 November 2026. That release included anonymous access and matching hashes for the original HTML, screenshot and report downloads. The workflow links above track the current release. [Original CI run](https://github.com/GinesN/RefiLens/actions/runs/44140620714) · [Original Pages run](https://github.com/GinesN/RefiLens/actions/runs/44140621155) · [Validation report](VALIDATION_REPORT.md)
 
 The public English interface lets readers choose one of five issuers, explore its disclosed maturity schedule and change the refinancing share, interest rate and operating cash flow. It projects five annual closing balances for the edited assumptions and compares them with a reference that refinances 100% at 6% and repeats FY2025 operating cash flow. Selecting a year shows its closing balances and reconciles the cumulative difference into operating cash, principal paid with cash and interest. The last maturity column preserves the filing's grouped later maturities. The Nucor case stays available as a separate PDF.
 
@@ -23,7 +24,8 @@ The public site loads validated FY2025 USD values from a small build-time export
 
 | Change | Source |
 |---|---|
-| Repository introduction and setup | `README.md` |
+| Repository introduction and demo | `README.md` |
+| Local workspace setup and reproduction | `docs/LOCAL_WORKSPACE.md` |
 | Public simulator | `site/` for the interface, chart, sensitivity table, browser worker and Python model adapter |
 | Files included in the public site | `scripts/build_public_site.py` (explicit allowlist) |
 | Full interactive workspace | `apps/web` |
@@ -32,7 +34,14 @@ The public site loads validated FY2025 USD values from a small build-time export
 | Downloadable final reports | `apps/web/public/research` |
 | Automated checks and deployment | `.github/workflows/ci.yml` and `pages.yml` |
 
-Build a local copy with `python3 scripts/build_public_site.py`, then serve `data/public-site` over HTTP. The build fetches the pinned runtime and license on first use and keeps them in an ignored cache. Updates to `main` run software checks and publish the simulator through GitHub Actions. Inspect both workflow results after changes.
+Build a local copy with Python 3.12 or later. The build fetches the pinned runtime and license on its first run and keeps them in an ignored cache.
+
+```sh
+python3 scripts/build_public_site.py
+python3 -m http.server 8200 --bind 127.0.0.1 --directory data/public-site
+```
+
+Open the [local simulator](http://127.0.0.1:8200). Updates to `main` run software checks and publish the simulator through GitHub Actions. Inspect both workflow results after changes.
 
 Use a small branch for future work, describe the change and validation in a pull request, and keep the roadmap tied to actual acceptance evidence. Preserve source dates and original hashes. The documented FY2025 inputs remain historical until an explicitly validated ingestion updates them.
 
