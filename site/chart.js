@@ -1,5 +1,5 @@
 // Render dollar amounts already calculated by the Python model.
-const tickFormat = new Intl.NumberFormat("es-ES", { maximumFractionDigits: 1 });
+const tickFormat = new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 });
 
 export function drawTrajectory(canvas, opening, rows, endYear, reserve) {
   const { width, height } = canvas.getBoundingClientRect();

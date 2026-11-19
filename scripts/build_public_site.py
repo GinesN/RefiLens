@@ -21,11 +21,11 @@ from app.extraction.profiles import profile_for
 from model import DEFAULTS, PRESETS, analyze
 
 ISSUERS = {
-    "NUE": ("Nucor", "Principal de deuda a largo plazo. Excluye arrendamientos financieros y deuda a corto plazo."),
-    "STLD": ("Steel Dynamics", "Principal de deuda a largo plazo. La caja que se muestra excluye el efectivo restringido."),
-    "RS": ("Reliance", "Principal de deuda a largo plazo. El informe indica un vencimiento de cero en 2027."),
-    "LECO": ("Lincoln Electric", "El tramo de 2026 ya incluye los préstamos bancarios a corto plazo."),
-    "ITW": ("Illinois Tool Works", "Principal de deuda a largo plazo. El papel comercial se muestra por separado en el cálculo."),
+    "NUE": ("Nucor", "Scheduled long-term debt principal excludes finance leases and short-term debt."),
+    "STLD": ("Steel Dynamics", "Scheduled long-term debt principal. The displayed cash balance excludes restricted cash."),
+    "RS": ("Reliance", "Scheduled long-term debt principal. The filing reports zero principal due in 2027."),
+    "LECO": ("Lincoln Electric", "The 2026 maturity bucket includes short-term bank borrowings."),
+    "ITW": ("Illinois Tool Works", "Scheduled long-term debt principal. Commercial paper appears separately in the cash bridge."),
 }
 RUNTIME = {
     "pyodide.tgz": (

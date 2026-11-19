@@ -1,16 +1,21 @@
-import { drawTrajectory } from "./chart.js?v=4";
-import { bindMatrix } from "./sensitivity.js?v=3";
+import { drawTrajectory } from "./chart.js?v=6";
+import { bindMatrix } from "./sensitivity.js?v=6";
 
 const byId = (id) => document.getElementById(id);
 const controls = ["share", "rate", "decline"];
 const presetButtons = [...document.querySelectorAll("[data-preset]")];
-const formatter = new Intl.NumberFormat("es-ES", { maximumFractionDigits: 2, useGrouping: "always" });
-const smallFormatter = new Intl.NumberFormat("es-ES", { maximumFractionDigits: 6 });
+const formatter = new Intl.NumberFormat("en-US", { maximumFractionDigits: 2, useGrouping: "always" });
+const smallFormatter = new Intl.NumberFormat("en-US", { maximumFractionDigits: 6 });
+
+function millions(amount) {
+  const value = Number(amount) / 1_000_000;
+  const format = Math.abs(value) < 1 ? smallFormatter : formatter;
+  return format.format(value);
+}
 
 function money(amount) {
-  const millions = Number(amount) / 1_000_000;
-  const format = Math.abs(millions) < 1 ? smallFormatter : formatter;
-  return `${format.format(millions)} M USD`;
+  const negative = Number(amount) < 0;
+  return `${negative ? "−" : ""}$${millions(Math.abs(Number(amount)))}m`;
 }
 
 function setText(id, value) {
@@ -45,19 +50,19 @@ function difference(amount) {
 function showCash(result) {
   byId("result").dataset.negative = Number(result.closing) < 0;
   setText("closing-cash", money(result.closing));
-  let note = `${difference(result.delta)} frente a la referencia.`;
-  if (Number(result.delta) === 0) note = "La caja coincide con la referencia.";
-  if (Number(result.closing) < 0) note = "Falta caja para cubrir los pagos de este escenario.";
+  let note = `${difference(result.delta)} vs. the reference case.`;
+  if (Number(result.delta) === 0) note = "Cash matches the reference case.";
+  if (Number(result.closing) < 0) note = "This scenario has a funding shortfall.";
   setText("result-note", note);
   const rows = [
-    ["Caja al inicio del año", result.opening],
-    ["Caja que genera el negocio", result.cash_from_operations],
-    ["Inversión que se paga", company.capital_expenditure],
-    ["Vencimientos que se pagan con caja", result.debt_from_cash],
+    ["Opening cash", result.opening],
+    ["Operating cash flow", result.cash_from_operations],
+    ["Capital spending", company.capital_expenditure],
+    ["Maturing principal paid from cash", result.debt_from_cash],
     ...(Number(result.other_uses) > 0
-      ? [["Pago supuesto de deuda a corto plazo", result.other_uses]]
+      ? [["Assumed short-term debt repayment", result.other_uses]]
       : []),
-    ["Cambio en intereses pagados", result.interest_change],
+    ["Change in cash interest", result.interest_change],
   ];
   bridge.replaceChildren(...rows.map(([label, amount]) => {
     const row = document.createElement("div");
@@ -84,16 +89,16 @@ function showLimits(result, yearIndex) {
   byId("limits-data").hidden = false;
   byId("limites").dataset.loading = "false";
   byId("limits-status").hidden = true;
-  setText("matrix-period", `${company.name} · ${period} · Caída de caja operativa del ${decline} %`);
+  setText("matrix-period", `${company.name} · ${period} · Operating cash flow down ${decline}%`);
   renderMatrix(analysis.matrix, yearIndex, share, rate);
   const minimum = result.minimum_share;
   const apply = byId("apply-minimum");
   apply.hidden = minimum === null || minimum === share;
-  setText("minimum-share", minimum === null ? "Inalcanzable" : `${minimum} %`);
-  const conditions = `al ${formatter.format(rate)} % de interés, hasta ${endYear}`;
-  let note = `Para mantener ${money(target)} en cada cierre ${conditions}.`;
-  if (minimum === null) note = `Refinanciar el 100 % ${conditions}, no basta para mantener ${money(target)}.`;
-  if (minimum === 0) note = `Sin refinanciar, la caja más baja hasta ${endYear} sería de ${money(result.cash_without_refinancing)}. Cubre la reserva de ${money(target)}.`;
+  setText("minimum-share", minimum === null ? "Unreachable" : `${minimum}%`);
+  const conditions = `at ${formatter.format(rate)}% through ${endYear}`;
+  let note = `To keep ${money(target)} at every year-end ${conditions}.`;
+  if (minimum === null) note = `Even 100% refinancing ${conditions} falls short of the ${money(target)} reserve.`;
+  if (minimum === 0) note = `With zero refinancing, the lowest year-end cash through ${endYear} is ${money(result.cash_without_refinancing)}, enough to cover the ${money(target)} reserve.`;
   setText("minimum-note", note);
   setText("reserve-lowest", money(result.lowest));
   setText("reserve-headroom", difference(result.reserve_headroom));
@@ -101,8 +106,8 @@ function showLimits(result, yearIndex) {
   byId("reserve-result").hidden = target === 0;
   if (target > 0) {
     setText("reserve-result", Number(result.reserve_gap) > 0
-      ? `Faltan hasta ${money(result.reserve_gap)} para alcanzar la reserva en todos los cierres del periodo.`
-      : `La reserva de ${money(target)} se mantiene en todos los cierres del periodo.`);
+      ? `The largest shortfall against the reserve is ${money(result.reserve_gap)}.`
+      : `Cash meets the ${money(target)} reserve at every year-end.`);
   }
 }
 
@@ -116,14 +121,14 @@ function showSelectedYear() {
     button.setAttribute("aria-pressed", String(Number(button.textContent) === endYear));
   });
   const first = company.period.year + 1;
-  setText("driver-period", endYear === first ? `Efecto en ${first}` : `Efecto acumulado de ${first} a ${endYear}`);
+  setText("driver-period", endYear === first ? `Impact in ${first}` : `Cumulative impact, ${first}–${endYear}`);
   for (const key of ["operations", "principal", "interest", "total"]) {
     const amount = key === "total" ? result.delta : result[`${key}_effect`];
     const element = byId(`${key}-effect`);
     element.textContent = difference(amount);
     element.dataset.sign = Number(amount) < 0 ? "loss" : Number(amount) > 0 ? "gain" : "flat";
   }
-  setText("baseline-cash", `Caja de referencia al cierre: ${money(result.reference)}.`);
+  setText("baseline-cash", `Reference case year-end cash: ${money(result.reference)}.`);
   redraw();
 }
 
@@ -148,8 +153,8 @@ function showProjection(result) {
   byId("reserve-key").hidden = !withReserve;
   byId("first-gap").hidden = !firstGap;
   if (firstGap) setText("first-gap", withReserve
-    ? `Primer cierre por debajo de la reserva: ${firstGap.year}.`
-    : `La caja cae por debajo de cero por primera vez en ${firstGap.year}.`);
+    ? `First year-end below the reserve: ${firstGap.year}.`
+    : `Cash first turns negative in ${firstGap.year}.`);
   byId("cash-table-body").replaceChildren(...rows.map(({ year, reference, closing }) => {
     const tr = document.createElement("tr");
     const title = document.createElement("th");
@@ -158,7 +163,7 @@ function showProjection(result) {
     tr.append(title);
     for (const amount of [reference, closing]) {
       const td = document.createElement("td");
-      td.textContent = money(amount).replace(" M USD", "");
+      td.textContent = millions(amount);
       tr.append(td);
     }
     return tr;
@@ -187,9 +192,9 @@ function unavailable() {
   stopWorker();
   setText("closing-cash", "—");
   setText("result-note", "");
-  setText("comparison-status", "No se pudo calcular la comparación.");
-  setText("limits-status", "No se pudieron calcular los límites.");
-  status("No se pudo calcular este escenario.", true);
+  setText("comparison-status", "The comparison could not be calculated.");
+  setText("limits-status", "The refinancing limits could not be calculated.");
+  status("The scenario could not be calculated.", true);
 }
 
 function getWorker() {
@@ -216,7 +221,7 @@ function getWorker() {
 
 function calculate() {
   const values = Object.fromEntries(controls.map((key) => [key, byId(key).value]));
-  for (const key of controls) setText(`${key}-label`, `${formatter.format(values[key])} %`);
+  for (const key of controls) setText(`${key}-label`, `${formatter.format(values[key])}%`);
   for (const button of presetButtons) {
     button.setAttribute("aria-pressed", String(matches(values, data.presets[button.dataset.preset])));
   }
@@ -239,18 +244,18 @@ function calculate() {
   byId("reserve-result").hidden = true;
   bridge.replaceChildren();
   byId("comparison").dataset.loading = "true";
-  setText("comparison-status", "Actualizando la comparación…");
+  setText("comparison-status", "Updating the comparison…");
   byId("comparison-status").hidden = false;
   byId("limites").dataset.loading = "true";
   byId("limits-status").hidden = false;
   if (!validReserve) {
-    setText("comparison-status", "Corrige el importe de la reserva de caja.");
-    setText("limits-status", "Corrige el importe de la reserva de caja.");
-    status("Corrige el importe de la reserva de caja.");
+    setText("comparison-status", "Enter a valid cash reserve.");
+    setText("limits-status", "Enter a valid cash reserve.");
+    status("Enter a valid cash reserve.");
     return;
   }
-  setText("limits-status", "Calculando las combinaciones…");
-  status("Calculando…");
+  setText("limits-status", "Calculating combinations…");
+  status("Calculating…");
   debounceTimer = setTimeout(() => {
     try {
       getWorker().postMessage({ id, company, controls: { ...values, reserve: String(Number(reserve)) } });
@@ -265,15 +270,15 @@ function chooseBucket(index) {
   const entry = company.schedule[index];
   bucketButtons.forEach((button, i) => button.setAttribute("aria-pressed", String(index === i)));
   if (entry.year === null) {
-    setText("selected-bucket", `Desde ${company.period.year + 6} · ${money(entry.amount)} en total, sin desglose anual.`);
+    setText("selected-bucket", `${company.period.year + 6} and later · ${money(entry.amount)} in total, with no annual breakdown.`);
     return;
   }
   endYear = entry.year;
   const first = company.period.year + 1;
   const horizon = endYear === first ? String(first) : `${first}–${endYear}`;
-  setText("selected-bucket", `${endYear} · ${money(entry.amount)} de principal`);
-  setText("simulation-period", `Escenario ${horizon} · ${money(entry.amount)} vencen en ${endYear}`);
-  setText("result-caption", `Caja estimada al final de ${endYear}`);
+  setText("selected-bucket", `${endYear} · ${money(entry.amount)} in principal`);
+  setText("simulation-period", `${horizon} scenario · ${money(entry.amount)} due in ${endYear}`);
+  setText("result-caption", `Projected cash at ${endYear} year-end`);
   showSelectedYear();
 }
 
@@ -317,16 +322,16 @@ function selectCompany() {
   setText("source-cfo", money(company.operating_cash_flow));
   setText("source-scope", source.scope);
   const filed = new Date(`${source.filed}T00:00:00Z`);
-  const filedLabel = new Intl.DateTimeFormat("es-ES", { dateStyle: "long", timeZone: "UTC" }).format(filed);
-  setText("filing-date", `Informe 10-K del ejercicio ${period.year}, publicado el ${filedLabel}. Referencia SEC ${source.accession}.`);
+  const filedLabel = new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeZone: "UTC" }).format(filed);
+  setText("filing-date", `FY${period.year} Form 10-K, filed ${filedLabel}. SEC accession ${source.accession}.`);
   byId("filing-link").href = source.url;
   renderSchedule();
   loadControls(data.defaults);
 }
 
 async function init() {
-  const response = await fetch(new URL("./companies.json?v=5", import.meta.url));
-  if (!response.ok) throw new Error("No se pudieron cargar los datos.");
+  const response = await fetch(new URL("./companies.json?v=6", import.meta.url));
+  if (!response.ok) throw new Error("The company data could not be loaded.");
   data = await response.json();
   byId("company").replaceChildren(...data.companies.map(
     (entry) => new Option(`${entry.name} (${entry.ticker})`, entry.ticker),

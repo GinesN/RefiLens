@@ -1,36 +1,36 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Explora los vencimientos reales de cinco empresas y simula cómo cambia su caja al refinanciar deuda.">
+  <meta name="description" content="Explore five companies’ disclosed debt maturities and model how refinancing changes their cash balances.">
   <meta name="theme-color" content="#f5f1eb">
-  <title>RefiLens · Simulador de refinanciación</title>
+  <title>RefiLens · Corporate Debt &amp; Liquidity</title>
   <link rel="icon" type="image/svg+xml" href="mark.svg?v=4">
-  <link rel="stylesheet" href="styles.css?v=5">
-  <script type="module" src="app.js?v=5"></script>
+  <link rel="stylesheet" href="styles.css?v=6">
+  <script type="module" src="app.js?v=6"></script>
 </head>
 <body>
-  <a class="skip" href="#main">Saltar al simulador</a>
+  <a class="skip" href="#main">Skip to the simulator</a>
   <header class="shell masthead">
-    <a class="brand" href="./"><img src="mark.svg?v=4" width="33" height="33" alt="">RefiLens</a>
-    <span class="header-note">Datos anuales de 2025 · USD</span>
+    <a class="brand" href="./"><img src="mark.svg?v=4" width="48" height="48" alt=""><span class="brand-wordmark">RefiLens<small>Debt &amp; liquidity analysis</small></span></a>
+    <span class="header-note">FY2025 filings · USD</span>
   </header>
 
   <main id="main" class="shell">
     <div class="intro">
-      <h1>¿Cuánta caja queda<br class="desktop-break"> <span>tras pagar la deuda?</span></h1>
-      <p>Elige una empresa y prueba qué pasa si refinancia menos deuda o paga más intereses.</p>
+      <h1>How much cash is left<br class="desktop-break"> <span>after debt comes due?</span></h1>
+      <p>Choose a company and test how higher rates, less refinancing or weaker operations affect its cash.</p>
     </div>
 
-    <noscript><p class="notice">Activa JavaScript para elegir una empresa y utilizar el simulador.</p></noscript>
-    <p class="notice" id="load-error" role="alert" hidden>No se pudieron cargar los datos. <a href="./">Volver a intentar</a></p>
+    <noscript><p class="notice">Enable JavaScript to choose a company and run a scenario.</p></noscript>
+    <p class="notice" id="load-error" role="alert" hidden>The company data could not be loaded. <a href="./">Try again</a></p>
 
     <div id="workspace" hidden>
       <div class="company-select">
-        <label for="company">Empresa</label>
+        <label for="company">Company</label>
         <select id="company"></select>
-        <a href="#limites" class="limits-jump">Explorar límites ↓</a>
+        <a href="#limites" class="limits-jump">Explore refinancing needs ↓</a>
       </div>
 
       <div class="grid">
@@ -40,58 +40,58 @@
             <span id="company-ticker" class="ticker"></span>
           </div>
           <dl class="facts">
-            <div><dt>Caja al cierre de 2025</dt><dd id="opening-cash"></dd></div>
-            <div><dt>Caja generada en 2025</dt><dd id="source-cfo"></dd></div>
+            <div><dt>Cash at FY2025 close</dt><dd id="opening-cash"></dd></div>
+            <div><dt>FY2025 operating cash flow</dt><dd id="source-cfo"></dd></div>
           </dl>
-          <h3>¿Cuándo vence su deuda?</h3>
-          <p class="muted chart-caption">Toca un año para simular hasta ese cierre.</p>
-          <div id="schedule" class="chart" role="group" aria-label="Vencimientos de deuda"></div>
+          <h3>Debt maturities</h3>
+          <p class="muted chart-caption">Select a year to model cash through that year-end.</p>
+          <div id="schedule" class="chart" role="group" aria-label="Debt maturities"></div>
           <p id="selected-bucket" class="bucket" aria-live="polite"></p>
           <details class="source">
-            <summary>Fuente y alcance</summary>
+            <summary>Filing and scope</summary>
             <p id="source-scope"></p>
             <p id="filing-date"></p>
-            <a id="filing-link" target="_blank" rel="noopener noreferrer">Abrir informe anual en la SEC ↗</a>
+            <a id="filing-link" target="_blank" rel="noopener noreferrer">View the SEC filing ↗</a>
           </details>
         </section>
 
         <section class="panel simulation" aria-labelledby="sim-title">
-          <h2 id="sim-title">Simula la refinanciación</h2>
+          <h2 id="sim-title">Refinancing simulator</h2>
           <p id="simulation-period" class="sim-period"></p>
-          <div class="presets" role="group" aria-label="Escenarios predefinidos">
-            <button type="button" data-preset="reference">Referencia</button>
-            <button type="button" data-preset="costly">Interés más alto</button>
-            <button type="button" data-preset="stress">Presión combinada</button>
+          <div class="presets" role="group" aria-label="Scenario presets">
+            <button type="button" data-preset="reference">Reference</button>
+            <button type="button" data-preset="costly">Higher rates</button>
+            <button type="button" data-preset="stress">Combined stress</button>
           </div>
           <div class="controls">
             <div class="control">
-              <label for="share">Deuda que consigues refinanciar <output for="share" id="share-label">75 %</output></label>
+              <label for="share">Share of maturing debt refinanced <output for="share" id="share-label">75%</output></label>
               <input id="share" type="range" min="0" max="100" step="1" value="75">
             </div>
             <div class="control">
-              <label for="rate">Interés del préstamo nuevo <output for="rate" id="rate-label">6 %</output></label>
+              <label for="rate">New borrowing rate <output for="rate" id="rate-label">6%</output></label>
               <input id="rate" type="range" min="0" max="15" step="0.25" value="6">
             </div>
             <div class="control">
-              <label for="decline">Caída de la caja que genera el negocio <output for="decline" id="decline-label">0 %</output></label>
+              <label for="decline">Decline in operating cash flow <output for="decline" id="decline-label">0%</output></label>
               <input id="decline" type="range" min="0" max="60" step="1" value="0">
             </div>
           </div>
           <div class="result" id="result">
-            <div class="result-caption" id="result-caption">Caja estimada al final de 2026</div>
+            <div class="result-caption" id="result-caption">Projected cash at 2026 year-end</div>
             <p class="result-value" id="closing-cash" aria-live="polite" aria-atomic="true"></p>
             <p class="result-note" id="result-note"></p>
             <p class="result-note" id="reserve-result" hidden></p>
           </div>
           <p id="model-status" class="muted model-status" role="status" hidden></p>
-          <button type="button" class="text-button" id="retry" hidden>Reintentar cálculo</button>
+          <button type="button" class="text-button" id="retry" hidden>Retry calculation</button>
           <div class="sim-actions">
             <details class="model">
-              <summary>Ver el cálculo y los supuestos</summary>
+              <summary>Cash bridge and assumptions</summary>
               <dl id="bridge" class="bridge"></dl>
-              <p>El detalle muestra el último año simulado. El modelo repite la caja operativa y la inversión de 2025 cada año, con los ajustes que elijas. Aplica a la deuda que vence un interés anterior supuesto del 4 %. Supone refinanciación a principio de año, sin comisiones. El cálculo excluye dividendos, recompras y adquisiciones.</p>
+              <p>The bridge shows the selected year. The model holds FY2025 capital spending constant and applies your operating cash flow adjustment each year. It assumes a 4% coupon on retiring debt and new borrowing at the start of each year, with zero fees. Dividends, buybacks and acquisitions are outside this simulation.</p>
             </details>
-            <button type="button" class="text-button" id="reset">Restablecer</button>
+            <button type="button" class="text-button" id="reset">Reset</button>
           </div>
         </section>
       </div>
@@ -99,34 +99,34 @@
       <section id="comparison" class="panel comparison" aria-labelledby="comparison-title">
         <div class="comparison-header">
           <div>
-            <h2 id="comparison-title">Evolución de la caja</h2>
-            <p class="muted">Referencia: refinancia el 100 % al 6 % y repite la caja operativa de 2025.</p>
+            <h2 id="comparison-title">Projected cash balances</h2>
+            <p class="muted">Reference case assumes 100% refinancing at 6% and repeats FY2025 operating cash flow.</p>
           </div>
-          <div class="legend" aria-label="Series en millones de dólares"><small>M USD</small><span>Referencia</span><span>Tu escenario</span><span class="reserve-key" id="reserve-key" hidden>Reserva elegida</span></div>
+          <div class="legend" aria-label="Cash in USD millions"><small>USD m</small><span>Reference</span><span>Your scenario</span><span class="reserve-key" id="reserve-key" hidden>Cash reserve</span></div>
         </div>
-        <p id="comparison-status" class="muted" hidden>Actualizando la comparación…</p>
+        <p id="comparison-status" class="muted" hidden>Updating the comparison…</p>
         <div class="comparison-grid" id="comparison-data" hidden>
           <div class="trajectory">
             <canvas id="cash-chart" aria-hidden="true"></canvas>
-            <div id="cash-years" class="cash-years" role="group" aria-label="Seleccionar año de caja"></div>
+            <div id="cash-years" class="cash-years" role="group" aria-label="Select a projection year"></div>
             <p id="first-gap" class="gap-note" hidden></p>
             <details>
-              <summary>Ver cifras por año</summary>
+              <summary>View annual figures</summary>
               <table class="cash-table">
-                <caption>Caja al cierre en millones de dólares</caption>
-                <thead><tr><th scope="col">Año</th><th scope="col">Referencia</th><th scope="col">Tu escenario</th></tr></thead>
+                <caption>Year-end cash in USD millions</caption>
+                <thead><tr><th scope="col">Year</th><th scope="col">Reference</th><th scope="col">Your scenario</th></tr></thead>
                 <tbody id="cash-table-body"></tbody>
               </table>
             </details>
           </div>
           <div class="drivers">
-            <h3 id="drivers-title">Qué mueve el resultado</h3>
+            <h3 id="drivers-title">What drives the difference?</h3>
             <p class="muted" id="driver-period"></p>
             <dl class="driver-list">
-              <div><dt>Caja del negocio</dt><dd id="operations-effect"></dd></div>
-              <div><dt>Deuda que pagas con caja</dt><dd id="principal-effect"></dd></div>
-              <div><dt>Cambio en intereses</dt><dd id="interest-effect"></dd></div>
-              <div class="driver-total"><dt>Diferencia total</dt><dd id="total-effect"></dd></div>
+              <div><dt>Operating cash flow</dt><dd id="operations-effect"></dd></div>
+              <div><dt>Principal paid from cash</dt><dd id="principal-effect"></dd></div>
+              <div><dt>Change in interest</dt><dd id="interest-effect"></dd></div>
+              <div class="driver-total"><dt>Total difference</dt><dd id="total-effect"></dd></div>
             </dl>
             <p class="muted" id="baseline-cash"></p>
           </div>
@@ -136,54 +136,54 @@
       <section id="limites" class="panel limits" aria-labelledby="limits-title">
         <div class="limits-header">
           <div>
-            <h2 id="limits-title">¿Cuánto necesitas refinanciar?</h2>
-            <p class="muted">La reserva es tu objetivo de caja. Al cambiarla, se actualizan el margen y los colores de la tabla.</p>
+            <h2 id="limits-title">How much refinancing is needed?</h2>
+            <p class="muted">Set a minimum cash balance. The table shows which combinations meet it at every year-end.</p>
           </div>
           <div class="reserve-control">
-            <label for="reserve">Reserva de caja</label>
-            <div class="reserve-field"><input id="reserve" type="text" value="0" inputmode="numeric" autocomplete="off" aria-describedby="reserve-unit reserve-error"><span id="reserve-unit">M USD</span></div>
-            <p id="reserve-error" class="field-error" hidden>Introduce un número entero entre 0 y 10.000.</p>
+            <label for="reserve">Cash reserve target</label>
+            <div class="reserve-field"><input id="reserve" type="text" value="0" inputmode="numeric" autocomplete="off" aria-describedby="reserve-unit reserve-error"><span id="reserve-unit">USD m</span></div>
+            <p id="reserve-error" class="field-error" hidden>Enter a whole number from 0 to 10,000.</p>
           </div>
         </div>
         <p id="limits-status" class="muted" role="status" hidden></p>
         <div id="limits-data" class="limits-grid" hidden>
           <div>
             <p id="matrix-period" class="matrix-period"></p>
-            <p id="matrix-instruction" class="muted">Pulsa una celda para aplicar su tipo y porcentaje refinanciado.</p>
+            <p id="matrix-instruction" class="muted">Select a cell to apply its rate and refinancing share.</p>
             <table class="matrix" aria-describedby="matrix-period matrix-instruction matrix-legend">
-              <caption>Caja más baja en los cierres anuales (M USD)</caption>
+              <caption>Lowest year-end cash through the selected year (USD millions)</caption>
               <thead id="matrix-head"></thead>
               <tbody id="matrix-body"></tbody>
             </table>
-            <div class="matrix-legend" id="matrix-legend"><span data-level="meets">Alcanza la reserva</span><span data-level="below">Por debajo</span><span data-level="negative">Caja negativa</span></div>
+            <div class="matrix-legend" id="matrix-legend"><span data-level="meets">Meets reserve</span><span data-level="below">Below reserve</span><span data-level="negative">Negative cash</span></div>
           </div>
           <div class="threshold">
-            <h3>Mínimo a refinanciar</h3>
+            <h3>Minimum refinancing share</h3>
             <p id="minimum-share" class="minimum-share" aria-live="polite"></p>
             <p id="minimum-note" class="muted"></p>
             <dl class="reserve-readout">
-              <div><dt>Caja más baja de tu escenario</dt><dd id="reserve-lowest"></dd></div>
-              <div><dt>Margen frente a la reserva</dt><dd id="reserve-headroom" aria-live="polite"></dd></div>
+              <div><dt>Lowest cash in your scenario</dt><dd id="reserve-lowest"></dd></div>
+              <div><dt>Headroom above reserve</dt><dd id="reserve-headroom" aria-live="polite"></dd></div>
             </dl>
-            <button id="apply-minimum" type="button" class="threshold-button" hidden>Probar ese mínimo</button>
-            <details><summary>Cómo se calcula</summary><p>Busca el menor porcentaje entero que conserva la reserva en todos los cierres hasta el año elegido, con el interés y la caja operativa que has seleccionado.</p></details>
+            <button id="apply-minimum" type="button" class="threshold-button" hidden>Apply minimum share</button>
+            <details><summary>How it works</summary><p>The model finds the smallest whole percentage that maintains your reserve at each year-end through the selected year, given your interest rate and operating cash flow assumptions.</p></details>
           </div>
         </div>
       </section>
 
       <div id="downloads" class="resources">
         <details id="case">
-          <summary>Caso práctico de Nucor</summary>
-          <p>Explora cómo cambia la caja durante dos años al ajustar la operación, la refinanciación y las recompras de acciones. El informe indica sus propios supuestos y fecha de corte.</p>
-          <a href="reports/RefiLens_Nucor_Case_Study.pdf" target="_blank" rel="noopener">Leer el caso (PDF) ↗</a>
+          <summary>Nucor case study</summary>
+          <p>See how operations, refinancing and share buybacks affect Nucor’s cash over two years. The report includes its assumptions and filing cutoff.</p>
+          <a href="reports/RefiLens_Nucor_Case_Study.pdf" target="_blank" rel="noopener">Read the case study (PDF) ↗</a>
         </details>
       </div>
     </div>
   </main>
 
   <footer class="shell footer">
-    <span>RefiLens · Ejercicio con datos históricos y supuestos editables</span>
-    <a href="https://github.com/GinesN/RefiLens" target="_blank" rel="noopener noreferrer">Código fuente ↗</a>
+    <span>RefiLens · Historical filings · Illustrative scenarios</span>
+    <a href="https://github.com/GinesN/RefiLens" target="_blank" rel="noopener noreferrer">Source code ↗</a>
   </footer>
 </body>
 </html>

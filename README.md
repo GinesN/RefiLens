@@ -10,7 +10,7 @@ A strong interest-coverage ratio does not tell you whether cash can fund investm
 
 **Public repository:** [GinesN/RefiLens](https://github.com/GinesN/RefiLens) · [Documentation index](docs/README.md) · [Contribution guide](CONTRIBUTING.md)
 
-**Try the public simulator:** [ginesn.github.io/RefiLens](https://ginesn.github.io/RefiLens/). Choose an issuer, select a maturity year and change your refinancing assumptions. The interface is in Spanish.
+**Try the public simulator:** [ginesn.github.io/RefiLens](https://ginesn.github.io/RefiLens/). Choose an issuer, select a maturity year and change your refinancing assumptions.
 
 **Start locally:** [Project introduction](http://localhost:3000) · [Nucor case](http://localhost:3000/?company=NUE#case-study) · [Research workspace](http://localhost:3000/?company=NUE#overview)
 
@@ -212,6 +212,6 @@ See [release readiness](docs/RELEASE_READINESS.md) for local acceptance evidence
 | `fixtures` | Authentic filing derivatives, partial source evidence and explicitly synthetic test inputs |
 | `docs` | Financial definitions, completed case, provenance, limits and dated validation |
 | `scripts` | Repeatable setup, checks, source review and artifact helpers |
-| `site` | Public Spanish maturity explorer and browser-based refinancing simulator |
+| `site` | Public maturity explorer and browser-based refinancing simulator |
 
 Local caches, databases, configuration, build outputs and QA intermediates are ignored. Final downloadable artifacts are kept in `apps/web/public/research`. See [security](SECURITY.md) before sharing configuration or reports of a problem.
