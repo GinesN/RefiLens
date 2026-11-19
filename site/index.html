@@ -15,6 +15,14 @@
   <meta property="og:image:height" content="770">
   <meta property="og:image:alt" content="RefiLens showing the Nucor debt maturity chart and adjustable refinancing controls.">
   <title>RefiLens · Corporate Debt &amp; Liquidity</title>
+  <script>
+    if (location.hostname === "ginesn.github.io") {
+      const simulator = new URL("https://refilens.pages.dev/");
+      simulator.search = location.search;
+      simulator.hash = location.hash;
+      location.replace(simulator.href);
+    }
+  </script>
   <link rel="icon" type="image/svg+xml" href="mark.svg?v=4">
   <link rel="stylesheet" href="styles.css?v=8">
   <script type="module" src="app.js?v=8"></script>
@@ -36,7 +44,7 @@
       </div>
     </div>
 
-    <noscript><p class="notice">Enable JavaScript to choose a company and run a scenario.</p></noscript>
+    <noscript><p class="notice">Enable JavaScript to run a scenario. <a href="https://refilens.pages.dev/">Open the public simulator</a>.</p></noscript>
     <p class="notice" id="load-error" role="alert" hidden>The company data could not be loaded. <a href="./">Try again</a></p>
 
     <div id="workspace" hidden>
