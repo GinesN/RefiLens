@@ -2,7 +2,7 @@
 
 ## Public simulator
 
-`scripts/build_public_site.py` exports the five historical FY2025 USD snapshots, their source links, baseline calculations and the four shared steel producer scenarios. It bundles the Pyodide runtime after verifying its pinned hashes. GitHub Pages serves the build.
+`scripts/build_public_site.py` exports the five historical FY2025 USD snapshots, their source links, baseline calculations and the four shared steel producer scenarios. It bundles the Pyodide runtime after verifying its pinned hashes. Cloudflare Pages builds the site from `main` and serves the public simulator. [Deployment details](PUBLICATION.md)
 
 Changes to borrowing rates, refinancing shares, operating cash and reserve targets run the shared Python Decimal liquidity engine in a web worker. The Nucor walkthrough sets those same inputs. The peer panels display the results of the four preset scenarios, calculated and reconciled with the same engine at build time.
 
