@@ -1,11 +1,11 @@
 # Documentation
 
-## Understand the project
+## Open the public simulator
 
-1. [Project README](../README.md): financial question, scope, screenshots and setup.
-2. [Spanish operating guide](GUIA_FACIL_ES.md): each function in plain language.
-3. [Completed Nucor case](case-studies/NUCOR_FY2025.md): question, assumptions, outcomes and boundaries.
-4. [Project brief](../apps/web/public/research/RefiLens_Project_Brief.pdf) and [case PDF](../apps/web/public/research/RefiLens_Nucor_Case_Study.pdf): portable presentation.
+- [Live simulator](https://ginesn.github.io/RefiLens/)
+- [Guided Nucor liquidity case](https://ginesn.github.io/RefiLens/#nucor-walkthrough)
+- [Nucor and Steel Dynamics comparison](https://ginesn.github.io/RefiLens/#steel-comparison)
+- [Project README and walkthrough](../README.md)
 
 ## Inspect the financial work
 
@@ -16,13 +16,16 @@
 - [Annual cash model](LIQUIDITY_MODEL.md) and [illustrative stress cases](STRESS_SCENARIOS.md)
 - [Assumptions and limitations](ASSUMPTIONS_AND_LIMITATIONS.md)
 - [Independent owner-review checklist](OWNER_VERIFICATION_CHECKLIST.md), still pending
+- [Extended Nucor case memo](case-studies/NUCOR_FY2025.md) and [case PDF](../apps/web/public/research/RefiLens_Nucor_Case_Study.pdf)
 
 ## Run, verify and maintain
 
+- [Local workspace setup, ingestion and reproduction](LOCAL_WORKSPACE.md)
+- [Local workspace guide in Spanish](GUIA_FACIL_ES.md)
 - [Architecture](ARCHITECTURE.md)
-- [Validation evidence](VALIDATION_REPORT.md): dated checks, with earlier entries retained as history
+- [Validation evidence](VALIDATION_REPORT.md) for dated checks
 - [Release readiness](RELEASE_READINESS.md)
-- [Public links and maintenance](PUBLICATION.md): GitHub Pages presentation versus the full Python workspace
+- [Public simulator build and deployment](PUBLICATION.md)
 - [Roadmap](ROADMAP.md) and [decisions](DECISIONS.md)
 - [Contribution guide](../CONTRIBUTING.md) and [security](../SECURITY.md)
 
