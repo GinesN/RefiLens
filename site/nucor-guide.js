@@ -45,7 +45,7 @@ export function bindNucorGuide({ company, presets, money, apply, readScenario })
       label: "Financing response",
       title: "How much debt would need refinancing?",
       explanation: "Keep the 10% rate and weaker operations. Test refinancing 80% of maturing debt, then compare it with the smallest whole percentage that preserves $300m at both year-ends. The model assumes lenders provide that funding.",
-      values: { ...presets.stress, share: "80" },
+      values: presets.response,
       metric: ["Minimum refinancing share", (row) => row.minimum_share === null ? "Unreachable" : `${row.minimum_share}%`],
       takeaway: (row) => Number(row.reserve_headroom) >= 0
         ? `At 80%, cash clears the reserve by ${money(row.reserve_headroom)} at its lowest year-end.`
@@ -107,6 +107,7 @@ export function bindNucorGuide({ company, presets, money, apply, readScenario })
     byId("guide-settings").textContent = `${share}% refinanced · ${rate}% new rate · ${decline}% drop in operating cash · $300m reserve`;
     back.disabled = index === 0;
     next.textContent = step.next;
+    byId("guide-peer-link").hidden = index !== steps.length - 1;
     apply(TICKER, YEAR, RESERVE, step.values);
     heading.focus({ preventScroll: true });
     guide.scrollIntoView({ block: "start" });

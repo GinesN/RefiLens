@@ -15,6 +15,8 @@ The sensitivity table combines five new rates and five refinancing shares at the
 
 The [Nucor walkthrough](https://ginesn.github.io/RefiLens/#nucor-walkthrough) applies four scenarios to the same simulator through 2027. It starts with the disclosed maturity schedule, isolates a change in interest rates, introduces a combined stress and tests how refinancing more debt affects a hypothetical $300m reserve. Its figures come from the public model. The separate research memo includes additional spending and distribution assumptions.
 
+The [steel producer comparison](https://ginesn.github.io/RefiLens/#steel-comparison) applies those four shared scenarios to Nucor and Steel Dynamics, using their own FY2025 opening balances, cash flows and maturity schedules. Each preset is calculated at build time with the same Decimal model as the simulator. The two-year cash bridge reconciles opening and closing cash. Scheduled principal due is shown for context, with only the unrefinanced portion deducted. Reserve headroom is measured at the lowest year-end balance through 2027.
+
 The public site loads validated FY2025 USD values from a small build-time export. It runs the shared Python Decimal model in a browser worker via Pyodide 0.29.4. The pinned runtime is bundled into the deployment after its SHA-256 is checked. The browser loads the runtime and evidence from the same site. The default five-year comparison is computed during the build so it is visible as soon as the issuer data loads. Edited assumptions run both paths in the browser. The full research workspace with more adjustable assumptions requires Next.js and FastAPI.
 
 ## Where to make changes

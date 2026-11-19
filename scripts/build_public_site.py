@@ -18,7 +18,7 @@ FINANCE = API / "app/finance"
 sys.path[:0] = [str(ROOT / "site"), str(API), str(FINANCE)]
 
 from app.extraction.profiles import profile_for
-from model import DEFAULTS, PRESETS, analyze
+from model import DEFAULTS, PRESETS, analyze, compare_steel_producers
 
 ISSUERS = {
     "NUE": ("Nucor", "Scheduled long-term debt principal excludes finance leases and short-term debt."),
@@ -136,6 +136,8 @@ def runtime_file(name: str) -> bytes:
 
 def main() -> None:
     companies = [read_company(ticker, *labels) for ticker, labels in ISSUERS.items()]
+    by_ticker = {company["ticker"]: company for company in companies}
+    steel_comparison = compare_steel_producers(by_ticker["NUE"], by_ticker["STLD"])
     runtime = runtime_file("pyodide.tgz")
     license_text = runtime_file("LICENSE")
 
@@ -144,11 +146,16 @@ def main() -> None:
     OUT.mkdir(parents=True)
     for name in [
         "index.html", "styles.css", "app.js", "chart.js", "sensitivity.js",
-        "nucor-guide.js", "worker.js", "model.py", "mark.svg",
+        "nucor-guide.js", "steel-comparison.js", "worker.js", "model.py", "mark.svg",
     ]:
         shutil.copyfile(ROOT / "site" / name, OUT / name)
     shutil.copyfile(FINANCE / "liquidity.py", OUT / "liquidity.py")
-    (OUT / "companies.json").write_text(json.dumps({"companies": companies, "defaults": DEFAULTS, "presets": PRESETS}))
+    (OUT / "companies.json").write_text(json.dumps({
+        "companies": companies,
+        "defaults": DEFAULTS,
+        "presets": PRESETS,
+        "steel_comparison": steel_comparison,
+    }))
     (OUT / ".nojekyll").touch()
     (OUT / "runtime").mkdir()
     (OUT / "runtime/LICENSE").write_bytes(license_text)
