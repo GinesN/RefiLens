@@ -146,7 +146,7 @@ def main() -> None:
     OUT.mkdir(parents=True)
     for name in [
         "index.html", "styles.css", "app.js", "chart.js", "sensitivity.js",
-        "nucor-guide.js", "steel-comparison.js", "worker.js", "model.py", "mark.svg",
+        "nucor-guide.js", "steel-comparison.js", "worker.js", "model.py", "mark.svg", "social-preview.jpg",
     ]:
         shutil.copyfile(ROOT / "site" / name, OUT / name)
     shutil.copyfile(FINANCE / "liquidity.py", OUT / "liquidity.py")
