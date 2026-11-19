@@ -20,6 +20,7 @@ output/
 outputs/
 # Keep the current presentation captures; local QA history stays on this Mac.
 docs/screenshots/*
+!docs/screenshots/public-simulator.jpg
 !docs/screenshots/project-desktop.png
 !docs/screenshots/project-mobile.png
 !docs/screenshots/case-study-desktop.png
