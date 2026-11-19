@@ -2,11 +2,11 @@
 
 **Corporate refinancing and liquidity simulator**
 
-[Open the simulator](https://ginesn.github.io/RefiLens/) · [Follow the Nucor walkthrough](https://ginesn.github.io/RefiLens/#nucor-walkthrough) · [Compare Nucor and Steel Dynamics](https://ginesn.github.io/RefiLens/#steel-comparison)
+[Open the simulator](https://refilens.pages.dev/) · [Follow the Nucor walkthrough](https://refilens.pages.dev/#nucor-walkthrough) · [Compare Nucor and Steel Dynamics](https://refilens.pages.dev/#steel-comparison)
 
 How much cash can a company keep when its debt comes due? RefiLens uses FY2025 SEC filings from five U.S. industrial companies to show how changes in operating cash flow, borrowing rates and the share of debt refinanced affect year-end cash.
 
-[![RefiLens public simulator showing Nucor’s debt maturities, scenario controls and projected cash](docs/screenshots/public-simulator.jpg)](https://ginesn.github.io/RefiLens/)
+[![RefiLens public simulator showing Nucor’s debt maturities, scenario controls and projected cash](docs/screenshots/public-simulator.jpg)](https://refilens.pages.dev/)
 
 ## Try the public simulator
 
@@ -14,7 +14,7 @@ How much cash can a company keep when its debt comes due? RefiLens uses FY2025 S
 2. **Change the financing assumptions.** Adjust how much debt is refinanced, the new interest rate or the cash the business generates. The projected cash chart compares your scenario with a reference case and explains the difference.
 3. **Set a cash reserve.** The sensitivity table shows the lowest year-end cash under different combinations. The model calculates the smallest whole refinancing percentage that meets your reserve at each year-end through the selected year.
 
-The [Nucor walkthrough](https://ginesn.github.io/RefiLens/#nucor-walkthrough) applies four scenarios in order and explains each result as the controls change.
+The [Nucor walkthrough](https://refilens.pages.dev/#nucor-walkthrough) applies four scenarios in order and explains each result as the controls change.
 
 ## Nucor and Steel Dynamics under the same stress
 
@@ -26,7 +26,7 @@ Nucor starts with nearly three times as much cash as Steel Dynamics. In the **Co
 | Modeled operating cash after capital spending, 2026–27 | −1,669.60 | 423.20 |
 | Projected cash at 2027 close | 162.76 | 996.00 |
 
-Under these assumptions, Nucor draws on opening cash to cover capital spending while Steel Dynamics generates cash after investing. Open **How each cash balance adds up** to see how principal payments and interest contribute to both outcomes. [Explore the comparison](https://ginesn.github.io/RefiLens/#steel-comparison)
+Under these assumptions, Nucor draws on opening cash to cover capital spending while Steel Dynamics generates cash after investing. Open **How each cash balance adds up** to see how principal payments and interest contribute to both outcomes. [Explore the comparison](https://refilens.pages.dev/#steel-comparison)
 
 ## Data and model
 
@@ -38,7 +38,7 @@ The public scenarios repeat FY2025 capital spending and make borrowing terms and
 
 | Component | Implementation |
 |---|---|
-| Public simulator | `site/` runs the shared Python `Decimal` cash model in a Pyodide web worker on GitHub Pages. The build bundles the FY2025 snapshots and the four shared peer scenarios. |
+| Public simulator | `site/` runs the shared Python `Decimal` cash model in a Pyodide web worker on Cloudflare Pages. The build bundles the FY2025 snapshots and the four shared peer scenarios. |
 | Local research workspace | `apps/web/` provides a Next.js and TypeScript interface. `services/api/` contains FastAPI, SQLAlchemy, the SEC import tools and the shared financial model. |
 | Evidence and reproducibility | `fixtures/` contains filing snapshots. `scripts/` contains setup, checks and export tools. `docs/` contains the financial definitions, source evidence and validation results. |
 
